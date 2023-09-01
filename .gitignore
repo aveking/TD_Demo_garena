@@ -1,5 +1,9 @@
-
+/Library
+/Logs
+/Temp
+/UserSettings
 .vsconfig
 .vs/mini_game_td/v16/.suo
 *.csproj
 mini_game_td.sln
+TD_Demo_garena.sln
