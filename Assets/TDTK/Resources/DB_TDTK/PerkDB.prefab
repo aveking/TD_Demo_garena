@@ -1,0 +1,1969 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400000}
+  - component: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: PerkDB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05b05b973198ce4897c75804bad916c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perkList:
+  - ID: 12
+    name: Energy Tower Cost
+    icon: {fileID: 21300000, guid: ebd46d1b6c658bf49b728d724326e65e, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 14
+    cost: 0000000000000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 
+    itemIDList: 020000000000000009000000
+    itemID: 4
+    value: 5
+    valueAlt: 0
+    valueRscList:
+    - 0
+    - 0
+    stats:
+      damageMin: 0
+      damageMax: 6
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0.25
+    upgradeCost: 0.25
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Reduce build cost all Energy based tower (MG, pulse-laser, beam-laser)
+      by 25%.
+  - ID: 13
+    name: Energy Tower Slow
+    icon: {fileID: 21300000, guid: 7779e15150a727745b21d59c30f53d1d, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 14
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 0c000000
+    itemIDList: 020000000000000009000000
+    itemID: 4
+    value: 5
+    valueAlt: 0
+    valueRscList:
+    - 0
+    - 0
+    stats:
+      damageMin: 0
+      damageMax: 6
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 1
+        slowMultiplier: 0.75
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: All energy based tower (MG, pulse-laser, beam-laser) slows target down
+  - ID: 14
+    name: PulseLaser mk2
+    icon: {fileID: 21300000, guid: ebaab99dec7d40c458d5043936c9401e, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 0
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 0d000000
+    itemIDList: 
+    itemID: 4
+    value: 5
+    valueAlt: 0
+    valueRscList:
+    - 0
+    - 0
+    stats:
+      damageMin: 0
+      damageMax: 6
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 1
+        slowMultiplier: 0.75
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 1
+        cooldownBuff: 1
+        rangeBuff: 1
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 1
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Unlock PulseLaser mk2. A more deadly upgrade from standard pulse-laser.
+  - ID: 10
+    name: Projectile Tower Cost
+    icon: {fileID: 21300000, guid: 6c9e48b5a61084a478843d25d50a84dd, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 14
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 
+    itemIDList: 010000000d00000003000000
+    itemID: 4
+    value: 5
+    valueAlt: 0
+    valueRscList:
+    - 0
+    - 0
+    stats:
+      damageMin: 0
+      damageMax: 6
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0.1
+    upgradeCost: 0.1
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Reduce build cost all projectile based tower (canon, artillery, missile)
+      by 25%
+  - ID: 9
+    name: Projectile Tower Damage
+    icon: {fileID: 21300000, guid: 6313674fc73266349840adac8757a536, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 14
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 0a000000
+    itemIDList: 010000000d00000003000000
+    itemID: 4
+    value: 5
+    valueAlt: 0
+    valueRscList:
+    - 0
+    - 0
+    stats:
+      damageMin: 0
+      damageMax: 6
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 1
+        slowMultiplier: 0.75
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Increase damage of all projectile based tower (canon, artillery, missile)
+      by 25%
+  - ID: 0
+    name: CanonTower mk2
+    icon: {fileID: 21300000, guid: 7316f705bc0cf0e43998fa1b6816b07b, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 0
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 09000000
+    itemIDList: 
+    itemID: 4
+    value: 5
+    valueAlt: 0
+    valueRscList:
+    - 0
+    - 0
+    stats:
+      damageMin: 0
+      damageMax: 6
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 1
+        slowMultiplier: 0.75
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 1
+        cooldownBuff: 1
+        rangeBuff: 1
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 1
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 5
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Unlock CanonTower mk2. A more deadly upgrade from standard CanonTower.
+  - ID: 1
+    name: Regen Cash
+    icon: {fileID: 21300000, guid: 948400ac2da41b04586c297dae73f8aa, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 8
+    cost: 0000000003000000
+    minLevel: 0
+    minWave: 1
+    minPerkPoint: 0
+    prereq: 
+    itemIDList: 03000000
+    itemID: 0
+    value: 1
+    valueAlt: 3
+    valueRscList:
+    - 0.5
+    - 0
+    stats:
+      damageMin: 5
+      damageMax: 6
+      cooldown: 1
+      clipSize: -1
+      reloadDuration: 2
+      range: 10
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 2
+        interval: 0.5
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0.3
+      buff:
+        effectID: 0
+        damageBuff: 1
+        cooldownBuff: 1
+        rangeBuff: 1
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 1
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 5
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Regenerate cash overtime
+  - ID: 2
+    name: Life Bonus
+    icon: {fileID: 21300000, guid: 81558e61753138044920d411c6df495b, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 6
+    cost: 0000000000000000
+    minLevel: 0
+    minWave: 5
+    minPerkPoint: 0
+    prereq: 
+    itemIDList: 
+    itemID: 6
+    value: 1
+    valueAlt: 1
+    valueRscList:
+    - 0
+    - 0
+    stats:
+      damageMin: 5
+      damageMax: 6
+      cooldown: 1
+      clipSize: -1
+      reloadDuration: 2
+      range: 10
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 2
+        interval: 0.5
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0.3
+      buff:
+        effectID: 0
+        damageBuff: 1
+        cooldownBuff: 1
+        rangeBuff: 1
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 1
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 5
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Gain 1 extra life everytime a wave is cleared
+  - ID: 7
+    name: Life Cap
+    icon: {fileID: 21300000, guid: 16c5021772b2e064292925955f4ebe9f, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 4
+    cost: 0000000000000000
+    minLevel: 0
+    minWave: 5
+    minPerkPoint: 0
+    prereq: 
+    itemIDList: 
+    itemID: 6
+    value: 5
+    valueAlt: 1
+    valueRscList:
+    - 0
+    - 0
+    stats:
+      damageMin: 5
+      damageMax: 6
+      cooldown: 1
+      clipSize: -1
+      reloadDuration: 2
+      range: 10
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 2
+        interval: 0.5
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0.3
+      buff:
+        effectID: 0
+        damageBuff: 1
+        cooldownBuff: 1
+        rangeBuff: 1
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 1
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Increase life capcity by 5
+  - ID: 3
+    name: Energy Cap I
+    icon: {fileID: 21300000, guid: d5e1a062b30b3b44fb7bdaea46b40273, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 20
+    cost: 0000000001000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 
+    itemIDList: ffffffff
+    itemID: 0
+    value: 25
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0.2
+      damageMax: 6
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0.2
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 2
+        interval: 0.5
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0.3
+      buff:
+        effectID: 0
+        damageBuff: 1
+        cooldownBuff: 1
+        rangeBuff: 1
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 1
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 5
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Increase energy capacity by 25.
+  - ID: 5
+    name: Energy Cap II
+    icon: {fileID: 21300000, guid: d5e1a062b30b3b44fb7bdaea46b40273, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 20
+    cost: 0a00000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 03000000
+    itemIDList: ffffffff
+    itemID: 0
+    value: 25
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0.2
+      damageMax: 6
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0.2
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 2
+        interval: 0.5
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0.3
+      buff:
+        effectID: 0
+        damageBuff: 1
+        cooldownBuff: 1
+        rangeBuff: 1
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 1
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 5
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Further increase energy capacity by 25.
+  - ID: 4
+    name: Energy Bonus
+    icon: {fileID: 21300000, guid: c29d8a09d461bd949a3fa253121f223b, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 22
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 03000000
+    itemIDList: 01000000ffffffff
+    itemID: 0
+    value: 25
+    valueAlt: 25
+    valueRscList: []
+    stats:
+      damageMin: 0
+      damageMax: 0
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 1
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0.3
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 0000000000000000
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Clearing each wave grants 25 energy
+  - ID: 6
+    name: Energy Regen
+    icon: {fileID: 21300000, guid: 368361193b4659f44a89d562ae475ac7, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 19
+    cost: 0000000003000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 03000000
+    itemIDList: 03000000
+    itemID: 0
+    value: 1
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0
+      damageMax: 0
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Increase energy regeneration rate
+  - ID: 8
+    name: Super EMP
+    icon: {fileID: 21300000, guid: 0c9e6c11a0d8a154a886ee0dc19a567b, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 1
+    cost: 0000000003000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 04000000
+    itemIDList: 03000000
+    itemID: 0
+    value: 1
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0
+      damageMax: 0
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Unlock ability SuperEmp. Slows all hostile on the map for 3 seconds.
+  - ID: 11
+    name: Super Buff
+    icon: {fileID: 21300000, guid: 91792981a08babc40a809a0b661a2956, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 1
+    cost: 0000000003000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 06000000
+    itemIDList: 04000000
+    itemID: 0
+    value: 1
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0
+      damageMax: 0
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Unlock ability SuperBuff. Buff all towers damage, range and firing rate
+      by 25%.
+  - ID: 15
+    name: FPS Fast Reload
+    icon: {fileID: 21300000, guid: c2debddade0841f4296d05e873076159, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 17
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 
+    itemIDList: ffffffff
+    itemID: 0
+    value: 0
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0
+      damageMax: 0
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0.2
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Reduce reload duration in FPS mode by 20%
+  - ID: 16
+    name: FPS Clip Size
+    icon: {fileID: 21300000, guid: 8991ee7432088804eb6fcd84e2d4378c, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 17
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 0f000000
+    itemIDList: ffffffff
+    itemID: 0
+    value: 0
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0
+      damageMax: 0
+      cooldown: 0
+      clipSize: 0.25
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Increase weapon clip size in FPS mode by 25%
+  - ID: 17
+    name: FPS Critical
+    icon: {fileID: 21300000, guid: b36690acecf61a446a7b346741bd3114, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 17
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 
+    itemIDList: ffffffff
+    itemID: 0
+    value: 0
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0
+      damageMax: 0
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0.2
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Increase chance to score critical in FPS mode by 20%
+  - ID: 18
+    name: FPS Damage
+    icon: {fileID: 21300000, guid: 1e596fc7527881a4aa57928dc1cbf977, type: 3}
+    iconUnavailable: {fileID: 0}
+    iconPurchased: {fileID: 0}
+    repeatable: 0
+    purchased: 0
+    purchasedCount: 0
+    type: 17
+    cost: 0000000002000000
+    minLevel: 0
+    minWave: 0
+    minPerkPoint: 0
+    prereq: 1000000011000000
+    itemIDList: ffffffff
+    itemID: 0
+    value: 0
+    valueAlt: 0
+    valueRscList: []
+    stats:
+      damageMin: 0.5
+      damageMax: 0
+      cooldown: 0
+      clipSize: 0
+      reloadDuration: 0
+      range: 0
+      minRange: 0
+      aoeRadius: 0
+      hit: 0
+      shieldBreak: 0
+      shieldPierce: 0
+      damageShieldOnly: 0
+      crit:
+        chance: 0
+        dmgMultiplier: 0
+      stun:
+        chance: 0
+        duration: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      instantKill:
+        chance: 0
+        HPThreshold: 0
+      buff:
+        effectID: 0
+        damageBuff: 0
+        cooldownBuff: 0
+        rangeBuff: 0
+        criticalBuff: 0
+        hitBuff: 0
+        dodgeBuff: 0
+        regenHP: 0
+      rscGain: 
+      cost: 
+      buildDuration: 1
+      unBuildDuration: 1
+      shootObject: {fileID: 0}
+      effectObject: {fileID: 0}
+      autoDestroyEffect: 1
+      effectDuration: 1.5
+      useCustomDesp: 0
+      desp: 
+    effects:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    HP: 0
+    HPRegen: 0
+    HPStagger: 0
+    shield: 0
+    shieldRegen: 0
+    shieldStagger: 0
+    buildCost: 0
+    upgradeCost: 0
+    abCost: 0
+    abCooldown: 0
+    abAOERadius: 0
+    desp: Increase weapon damage in fps mode by 50%
