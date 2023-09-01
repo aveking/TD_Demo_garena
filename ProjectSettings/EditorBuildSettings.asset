@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TDTK/Scenes/TDTK__PersistentPerk_InterLevel.unity
     guid: 1c005d6603006d14c92b0ef290a4a40c
+  - enabled: 1
+    path: Assets/TDTK/Scenes/TD_Demo_Garena_GamePlay.unity
+    guid: 1147571e1709cac4486ff1f8b8afcd19
   m_configObjects: {}
