@@ -6,24 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TDTK/Scenes/TDTK_Demo_Menu.unity
-    guid: 384e3babef6dda24cb5a3f3b9afcd68c
+    path: Assets/TD_Demo_Garena_LoginMenu.unity
+    guid: 9a52d656ccdec4c4090c1900d66fd64d
   - enabled: 1
-    path: Assets/TDTK/Scenes/TDTK_Demo_Maze_Terrain.unity
-    guid: f91c50f1823d35b48b7f495e46f9d000
-  - enabled: 1
-    path: Assets/TDTK/Scenes/TDTK_Demo_Maze_Loop.unity
-    guid: e4fecb363e9f09747b8810f2df42ae4a
-  - enabled: 1
-    path: Assets/TDTK/Scenes/TDTK_Demo_Maze.unity
-    guid: 9a9b7509e3009f848bc236bd74a21bc6
-  - enabled: 1
-    path: Assets/TDTK/Scenes/TDTK_Demo_FixedPath.unity
-    guid: 88b60262a83b5b64b9ff0b0adc776fd2
-  - enabled: 1
-    path: Assets/TDTK/Scenes/TDTK__PersistentPerk_InterLevel.unity
-    guid: 1c005d6603006d14c92b0ef290a4a40c
-  - enabled: 1
-    path: Assets/TDTK/Scenes/TD_Demo_Garena_GamePlay.unity
+    path: Assets/TD_Demo_Garena_GamePlay.unity
     guid: 1147571e1709cac4486ff1f8b8afcd19
   m_configObjects: {}

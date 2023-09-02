@@ -68,7 +68,7 @@ namespace TDTK {
 		
 		[MenuItem ("Tools/TDTK/SpawnEditor", false, 10)]
 		static void OpenSpawnEditor () {
-			SpawnEditorWindow.Init();
+			//SpawnEditorWindow.Init();
 		}
 		
 		[MenuItem ("Tools/TDTK/FPSWeaponEditor", false, 10)]

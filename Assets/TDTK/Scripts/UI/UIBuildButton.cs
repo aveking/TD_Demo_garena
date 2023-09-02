@@ -145,7 +145,7 @@ namespace TDTK {
 		
 		
 		private int currentButtonID=-1; //last touched button, for touch mode only
-		public void OnTowerButton(GameObject butObj, int pointerID=-1){
+		public void OnTowerButton(GameObject butObj, int pointerID=-1){//建一座塔
 			int ID=GetButtonID(butObj);
 			
 			if(UIMainControl.InTouchMode() && !BuildManager.UseDragNDrop()){

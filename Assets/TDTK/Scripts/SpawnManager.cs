@@ -9,6 +9,11 @@ namespace TDTK
 
     public class SpawnManager : MonoBehaviour
     {//怪物出生管理器
+        public GameObject BOSS_Unit;
+        public GameObject Minion_Unit;
+
+
+
 
         public enum _SpawnMode { Continous, WaveCleared, Round }
         public _SpawnMode spawnMode;
@@ -91,9 +96,6 @@ namespace TDTK
             }
             if (!IsSpawningStarted()) _Spawn();
         }
-
-
-
 
         public static void OnUnitDestroyed(UnitCreep unit)
         {
@@ -243,10 +245,7 @@ namespace TDTK
             }
         }
 
-
-
-
-        private float SpawnWaveFinite()
+        private float SpawnWaveFinite() //产生怪的函数
         {
             if (spawning) return 0;
 
@@ -266,6 +265,23 @@ namespace TDTK
                 wave.waveID = currentWaveID;
                 waveList.Add(wave);
             }
+
+            Debug.Log($"wave.subWaveList.Count={wave.subWaveList.Count}");
+            Debug.Log($"wave.subWaveList[0].count={wave.subWaveList[0].count}");
+
+            //Boss 魔王
+            wave.subWaveList[0].unit = BOSS_Unit;
+            wave.subWaveList[0].count = 1;
+            wave.subWaveList[0].path = null;
+            wave.subWaveList[0].overrideHP = 1000;
+            wave.subWaveList.Add(wave.subWaveList[0].Clone());
+
+            //Minion 仆从
+            wave.subWaveList[1].unit = Minion_Unit;
+            wave.subWaveList[1].count = 50;
+            wave.subWaveList[1].interval = 0.25f;
+            wave.subWaveList[1].delay = 1f;
+            wave.subWaveList[1].path = null;
 
             if (spawnMode == _SpawnMode.Continous)
             {

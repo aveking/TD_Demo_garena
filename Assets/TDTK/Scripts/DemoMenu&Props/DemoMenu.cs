@@ -26,6 +26,7 @@ namespace TDTK
         public List<UIButton> buttonList = new List<UIButton>();
 
         public Text labelTooltip;
+        public Transform tt;
 
         // Use this for initialization
         void Start()
@@ -69,6 +70,7 @@ namespace TDTK
                 buttonList[i].SetCallback(this.OnHoverButton, this.OnExitButton, this.OnButton, null);
             }
 
+            tt.GetChild(0).GetComponent<Text>().text = "最终解释权归作者sunren.hu所有\n禁止用于商业用途\n未经作者同意禁止任何形式的复制或分享\nTD Demo by Sunren.Hu";
             OnExitButton(null);
         }
 
