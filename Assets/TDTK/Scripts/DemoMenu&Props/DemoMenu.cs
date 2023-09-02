@@ -25,7 +25,7 @@ namespace TDTK
         public List<string> levelDespList = new List<string>();
         public List<UIButton> buttonList = new List<UIButton>();
 
-        public Text labelTooltip;
+        //public Text labelTooltip;
         public Transform tt;
 
         // Use this for initialization
@@ -97,17 +97,17 @@ namespace TDTK
             {
                 if (buttonList[i].rootObj == butObj)
                 {
-                    labelTooltip.text = levelDespList[i];
+                    //labelTooltip.text = levelDespList[i];
                 }
             }
 
-            labelTooltip.gameObject.SetActive(true);
+            //labelTooltip.gameObject.SetActive(true);
         }
 
         public void OnExitButton(GameObject butObj)
         {
-            labelTooltip.text = "";
-            labelTooltip.gameObject.SetActive(false);
+            //labelTooltip.text = "";
+            //labelTooltip.gameObject.SetActive(false);
         }
 
     }

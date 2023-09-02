@@ -53,6 +53,9 @@ namespace TDTK
         // Use this for initialization
         void Start()
         {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 120;
+
             if (defaultPath == null)
             {
                 Debug.Log("DefaultPath on SpawnManager not assigned, auto search for one");
