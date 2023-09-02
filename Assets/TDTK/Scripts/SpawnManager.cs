@@ -272,16 +272,23 @@ namespace TDTK
             //Boss 魔王
             wave.subWaveList[0].unit = BOSS_Unit;
             wave.subWaveList[0].count = 1;
+            wave.subWaveList[0].interval = 65535f;
             wave.subWaveList[0].path = null;
             wave.subWaveList[0].overrideHP = 1000;
+            wave.subWaveList[0].overrideShield = 0;
+            wave.subWaveList[0].overrideMoveSpd = 2;
             wave.subWaveList.Add(wave.subWaveList[0].Clone());
 
             //Minion 仆从
             wave.subWaveList[1].unit = Minion_Unit;
             wave.subWaveList[1].count = 50;
             wave.subWaveList[1].interval = 0.25f;
-            wave.subWaveList[1].delay = 1f;
             wave.subWaveList[1].path = null;
+            wave.subWaveList[1].overrideHP = 5;
+            wave.subWaveList[1].overrideShield = 0;
+            wave.subWaveList[1].overrideMoveSpd = 2;
+            wave.subWaveList[1].delay = 1f;
+
 
             if (spawnMode == _SpawnMode.Continous)
             {
