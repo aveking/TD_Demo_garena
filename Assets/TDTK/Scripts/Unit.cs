@@ -542,9 +542,9 @@ namespace TDTK
 
         int Boss_normal_back_attack_cnt = 0;
         float Boss_normal_back_attack_cd = 0f;
-        float Boss_normal_back_attack_maxcd = 4f;//0.5f;
+        float Boss_normal_back_attack_maxcd = 0.5f;//0.5f;
         float Boss_normal_back_attack_auto_cd = 0f;//等到时间，不管多少，就都发射
-        float Boss_normal_back_attack_auto_maxcd = 6f;//3f;
+        float Boss_normal_back_attack_auto_maxcd = 3f;//3f;
         void BOSS_one_att_inst()
         {
             if (Boss_normal_back_attack_cd > 0f) return;

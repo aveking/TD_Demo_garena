@@ -39,9 +39,14 @@ namespace TDTK
         public GameObject Platform_TD;//自动建造的炮塔
         public GameObject SceneTree;//场景中的树
         public int tower_cnt = 5;
-        int map_w = 5;
+        int map_w = 13;
         int[,] mapnode;
         const float NODE_SIZE = 2f;
+
+        GameObject GetRndSceneObj()
+        {
+            return SceneTree.transform.GetChild(Random.Range(0, SceneTree.transform.childCount)).gameObject;
+        }
 
         public void Init()
         {
@@ -97,8 +102,8 @@ namespace TDTK
 
             //Debug.LogError($"wpList.Count={wpList.Count}");
 
-            int max_rnd = 512 + 256;
-            int add_step = 64 + 256;
+            int max_rnd = 512 + 1;
+            int add_step = 64 + 1;
             int check_rnd = max_rnd;
             for (int i = 0; i < map_h; ++i)
             {
@@ -132,8 +137,8 @@ namespace TDTK
                             int rnd = Random.Range(0, 1000);
                             if (rnd < 64)
                             {
-                                Transform ai = GameObject.Instantiate(SceneTree).transform;
-                                ai.position = new Vector3(i * NODE_SIZE, Random.Range(-2f, -4f), (j - (map_w >> 1)) * NODE_SIZE);
+                                Transform ai = GameObject.Instantiate(GetRndSceneObj()).transform;
+                                ai.position = new Vector3(i * NODE_SIZE, -0.25f, /*Random.Range(-2f, -4f),*/ (j - (map_w >> 1)) * NODE_SIZE);
                             }
                         }
                         else
@@ -152,8 +157,8 @@ namespace TDTK
                                 rnd = Random.Range(0, 1000);
                                 if (rnd < 512)
                                 {
-                                    Transform ai = GameObject.Instantiate(SceneTree).transform;
-                                    ai.position = new Vector3(i * NODE_SIZE, Random.Range(-2f, -4f), (j - (map_w >> 1)) * NODE_SIZE);
+                                    Transform ai = GameObject.Instantiate(GetRndSceneObj()).transform;
+                                    ai.position = new Vector3(i * NODE_SIZE, -0.25f, /*Random.Range(-2f, -4f),*/ (j - (map_w >> 1)) * NODE_SIZE);
                                 }
                             }
 
