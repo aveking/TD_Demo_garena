@@ -36,8 +36,8 @@ namespace TDTK
         public int loopPoint = 0;
 
         public int map_h = 100;
-        public GameObject Platform_TD;
-        public GameObject SceneTree;
+        public GameObject Platform_TD;//自动建造的炮塔
+        public GameObject SceneTree;//场景中的树
         public int tower_cnt = 5;
         int map_w = 5;
         int[,] mapnode;
@@ -117,6 +117,27 @@ namespace TDTK
                     {
                         if (Mathf.Abs(lastwp_j - j) <= 2)//附近的可以放炮台
                         {
+                            //int rnd = Random.Range(0, 1000);
+                            //if (i >= 7 && i < map_h - 7 && rnd < check_rnd)
+                            //{
+                            //    Transform ai = GameObject.Instantiate(Platform_TD).transform;
+                            //    ai.position = new Vector3(i * NODE_SIZE, 0f, (j - (map_w >> 1)) * NODE_SIZE);
+                            //    check_rnd = 0;
+                            //}
+                            //else
+                            //{
+                            //    if (check_rnd < max_rnd) check_rnd += add_step;
+                            //}
+
+                            int rnd = Random.Range(0, 1000);
+                            if (rnd < 64)
+                            {
+                                Transform ai = GameObject.Instantiate(SceneTree).transform;
+                                ai.position = new Vector3(i * NODE_SIZE, Random.Range(-2f, -4f), (j - (map_w >> 1)) * NODE_SIZE);
+                            }
+                        }
+                        else
+                        {
                             int rnd = Random.Range(0, 1000);
                             if (i >= 7 && i < map_h - 7 && rnd < check_rnd)
                             {
@@ -127,16 +148,18 @@ namespace TDTK
                             else
                             {
                                 if (check_rnd < max_rnd) check_rnd += add_step;
+
+                                rnd = Random.Range(0, 1000);
+                                if (rnd < 512)
+                                {
+                                    Transform ai = GameObject.Instantiate(SceneTree).transform;
+                                    ai.position = new Vector3(i * NODE_SIZE, Random.Range(-2f, -4f), (j - (map_w >> 1)) * NODE_SIZE);
+                                }
                             }
-                        }
-                        else
-                        {
-                            int rnd = Random.Range(0, 1000);
-                            if (rnd < 512 + 256)
-                            {
-                                Transform ai = GameObject.Instantiate(SceneTree).transform;
-                                ai.position = new Vector3(i * NODE_SIZE, Random.Range(-2f, -4f), (j - (map_w >> 1)) * NODE_SIZE);
-                            }
+
+
+
+
                         }
                     }
 

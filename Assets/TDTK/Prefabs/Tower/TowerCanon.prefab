@@ -108,9 +108,9 @@ MonoBehaviour:
     cooldown: 1.5
     clipSize: 0
     reloadDuration: 0
-    range: 6
+    range: 18
     minRange: 0
-    aoeRadius: 2
+    aoeRadius: 0
     hit: 1
     shieldBreak: 1
     shieldPierce: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
 
       Cause aoe damage and slow targets'
   localShootObject: {fileID: 0}
-  targetPriority: 4
+  targetPriority: 3
   turretObject: {fileID: 400004}
   barrelObject: {fileID: 0}
   shootPoints:

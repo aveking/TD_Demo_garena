@@ -302,8 +302,8 @@ MonoBehaviour:
   waveID: 0
   flying: 0
   stopToAttack: 0
-  rotateSpd: 10
-  moveSpeed: 2.5
+  rotateSpd: 2
+  moveSpeed: 0.5
   rotateTowardsDestination: 1
   rotateTowardsDestinationX: 1
   lifeCost: 1

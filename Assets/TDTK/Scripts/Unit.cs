@@ -7,7 +7,7 @@ using TDTK;
 namespace TDTK
 {
 
-    public class Unit : MonoBehaviour
+    public class Unit : MonoBehaviour //塔和怪都继承于它
     {
 
 
@@ -188,7 +188,7 @@ namespace TDTK
 
         }
 
-        int break_shield_buff = 0;
+        int break_shield_buff = 0;//Boss的狂暴处理
         float break_shield_cd_buff = 10f;
         public virtual void FixedUpdate()
         {
@@ -857,7 +857,9 @@ namespace TDTK
         {
             //if(stats[currentActiveStat].shootObjectT==null) return localShootObjectT;
             //return stats[currentActiveStat].shootObjectT;
-            return stats[currentActiveStat].shootObject != null ? stats[currentActiveStat].shootObject : localShootObject;
+            ShootObject res = stats[currentActiveStat].shootObject != null ? stats[currentActiveStat].shootObject : localShootObject;
+            if (IsTower()) res.speed = 2.5f;//炮台的子弹飞行速度的调整
+            return res;
         }
         public GameObject GetEffectObject() { return stats[currentActiveStat].effectObject; }
 

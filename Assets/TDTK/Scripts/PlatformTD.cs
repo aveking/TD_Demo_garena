@@ -131,7 +131,7 @@ namespace TDTK
                     buildInfo.platform = this;
                     buildInfo.availableTowerIDList = availableTowerIDList;
 
-                    BuildManager.BuildTower(0, buildInfo);
+                    BuildManager.BuildTower(3, buildInfo);
 
                     //BuildTower(transform.position, BuildManager.GetInstance().towerList[0]);
                     //Debug.Log($"husunren log auto build tower  tower_build_wait_frame={tower_build_wait_frame}");

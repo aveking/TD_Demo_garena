@@ -22780,7 +22780,7 @@ MonoBehaviour:
   gridSize: 2
   disableBuildWhenInPlay: 0
   autoAdjustTextureToGrid: 1
-  unavailableTowerIDList: 07000000080000000000000009000000
+  unavailableTowerIDList: 
   availableTowerIDList: 
   towerList: []
   maskPlatform:
@@ -33729,7 +33729,7 @@ GameObject:
   - component: {fileID: 1665872695}
   - component: {fileID: 1665872697}
   m_Layer: 0
-  m_Name: Path1
+  m_Name: "Path1_\u8DEF\u7EBF\u548C\u70AE\u53F0\u914D\u7F6E\u5728\u8FD9\u91CC"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

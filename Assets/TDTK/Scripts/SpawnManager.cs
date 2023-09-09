@@ -279,7 +279,7 @@ namespace TDTK
             wave.subWaveList[0].path = null;
             wave.subWaveList[0].overrideHP = 1000;
             wave.subWaveList[0].overrideShield = 0;
-            wave.subWaveList[0].overrideMoveSpd = 2;
+            wave.subWaveList[0].overrideMoveSpd = 0.5f;
             if (wave.subWaveList.Count == 1) wave.subWaveList.Add(wave.subWaveList[0].Clone());
 
             //Minion 仆从
@@ -289,8 +289,8 @@ namespace TDTK
             wave.subWaveList[1].path = null;
             wave.subWaveList[1].overrideHP = 5;
             wave.subWaveList[1].overrideShield = 0;
-            wave.subWaveList[1].overrideMoveSpd = 2;
-            wave.subWaveList[1].delay = 1f;
+            wave.subWaveList[1].overrideMoveSpd = 0.5f;
+            wave.subWaveList[1].delay = 7f;
 
             if (spawnMode == _SpawnMode.Continous)
             {
