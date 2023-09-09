@@ -277,17 +277,17 @@ namespace TDTK
             wave.subWaveList[0].count = 1;
             wave.subWaveList[0].interval = 65535f;
             wave.subWaveList[0].path = null;
-            wave.subWaveList[0].overrideHP = 1000;
+            wave.subWaveList[0].overrideHP = 9999;
             wave.subWaveList[0].overrideShield = 0;
             wave.subWaveList[0].overrideMoveSpd = 0.5f;
             if (wave.subWaveList.Count == 1) wave.subWaveList.Add(wave.subWaveList[0].Clone());
 
             //Minion 仆从
             wave.subWaveList[1].unit = Minion_Unit;
-            wave.subWaveList[1].count = 50;
-            wave.subWaveList[1].interval = 0.25f;
+            wave.subWaveList[1].count = 16;
+            wave.subWaveList[1].interval = 2f;
             wave.subWaveList[1].path = null;
-            wave.subWaveList[1].overrideHP = 5;
+            wave.subWaveList[1].overrideHP = 20;
             wave.subWaveList[1].overrideShield = 0;
             wave.subWaveList[1].overrideMoveSpd = 0.5f;
             wave.subWaveList[1].delay = 7f;
@@ -302,7 +302,7 @@ namespace TDTK
 
             for (int i = 0; i < wave.subWaveList.Count; i++)
             {
-                Debug.Log($"i={i}  StartCoroutine(SpawnSubWave(wave.subWaveList[i], wave))");
+                //Debug.Log($"i={i}  StartCoroutine(SpawnSubWave(wave.subWaveList[i], wave))");
                 StartCoroutine(SpawnSubWave(wave.subWaveList[i], wave));
             }
 
@@ -336,7 +336,7 @@ namespace TDTK
                     break;
                 }
 
-                Debug.Log($"SpawnSubWave spawnCount={spawnCount} subWave.unit.name={subWave.unit.name}");
+                //Debug.Log($"SpawnSubWave spawnCount={spawnCount} subWave.unit.name={subWave.unit.name}");
                 GameObject obj = ObjectPoolManager.Spawn(subWave.unit, pos, rot);
                 UnitCreep unit = obj.GetComponent<UnitCreep>();
 

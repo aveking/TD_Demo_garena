@@ -97,8 +97,8 @@ namespace TDTK
 
             //Debug.LogError($"wpList.Count={wpList.Count}");
 
-            int max_rnd = 512;
-            int add_step = 64;
+            int max_rnd = 512 + 256;
+            int add_step = 64 + 256;
             int check_rnd = max_rnd;
             for (int i = 0; i < map_h; ++i)
             {

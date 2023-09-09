@@ -30256,6 +30256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499661347}
   - component: {fileID: 1499661348}
+  - component: {fileID: 1499661349}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -30299,7 +30300,7 @@ MonoBehaviour:
   enableMouseZoom: 1
   enableMouseRotate: 1
   enableMousePanning: 0
-  enableKeyPanning: 1
+  enableKeyPanning: 0
   mousePanningZoneWidth: 10
   enableTouchPan: 1
   enableTouchZoom: 1
@@ -30314,6 +30315,18 @@ MonoBehaviour:
   maxRotateAngle: 89
   avoidClipping: 0
   showGizmo: 1
+--- !u!114 &1499661349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499661346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bcc11a8bf1a1f4a9aeaf8a179dfc17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1506596198
 GameObject:
   m_ObjectHideFlags: 0

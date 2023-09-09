@@ -86,8 +86,8 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: af8e1e9c621bb91419210700b722676a, type: 3}
   useCustomDesp: 0
   desp: A slow firing tower that cause aoe damage and slows target down
-  defaultHP: 30
-  HP: 20
+  defaultHP: 100
+  HP: 100
   HPRegenRate: 0.5
   HPStaggerDuration: 10
   defaultShield: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   destroyEffDuration: 1
   thisObj: {fileID: 100002}
   thisT: {fileID: 0}
+  boss_flag: 0
   activeBuffList: []
   damageBuffMul: 0.1
   cooldownBuffMul: 0.1

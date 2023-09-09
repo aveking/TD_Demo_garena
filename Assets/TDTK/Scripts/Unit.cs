@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
 using TDTK;
 
 namespace TDTK
 {
-
     public class Unit : MonoBehaviour //塔和怪都继承于它
     {
-
-
         [Header("Base Info")]
         public int prefabID = -1;
         public int instanceID = -1;
@@ -58,8 +54,6 @@ namespace TDTK
         [Space(10)]
         public Transform targetPoint;
         public float hitThreshold = 0.25f;      //hit distance from the targetPoint for the shootObj
-
-
 
         [Header("Attack And Aim Setting")]
         public List<UnitStat> stats = new List<UnitStat>();
@@ -185,7 +179,13 @@ namespace TDTK
 
         public virtual void Update()
         {
+            if (Boss_normal_back_attack_cd > 0f)
+            {
+                Boss_normal_back_attack_cd -= Time.deltaTime;
+                if (Boss_normal_back_attack_cd < 0f) Boss_normal_back_attack_cd = 0f;
+            }
 
+            if (Boss_normal_back_attack_auto_cd > 0f) Boss_normal_back_attack_auto_cd -= Time.deltaTime;
         }
 
         int break_shield_buff = 0;//Boss的狂暴处理
@@ -207,25 +207,27 @@ namespace TDTK
             //	shield=Mathf.Clamp(shield, 0, GetFullShield());
             //}
 
-            if (break_shield_buff == 1)
-            {
-                break_shield_cd_buff -= Time.fixedDeltaTime;
-                if (break_shield_cd_buff <= 0f)
-                {
-                    break_shield_buff = 2;
-                    cooldownBuffMul = 0.0f;
-                    if (transform.childCount == 2) transform.GetChild(1).gameObject.SetActive(false);
-                }
-            }
+            //{
+            //    //被攻击，开启破盾的特效
+            //    if (break_shield_buff == 1)
+            //    {
+            //        break_shield_cd_buff -= Time.fixedDeltaTime;
+            //        if (break_shield_cd_buff <= 0f)
+            //        {
+            //            break_shield_buff = 2;
+            //            cooldownBuffMul = 0.0f;
+            //            if (transform.childCount >= 2) transform.GetChild(1).gameObject.SetActive(false);
+            //        }
+            //    }
+            //    if (break_shield_buff == 0 && shield <= 0)
+            //    {
+            //        break_shield_buff = 1;
+            //        cooldownBuffMul = 0.8f; //攻速提高到500%
+            //                                //Debug.Log($"start shield break buff");
+            //        if (transform.childCount >= 2) transform.GetChild(1).gameObject.SetActive(true);
+            //    }
+            //}
 
-            if (break_shield_buff == 0 && shield <= 0)
-            {
-                break_shield_buff = 1;
-                cooldownBuffMul = 0.8f;
-                //Debug.Log($"start shield break buff");
-
-                if (transform.childCount == 2) transform.GetChild(1).gameObject.SetActive(true);
-            }
 
             currentHPStagger -= Time.fixedDeltaTime;
             currentShieldStagger -= Time.fixedDeltaTime;
@@ -282,9 +284,6 @@ namespace TDTK
             }
 
         }
-
-
-
 
 
         float GetSOMaxRange()
@@ -442,8 +441,8 @@ namespace TDTK
 
 
 
-
-
+        public bool boss_flag = false;
+        int boss_back_attack_cnt = 0;
 
         private bool turretOnCooldown = false;
         public IEnumerator TurretRoutine()
@@ -466,37 +465,116 @@ namespace TDTK
 
             yield return null;
 
-            while (true)
+            if (boss_flag)
             {
-                while (target == null || stunned || IsInConstruction() || !targetInLOS) yield return null;
-                turretOnCooldown = true;
-
-                Unit currentTarget = target;
-
-                float animationDelay = PlayAnimAttack();
-                if (animationDelay > 0) yield return new WaitForSeconds(animationDelay);
-
-                AttackInstance attInstance = new AttackInstance();
-                attInstance.srcUnit = this;
-                attInstance.tgtUnit = currentTarget;
-                attInstance.Process();
-
-                for (int i = 0; i < shootPoints.Count; i++)
+                while (true)
                 {
-                    Transform sp = shootPoints[i];
-                    //Transform objT=(Transform)Instantiate(GetShootObjectT(), sp.position, sp.rotation);
-                    GameObject sObj = ObjectPoolManager.Spawn(GetShootObject().gameObject, sp.position, sp.rotation);
-                    ShootObject shootObj = sObj.GetComponent<ShootObject>();
-                    shootObj.Shoot(attInstance, sp);
+                    while (target == null || stunned || IsInConstruction() || !targetInLOS) yield return null;
+                    while (boss_back_attack_cnt <= 0) yield return null;
 
-                    if (delayBetweenShootPoint > 0) yield return new WaitForSeconds(delayBetweenShootPoint);
+                    boss_back_attack_cnt--;
+                    turretOnCooldown = true;
+
+                    Unit currentTarget = target;
+
+                    float animationDelay = PlayAnimAttack();
+                    if (animationDelay > 0) yield return new WaitForSeconds(animationDelay);
+
+                    AttackInstance attInstance = new AttackInstance();
+                    attInstance.srcUnit = this;
+                    attInstance.tgtUnit = currentTarget;
+                    attInstance.Process();
+
+                    for (int i = 0; i < shootPoints.Count; i++)
+                    {
+                        Transform sp = shootPoints[i];
+                        //Transform objT=(Transform)Instantiate(GetShootObjectT(), sp.position, sp.rotation);
+                        GameObject sObj = ObjectPoolManager.Spawn(GetShootObject().gameObject, sp.position, sp.rotation);
+                        ShootObject shootObj = sObj.GetComponent<ShootObject>();
+                        shootObj.Shoot(attInstance, sp);
+
+                        if (delayBetweenShootPoint > 0) yield return new WaitForSeconds(delayBetweenShootPoint);
+                    }
+
+                    yield return new WaitForSeconds(GetCooldown() - animationDelay - shootPoints.Count * delayBetweenShootPoint);
+
+                    if (GameControl.ResetTargetAfterShoot()) target = null;
+                    turretOnCooldown = false;
                 }
-
-                yield return new WaitForSeconds(GetCooldown() - animationDelay - shootPoints.Count * delayBetweenShootPoint);
-
-                if (GameControl.ResetTargetAfterShoot()) target = null;
-                turretOnCooldown = false;
             }
+            else
+            {
+                while (true)
+                {
+                    while (target == null || stunned || IsInConstruction() || !targetInLOS) yield return null;
+
+                    turretOnCooldown = true;
+
+                    Unit currentTarget = target;
+
+                    float animationDelay = PlayAnimAttack();
+                    if (animationDelay > 0) yield return new WaitForSeconds(animationDelay);
+
+                    AttackInstance attInstance = new AttackInstance();
+                    attInstance.srcUnit = this;
+                    attInstance.tgtUnit = currentTarget;
+                    attInstance.Process();
+
+                    for (int i = 0; i < shootPoints.Count; i++)
+                    {
+                        Transform sp = shootPoints[i];
+                        //Transform objT=(Transform)Instantiate(GetShootObjectT(), sp.position, sp.rotation);
+                        GameObject sObj = ObjectPoolManager.Spawn(GetShootObject().gameObject, sp.position, sp.rotation);
+                        ShootObject shootObj = sObj.GetComponent<ShootObject>();
+                        shootObj.Shoot(attInstance, sp);
+
+                        if (delayBetweenShootPoint > 0) yield return new WaitForSeconds(delayBetweenShootPoint);
+                    }
+
+                    yield return new WaitForSeconds(GetCooldown() - animationDelay - shootPoints.Count * delayBetweenShootPoint);
+
+                    if (GameControl.ResetTargetAfterShoot()) target = null;
+                    turretOnCooldown = false;
+                }
+            }
+
+        }
+
+        int Boss_normal_back_attack_cnt = 0;
+        float Boss_normal_back_attack_cd = 0f;
+        float Boss_normal_back_attack_maxcd = 4f;//0.5f;
+        float Boss_normal_back_attack_auto_cd = 0f;//等到时间，不管多少，就都发射
+        float Boss_normal_back_attack_auto_maxcd = 6f;//3f;
+        void BOSS_one_att_inst()
+        {
+            if (Boss_normal_back_attack_cd > 0f) return;
+
+            if (Boss_normal_back_attack_cnt == 0) Boss_normal_back_attack_auto_cd = Boss_normal_back_attack_auto_maxcd;
+            Boss_normal_back_attack_cnt++;
+
+            if (Boss_normal_back_attack_cnt >= 20)
+            {
+                Boss_normal_back_attack_Apply(false);
+            }
+            else if (Boss_normal_back_attack_cnt > 0 && Boss_normal_back_attack_auto_cd <= 0)
+            {
+                Boss_normal_back_attack_Apply(true);
+            }
+            else if (transform.childCount >= 3) transform.GetChild(2).gameObject.SetActive(true);
+        }
+
+        void Boss_normal_back_attack_Apply(bool _auto_triggered)
+        {
+            boss_back_attack_cnt = Boss_normal_back_attack_cnt / 4;
+            Boss_normal_back_attack_cnt = 0;
+            Boss_normal_back_attack_auto_cd = 0;
+
+            Debug.Log($"触发BOSS普通攻击反击效果 _auto_triggered={_auto_triggered}");
+
+            //进入不统计的0.5秒cd
+            Boss_normal_back_attack_cd = Boss_normal_back_attack_maxcd;
+            //根据back_attack_cnt 向炮台发动攻击
+            if (transform.childCount >= 3) transform.GetChild(2).gameObject.SetActive(false);
         }
 
         public void ApplyEffect(AttackInstance attInstance)
@@ -505,8 +583,23 @@ namespace TDTK
 
             if (attInstance.missed) return;
 
-            shield -= attInstance.damageShield;
-            HP -= attInstance.damageHP;
+            if (boss_flag == false)
+            {
+                shield -= attInstance.damageShield;
+                HP -= attInstance.damageHP;
+            }
+            else
+            {
+                //吸收子弹 ，随便找个FX 先用，
+                //反击盾：1和2的条件是或的关系
+                //1、3秒cd到了将吸收的子弹数除4，反射攻击
+                //2、当吸收到20个子弹的时候，直接反射攻击，delay 0.5s CD重置,
+
+                //Debug.Log("播放吸收子弹的特效");
+                BOSS_one_att_inst();
+            }
+
+
             new TextOverlay(GetTextOverlayPos(), attInstance.damage.ToString("f0"), new Color(1f, 1f, 1f, 1f));
 
             PlayAnimHit();
@@ -615,7 +708,17 @@ namespace TDTK
         //called when unit take damage
         void DamageHP(float dmg)
         {
-            HP -= dmg;
+            //if (boss_flag == false) HP -= dmg;
+            //else
+            //{
+            //    //吸收子弹 ，随便找个FX 先用，
+            //    //反击盾：1和2的条件是或的关系
+            //    //1、3秒cd到了将吸收的子弹数除4，反射攻击
+            //    //2、当吸收到20个子弹的时候，直接反射攻击，delay 0.5s CD重置,
+
+            //    Debug.Log("播放吸收子弹的特效");
+            //}
+
             new TextOverlay(GetTextOverlayPos(), dmg.ToString("f0"), new Color(1f, 1f, 1f, 1f));
 
             TDTK.OnUnitDamaged(this);
