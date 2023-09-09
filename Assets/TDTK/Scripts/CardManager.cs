@@ -18,21 +18,42 @@ namespace TDTK
 
     public class CardManager : MonoBehaviour
     {
-        public int cardNum = 0;
         public int drawNum = 10;
 
-        private List<Card> myCards = new List<Card>();
+        private Dictionary<CardType, Card> myCards = new Dictionary<CardType, Card>();
 
         // Start is called before the first frame update
         void Start()
         {
-            
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+
+        }
+
+        public bool AddCard(Card card, bool force = false)
+        {
+            if (myCards.ContainsKey(card.cardType) && !force)
+                return false;
+
+            myCards[card.cardType] = card;
+            return true;
+        }
+
+        public Card GetCard(CardType type)
+        {
+            Card card = null;
+            myCards.TryGetValue(type,out card);
+
+            return card;
+        }
+
+        public int CardNum
+        {
+            get { return myCards.Count; }
         }
 
         public Card DrawCard()
@@ -46,11 +67,21 @@ namespace TDTK
 
             return card;
         }
+
+        public void UpdateUICard(UICard uiCard, Card card)
+        {
+            if (card != null)
+            {
+                uiCard.imgRoot.color = card.GetColor();
+                uiCard.labelType.text = card.cardType.ToString();
+                uiCard.labelLevel.text = card.Level.ToString();
+            }
+        }
     }
 
     public class Card
     {
-        private static List<Color> cardColors = new List<Color>() 
+        private static List<Color> cardColors = new List<Color>()
         {Color.white, Color.green, Color.blue, Color.cyan, Color.yellow, Color.red};
 
         public CardType cardType;

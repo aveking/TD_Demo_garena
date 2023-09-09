@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+
 
 
 #if UNITY_5_3_OR_NEWER
@@ -17,12 +19,14 @@ namespace TDTK
         private const int CARD_NUM = 8;
 
         public List<string> lableList = new List<string>();
-        
+
         public List<UICard> cards;
         public UIButton drawCardBtn;
         public UIButton startBtn;
 
         public CardManager cardManager;
+
+        public ReplaceCardMenu replaceCardMenu;
 
         public List<string> levelNameList = new List<string>();
         //~ public List<string> levelDesp=new List<string>();
@@ -51,11 +55,11 @@ namespace TDTK
             // Init Cards
             for (int i = 0; i < CARD_NUM; i++)
             {
-                if (i == 0) 
+                if (i == 0)
                 {
                     cards[0].Init();
                 }
-                else if (i > 0) 
+                else if (i > 0)
                 {
                     cards.Add(UICard.Clone(cards[0].rootObj, "Card" + i));
 
@@ -75,20 +79,22 @@ namespace TDTK
         // Update is called once per frame
         void Update()
         {
-            
+            for (int i = 0; i < CARD_NUM; i++)
+            {
+                cardManager.UpdateUICard(cards[i], cardManager.GetCard((CardType)i));
+            }
         }
 
         void OnDrawCard(GameObject butObj, int pointerID = -1)
         {
             Card card = cardManager.DrawCard();
-            UpdateUICard(cardManager.cardNum++, card);
-        }
 
-        void UpdateUICard(int index, Card card)
-        {
-            cards[index].imgRoot.color = card.GetColor();
-            cards[index].labelType.text = card.cardType.ToString();
-            cards[index].labelLevel.text = card.Level.ToString();
+            if (!cardManager.AddCard(card))
+            {
+                Debug.Log("what");
+                replaceCardMenu.Show(cardManager, cardManager.GetCard(card.cardType), card);
+            }
+
         }
 
         void OnStartGame(GameObject butObj, int pointerID = -1)
@@ -102,7 +108,7 @@ namespace TDTK
 
         public void OnHoverButton(GameObject butObj)
         {
-            
+
         }
 
         public void OnExitButton(GameObject butObj)
