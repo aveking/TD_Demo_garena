@@ -11963,15 +11963,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605590749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -25}
+  m_LocalRotation: {x: -0.13551791, y: -0.15652074, z: 0.37199894, w: 0.90484965}
+  m_LocalPosition: {x: 10.99, y: -1.8, z: -22.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1301473125}
   - {fileID: 462422160}
   m_Father: {fileID: 1499661347}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -7.4, y: -22.787, z: 46.19}
 --- !u!81 &605590751
 AudioListener:
   m_ObjectHideFlags: 0
@@ -38197,9 +38197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dccd630afb12e845946c8680143dc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower_attack_rate: 1
-  tower_bullet_fly_speed: 1
-  boss_move_speed: 1
+  tower_attack_rate: 2.5
+  tower_bullet_fly_speed: 2
+  boss_move_speed: 4.5
 --- !u!4 &1868019687
 Transform:
   m_ObjectHideFlags: 0
