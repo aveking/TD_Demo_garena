@@ -961,7 +961,12 @@ namespace TDTK
             //if(stats[currentActiveStat].shootObjectT==null) return localShootObjectT;
             //return stats[currentActiveStat].shootObjectT;
             ShootObject res = stats[currentActiveStat].shootObject != null ? stats[currentActiveStat].shootObject : localShootObject;
-            if (IsTower()) res.speed = 2.5f;//炮台的子弹飞行速度的调整
+            if (IsTower())
+            {
+                res.speed = 2.5f * global_gamesetting._inst.tower_bullet_fly_speed;//炮台的子弹飞行速度的调整
+                stats[currentActiveStat].cooldown = global_gamesetting._inst.tower_attack_rate;
+                //cooldownBuffMul = Mathf.Lerp(-5f, 1f, global_gamesetting._inst.tower_attack_rate/100f);// global_gamesetting._inst.tower_attack_rate;
+            }
             return res;
         }
         public GameObject GetEffectObject() { return stats[currentActiveStat].effectObject; }
