@@ -38197,9 +38197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dccd630afb12e845946c8680143dc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower_attack_rate: 1
-  tower_bullet_fly_speed: 1
-  boss_move_speed: 1
+  tower_attack_rate: 4
+  tower_bullet_fly_speed: 2
+  boss_move_speed: 4
 --- !u!4 &1868019687
 Transform:
   m_ObjectHideFlags: 0
