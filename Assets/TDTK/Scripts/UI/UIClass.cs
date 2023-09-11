@@ -232,4 +232,34 @@ namespace TDTK {
 	}
 
 	
+	[System.Serializable]
+	public class UICard : UIObject{
+		
+		[HideInInspector] public Text labelType;
+		[HideInInspector] public Text labelLevel;
+		
+		public UICard(){}
+		public UICard(GameObject obj){
+			rootObj=obj;
+			Init();
+		}
+		public override void Init(){
+			base.Init();
+			
+			foreach(Transform child in rectT){
+				if(child.name=="Type"){
+					labelType=child.GetComponent<Text>();
+				}
+				if(child.name=="Level"){
+					labelLevel=child.GetComponent<Text>();
+				}
+			}
+		}
+		
+		public static new UICard Clone(GameObject srcObj, string name="", Vector3 posOffset=default(Vector3)){
+			GameObject newObj=UI.Clone(srcObj, name, posOffset);
+			return new UICard(newObj);
+		}
+	}
+
 }

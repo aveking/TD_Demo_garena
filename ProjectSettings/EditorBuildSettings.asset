@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TD_Demo_Garena_GamePlay.unity
     guid: 1147571e1709cac4486ff1f8b8afcd19
+  - enabled: 1
+    path: Assets/TD_Demo_Garena_Card.unity
+    guid: 9cc4077db7c6444cda23088b73aa1477
   m_configObjects: {}

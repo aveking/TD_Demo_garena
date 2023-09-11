@@ -40,7 +40,7 @@ namespace TDTK
             string genText = "";
 
             displayedNameList.Add("恐龙抗狼");
-            levelNameList.Add("TD_Demo_Garena_GamePlay");
+            levelNameList.Add("TD_Demo_Garena_Card");
             levelDespList.Add("garena demo\n" + genText);
 
             //displayedNameList.Add("Demo FixedPath");
