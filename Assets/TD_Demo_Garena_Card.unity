@@ -460,7 +460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a5d7ef0a77244fb8556e3460393c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardNum: 0
   drawNum: 10
 --- !u!4 &277426099
 Transform:
@@ -489,13 +488,14 @@ GameObject:
   - component: {fileID: 368926153}
   - component: {fileID: 368926152}
   - component: {fileID: 368926151}
+  - component: {fileID: 368926154}
   m_Layer: 0
   m_Name: CanvasMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &368926150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -579,6 +579,62 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &368926154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368926149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2daed305ce8be432db5ce26172937e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldUICard:
+    rootObj: {fileID: 1604868665}
+    rootT: {fileID: 0}
+    rectT: {fileID: 0}
+    imgRoot: {fileID: 0}
+    imgIcon: {fileID: 0}
+    label: {fileID: 0}
+    itemCallback: {fileID: 0}
+    labelType: {fileID: 0}
+    labelLevel: {fileID: 0}
+  newUICard:
+    rootObj: {fileID: 1449687588}
+    rootT: {fileID: 0}
+    rectT: {fileID: 0}
+    imgRoot: {fileID: 0}
+    imgIcon: {fileID: 0}
+    label: {fileID: 0}
+    itemCallback: {fileID: 0}
+    labelType: {fileID: 0}
+    labelLevel: {fileID: 0}
+  keepBtn:
+    rootObj: {fileID: 1127442102}
+    rootT: {fileID: 0}
+    rectT: {fileID: 0}
+    imgRoot: {fileID: 0}
+    imgIcon: {fileID: 0}
+    label: {fileID: 0}
+    itemCallback: {fileID: 0}
+    labelAlt: {fileID: 0}
+    labelAlt2: {fileID: 0}
+    imgHighlight: {fileID: 0}
+    button: {fileID: 0}
+  replaceBtn:
+    rootObj: {fileID: 1513777354}
+    rootT: {fileID: 0}
+    rectT: {fileID: 0}
+    imgRoot: {fileID: 0}
+    imgIcon: {fileID: 0}
+    label: {fileID: 0}
+    itemCallback: {fileID: 0}
+    labelAlt: {fileID: 0}
+    labelAlt2: {fileID: 0}
+    imgHighlight: {fileID: 0}
+    button: {fileID: 0}
 --- !u!1 &393141294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,6 +2819,7 @@ MonoBehaviour:
     imgHighlight: {fileID: 0}
     button: {fileID: 0}
   cardManager: {fileID: 277426098}
+  replaceCardMenu: {fileID: 0}
   levelNameList: []
   levelDespList: []
 --- !u!1 &1522210009
