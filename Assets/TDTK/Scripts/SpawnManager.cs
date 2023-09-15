@@ -285,12 +285,14 @@ namespace TDTK
             //Minion 仆从
             wave.subWaveList[1].unit = Minion_Unit;
             wave.subWaveList[1].count = 16;
-            wave.subWaveList[1].interval = 2f;
+            wave.subWaveList[1].interval = 1f;
             wave.subWaveList[1].path = null;
             wave.subWaveList[1].overrideHP = 20;
             wave.subWaveList[1].overrideShield = 0;
             wave.subWaveList[1].overrideMoveSpd = 0.5f * global_gamesetting._inst.boss_move_speed;
-            wave.subWaveList[1].delay = 7f;
+            wave.subWaveList[1].delay = 1f;
+
+            mp_mana._inst.start_game = true;
 
             if (spawnMode == _SpawnMode.Continous)
             {

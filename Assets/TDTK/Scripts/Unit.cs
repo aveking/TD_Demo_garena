@@ -585,8 +585,17 @@ namespace TDTK
 
             if (boss_flag == false)
             {
-                shield -= attInstance.damageShield;
-                HP -= attInstance.damageHP;
+                if (IsTower())
+                {
+                    //shield -= attInstance.damageShield;
+                    attInstance.damageHP = attInstance.damageHP * (1f + mp_mana._inst.mana_add_damage());
+                    HP -= attInstance.damageHP;
+                }
+                else
+                {
+                    //shield -= attInstance.damageShield;
+                    HP -= attInstance.damageHP;
+                }
             }
             else
             {
@@ -600,7 +609,7 @@ namespace TDTK
             }
 
 
-            new TextOverlay(GetTextOverlayPos(), attInstance.damage.ToString("f0"), new Color(1f, 1f, 1f, 1f));
+            new TextOverlay(GetTextOverlayPos(), attInstance.damageHP.ToString("f0"), new Color(1f, 1f, 1f, 1f));
 
             PlayAnimHit();
 
