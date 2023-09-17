@@ -52,34 +52,6 @@ public class hand_cards : MonoBehaviour
         }
     }
 
-
-    //    public MyHand_CardMgr(hxh_teamrushboss _parent, Transform tfmy_hand_one, Transform _fx)
-    //    {
-    //        parent = _parent;
-    //        tfcurhand_card_fx = _fx;
-    //        Transform my_hand_parent = tfmy_hand_one.parent;
-    //        for (int i = 0; i < hxh_gamelogic.MAXNUM_HANDCARDS; i++)
-    //        {
-    //            Transform tf = GameObject.Instantiate(tfmy_hand_one).transform;
-    //            tf.SetParent(my_hand_parent);
-    //            tf.localScale = Vector3.one * CARD_SCALE;
-    //            handcard_a[i] = tf;
-    //        }
-    //    }
-
-    //    public void Update()
-    //    {
-    //        Update_CardBridge();
-    //        Update_CardDrag();
-    //        Update_Card2Graveyard();
-    //    }
-
-    //    public void MyTurn_End()
-    //    {
-    //        MyHandCard.tf_dragone = null;
-    //        tfcurhand_card_fx.position = new Vector3(0f, 65535f, 0f);
-    //    }
-
     void Update_CardBridge()
     {
         //结合CanvasScaler.cs中的参数
@@ -153,35 +125,59 @@ public class hand_cards : MonoBehaviour
         screen_pos.z = 0f;
 
         MyHandCard.tf_dragone.localRotation = Quaternion.identity;
-        //screen_pos.y += CARD_UI_HEIGHT * 0.25f; //手机上再抓下面一些，不然手指挡住牌面
         screen_pos.y -= 512f; //hard code 偏移
         MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition = screen_pos;
-        //tfcurhand_card_fx.position = MyHandCard.tf_dragone.position;
-
-        //if (MyHandCard.drag_cardsheet.target_monster_cnt > 0)
-        //{
-        //    //绘制相关的选择线
-        //    float h = Screen.height;
-        //    float step = h / 12f;
-        //    float y = Input.mousePosition.y;// transform.position.y;
-        //    if (y > step * 1f && y < step * 7f)
-        //    {
-        //        int target_pos = 5 - (int)Mathf.Floor((y - step * 1f) / step);
-        //        MyHandCard.output_handler.Selecting_MonsterTarget(target_pos, MyHandCard.tf_dragone.position + card_line_start_offset);
-        //    }
-        //    else MyHandCard.output_handler.Selecting_MonsterTarget(-1, MyHandCard.tf_dragone.position + card_line_start_offset);
-        //}
     }
 
+    int[] card_costmp = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
     void DragOverCard()
     {
         //Debug.Log(MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition);
         if (MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition.y > -300f)
         {
-            Debug.Log("use card id = " + MyHandCard.tf_dragone.GetComponent<MyHandCard>().card_id);
-            MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000f, -500f);
-            MyHandCard.tf_dragone.gameObject.SetActive(false);
-            --handcard_t;
+            int card_id = MyHandCard.tf_dragone.GetComponent<MyHandCard>().card_id;
+            int cost_mp = card_costmp[card_id];
+            Debug.Log($"use card id = {card_id} cost={cost_mp}");
+            if (mp_mana._inst.CostMP(cost_mp))
+            {
+                switch (card_id)
+                {
+                    case 1: Play_Card1(); break;
+                    case 2: Play_Card2(); break;
+                    case 3: Play_Card3(); break;
+                    case 4: Play_Card4(); break;
+                    case 5: Play_Card5(); break;
+                }
+
+                MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000f, -500f);
+                MyHandCard.tf_dragone.gameObject.SetActive(false);
+                --handcard_t;
+            }
         }
+    }
+
+    void Play_Card1()
+    {
+
+    }
+
+    void Play_Card2()
+    {
+
+    }
+
+    void Play_Card3()
+    {
+
+    }
+
+    void Play_Card4()
+    {
+
+    }
+
+    void Play_Card5()
+    {
+
     }
 }

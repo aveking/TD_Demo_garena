@@ -19,6 +19,17 @@ public class mp_mana : MonoBehaviour
         else return (mana_cnt - 5) * 0.1f;
     }
 
+    public bool CostMP(int _v)
+    {
+        if (_v <= mana_cnt)
+        {
+            mana_cnt -= _v;
+            transform.GetChild(1).GetComponent<Text>().text = mana_cnt.ToString();
+            return true;
+        }
+        return false;
+    }
+
     private void Update()
     {
         //Ã¿ÃëÔö¼Ó1
