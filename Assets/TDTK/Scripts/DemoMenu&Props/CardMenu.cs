@@ -16,13 +16,15 @@ namespace TDTK
 
     public class CardMenu : MonoBehaviour
     {
-        private const int CARD_NUM = 8;
+        private const int CARD_NUM = 6;
 
         public List<string> lableList = new List<string>();
 
         public List<UICard> cards;
         public UIButton drawCardBtn;
         public UIButton startBtn;
+
+        public Text DrawNum;
 
         public CardManager cardManager;
 
@@ -32,6 +34,9 @@ namespace TDTK
         //~ public List<string> levelDesp=new List<string>();
         public List<string> levelDespList = new List<string>();
 
+
+        private int offsetX = 320;
+        private int offsetY = 360;
         // Start is called before the first frame update
         void Start()
         {
@@ -51,7 +56,7 @@ namespace TDTK
             startBtn.label.text = lableList[1];
             startBtn.SetCallback(this.OnHoverButton, this.OnExitButton, this.OnStartGame, null);
 
-            int transX = 120, transY = 0;
+            int transX = offsetX, transY = 0;
             // Init Cards
             for (int i = 0; i < CARD_NUM; i++)
             {
@@ -64,11 +69,12 @@ namespace TDTK
                     cards.Add(UICard.Clone(cards[0].rootObj, "Card" + i));
 
                     cards[i].rootT.Translate(transX, transY, 0);
-                    transX += 120;
-                    if (i == 3)
+                    //cards[i].rootT.localScale = new Vector3(1.5f, 1.5f);
+                    transX += offsetX;
+                    if (i == 2)
                     {
                         transX = 0;
-                        transY = -120;
+                        transY = -offsetY;
                     }
                 }
             }
@@ -81,24 +87,36 @@ namespace TDTK
         {
             for (int i = 0; i < CARD_NUM; i++)
             {
-                cardManager.UpdateUICard(cards[i], cardManager.GetCard((CardType)i));
+                cardManager.UpdateUICard(cards[i], cardManager.GetCard(i));
             }
+
+            DrawNum.text = string.Format("x {0}", cardManager.drawNum);
         }
 
         void OnDrawCard(GameObject butObj, int pointerID = -1)
         {
             Card card = cardManager.DrawCard();
 
-            if (!cardManager.AddCard(card))
+            if(card == null)
             {
-                Debug.Log("what");
-                replaceCardMenu.Show(cardManager, cardManager.GetCard(card.cardType), card);
+                drawCardBtn.button.GetComponents<AudioSource>()[0].Play();
+            }
+            else if (!cardManager.AddCard(card))
+            {
+                drawCardBtn.button.GetComponents<AudioSource>()[1].Play();
+                replaceCardMenu.Show(cardManager, cardManager.GetCard(card.CardType), card);
             }
 
         }
 
         void OnStartGame(GameObject butObj, int pointerID = -1)
         {
+            for (int i = 0; i < card_setting.CARD_NUM; i++)
+            {
+                Card card = cardManager.GetCard(i);
+                card_setting.ChangeCard(card.CardType, card.Level, card.Quality, card.GetDescription());
+            }
+
 #if UNITY_5_3_OR_NEWER
             SceneManager.LoadScene(levelNameList[0]);
 #else

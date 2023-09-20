@@ -4,30 +4,23 @@ using UnityEngine;
 
 namespace TDTK
 {
-    public enum CardType
-    {
-        Type1,
-        Type2,
-        Type3,
-        Type4,
-        Type5,
-        Type6,
-        Type7,
-        Type8
-    }
-
     public class CardManager : MonoBehaviour
     {
         public int drawNum = 10;
 
         private int drawTimes = 0;
 
-        private Dictionary<CardType, Card> myCards = new Dictionary<CardType, Card>();
+        private Dictionary<int, Card> myCards = new Dictionary<int, Card>();
 
         // Start is called before the first frame update
         void Start()
         {
-
+            myCards.Add(0, new Card(0, 0, 0));
+            myCards.Add(1, new Card(1, 0, 0));
+            myCards.Add(2, new Card(2, 0, 0));
+            myCards.Add(3, new Card(3, 0, 0));
+            myCards.Add(4, new Card(4, 0, 0));
+            myCards.Add(5, new Card(5, 0, 0));
         }
 
         // Update is called once per frame
@@ -38,17 +31,17 @@ namespace TDTK
 
         public bool AddCard(Card card, bool force = false)
         {
-            if (myCards.ContainsKey(card.cardType) && !force)
+            if (myCards.ContainsKey(card.CardType) && !force)
                 return false;
 
-            myCards[card.cardType] = card;
+            myCards[card.CardType] = card;
             return true;
         }
 
-        public Card GetCard(CardType type)
+        public Card GetCard(int type)
         {
             Card card = null;
-            myCards.TryGetValue(type,out card);
+            myCards.TryGetValue(type, out card);
 
             return card;
         }
@@ -61,25 +54,25 @@ namespace TDTK
 
         private int GenQuality()
         {
-            int quality = 0;
+            int quality;
             int num = Random.Range(0, 10);
 
             if (drawTimes < 10)
             {
                 quality = 0;
             }
-            else if (drawTimes<20)
+            else if (drawTimes < 20)
             {
-                if (num < 7)     
+                if (num < 7)
                     quality = 0;
                 else
                     quality = 1;
             }
-            else if (drawTimes<50)
+            else if (drawTimes < 50)
             {
                 if (num < 2)
                     quality = 0;
-                else if (num<6)
+                else if (num < 6)
                     quality = 1;
                 else
                     quality = 2;
@@ -90,7 +83,7 @@ namespace TDTK
                     quality = 0;
                 else if (num < 5)
                     quality = 1;
-                else if (num< 9 )
+                else if (num < 9)
                     quality = 2;
                 else
                     quality = 3;
@@ -129,7 +122,7 @@ namespace TDTK
 
         int GenLevel()
         {
-            int level = 0;
+            int level;
             int num = Random.Range(0, 20);
 
             if (num < 8)
@@ -148,14 +141,18 @@ namespace TDTK
 
         public Card DrawCard()
         {
+            if (drawNum <=0)
+                return null;
+
             Card card = new Card
             {
-                cardType = (CardType)Random.Range(0, 8),
+                CardType = Random.Range(0, 6),
                 Level = GenLevel(),
                 Quality = GenQuality()
             };
 
             drawTimes++;
+            drawNum--;
 
             return card;
         }
@@ -164,25 +161,68 @@ namespace TDTK
         {
             if (card != null)
             {
-                uiCard.imgRoot.color = card.GetColor();
-                uiCard.labelType.text = card.cardType.ToString();
-                uiCard.labelLevel.text = card.Level.ToString();
+                uiCard.imgRoot.sprite = card.GetBackground();
+                uiCard.imgQuality.sprite = card.GetQuality();
+                uiCard.imgLevel.sprite = card.GetLevel();
+                uiCard.imgName.sprite = card.GetName();
+                uiCard.label.text = card.GetDescription();
             }
         }
     }
 
     public class Card
     {
-        private static List<Color> cardColors = new List<Color>()
-        {Color.white, Color.green, Color.blue, Color.cyan, Color.yellow, Color.red};
-
-        public CardType cardType;
+        public int CardType;
         public int Quality;
-        public int Level = 0;
+        public int Level;
 
-        public Color GetColor()
+        public Card()
+        { }
+
+        public Card(int type, int quality, int level)
         {
-            return cardColors[Quality];
+            CardType = type;
+            Quality = quality;
+            Level = level;
+        }
+
+        public Sprite GetQuality()
+        {
+            return Resources.Load<Sprite>(string.Format("card_ql/{0}", Quality + 1));
+        }
+
+        public Sprite GetLevel()
+        {
+            return Resources.Load<Sprite>(string.Format("card_lv/{0}", Level + 1));
+        }
+
+        public Sprite GetBackground()
+        {
+            return Resources.Load<Sprite>(string.Format("card_bg/{0}", CardType + 1));
+        }
+
+        public Sprite GetName()
+        {
+            return Resources.Load<Sprite>(string.Format("card_bg/{0}a", CardType + 1));
+        }
+
+        public string GetDescription()
+        {
+            int quality = Quality +1;
+            int level = Level+1;
+
+            if (CardType == 0)
+                return string.Format("召唤{0}本魔典作战{1}秒，攻速+{2}%", 1 + quality / 2, 5 + level * 2, 5 + 5 * quality);
+            else if (CardType == 1)
+                return string.Format("强力魔典持续{0}秒，最多攻击{1}次", 3 + (level / 2) , level + (quality * 6) );
+            else if (CardType == 2)
+                return string.Format("{0}秒内移动+{1}%", 1 + (level / 2) , 60 + (quality * 25));
+            else if (CardType == 3)
+                return string.Format("获得{0}点护甲", (level + quality * 6) / 2);
+            else if (CardType == 4)
+                return string.Format("{0}秒内变大{1}倍,免疫攻击",0.5 +  (0.3 * level),2 + quality);
+            else 
+                return string.Format("弹幕时停{0}秒，炮塔时停{1}秒",0.1 +  (0.5 * level),0.1 + (0.5 * quality));
         }
     }
 

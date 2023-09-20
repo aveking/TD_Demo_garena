@@ -235,8 +235,9 @@ namespace TDTK {
 	[System.Serializable]
 	public class UICard : UIObject{
 		
-		[HideInInspector] public Text labelType;
-		[HideInInspector] public Text labelLevel;
+		[HideInInspector] public Image imgQuality;
+		[HideInInspector] public Image imgLevel;
+		[HideInInspector] public Image imgName;
 		
 		public UICard(){}
 		public UICard(GameObject obj){
@@ -247,11 +248,14 @@ namespace TDTK {
 			base.Init();
 			
 			foreach(Transform child in rectT){
-				if(child.name=="Type"){
-					labelType=child.GetComponent<Text>();
+				if(child.name=="Quality"){
+					imgQuality=child.GetComponent<Image>();
 				}
 				if(child.name=="Level"){
-					labelLevel=child.GetComponent<Text>();
+					imgLevel=child.GetComponent<Image>();
+				}
+				if(child.name=="Name"){
+					imgName=child.GetComponent<Image>();
 				}
 			}
 		}

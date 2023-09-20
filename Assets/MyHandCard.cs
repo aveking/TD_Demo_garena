@@ -24,7 +24,7 @@ public class MyHandCard : MonoBehaviour, IPointerDownHandler
         for (int i = 0; i < transform.GetChild(0).childCount; ++i) transform.GetChild(0).GetChild(i).gameObject.SetActive(false);
         for (int i = 0; i < transform.GetChild(1).childCount; ++i) transform.GetChild(1).GetChild(i).gameObject.SetActive(false);
         if (ql >= 0 && ql < transform.GetChild(0).childCount) transform.GetChild(0).GetChild(ql).gameObject.SetActive(true);
-        if (lv - 1 >= 0 && lv - 1 < transform.GetChild(1).childCount) transform.GetChild(1).GetChild(lv - 1).gameObject.SetActive(true);
+        if (lv >= 0 && lv < transform.GetChild(1).childCount) transform.GetChild(1).GetChild(lv).gameObject.SetActive(true);
 
         transform.GetChild(3).GetComponent<Text>().text = des;
     }

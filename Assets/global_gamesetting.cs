@@ -6,9 +6,9 @@ public static class card_setting
 {
     public const int CARD_NUM = 5;
 
-    public static int[] cards_lv = new int[CARD_NUM];//µÈ¼¶
-    public static int[] cards_ql = new int[CARD_NUM];//Æ·ÖÊ
-    public static string[] cards_des = new string[CARD_NUM];//ÃèÊö
+    public static int[] cards_lv = new int[CARD_NUM];//ï¿½È¼ï¿½
+    public static int[] cards_ql = new int[CARD_NUM];//Æ·ï¿½ï¿½
+    public static string[] cards_des = new string[CARD_NUM];//ï¿½ï¿½ï¿½ï¿½
 
     public static void ChangeCard(int _idx, int _lv, int _ql, string _des)
     {
@@ -33,14 +33,14 @@ public class global_gamesetting : MonoBehaviour
     {
         _inst = this;
 
-        //±¾µØ²âÊÔ´úÂë
-        int lv = 1, ql = 0; card_setting.ChangeCard(0, lv, ql, $"ÉËº¦{lv * 2 + ql * 10}µã");
-        lv = 2; ql = 1; card_setting.ChangeCard(1, lv, ql, $"ÉËº¦{lv * 2 + ql * 10}µã");
-        lv = 3; ql = 2; card_setting.ChangeCard(2, lv, ql, $"ÉËº¦{lv * 2 + ql * 10}µã");
-        lv = 4; ql = 3; card_setting.ChangeCard(3, lv, ql, $"ÉËº¦{lv * 2 + ql * 10}µã");
-        lv = 5; ql = 4; card_setting.ChangeCard(4, lv, ql, $"ÉËº¦{lv * 2 + ql * 10}µã");
+        //ï¿½ï¿½ï¿½Ø²ï¿½ï¿½Ô´ï¿½ï¿½ï¿½
+        // int lv = 1, ql = 0; card_setting.ChangeCard(0, lv, ql, $"ï¿½Ëºï¿½{lv * 2 + ql * 10}ï¿½ï¿½");
+        // lv = 2; ql = 1; card_setting.ChangeCard(1, lv, ql, $"ï¿½Ëºï¿½{lv * 2 + ql * 10}ï¿½ï¿½");
+        // lv = 3; ql = 2; card_setting.ChangeCard(2, lv, ql, $"ï¿½Ëºï¿½{lv * 2 + ql * 10}ï¿½ï¿½");
+        // lv = 4; ql = 3; card_setting.ChangeCard(3, lv, ql, $"ï¿½Ëºï¿½{lv * 2 + ql * 10}ï¿½ï¿½");
+        // lv = 5; ql = 4; card_setting.ChangeCard(4, lv, ql, $"ï¿½Ëºï¿½{lv * 2 + ql * 10}ï¿½ï¿½");
 
-        //Ë¢ÐÂµ½UIÉÏ
+        //Ë¢ï¿½Âµï¿½UIï¿½ï¿½
         for (int i = 0; i < obj_cards.Length; ++i) obj_cards[i].RefreshUI();
     }
 
