@@ -2819,7 +2819,7 @@ MonoBehaviour:
     imgHighlight: {fileID: 0}
     button: {fileID: 0}
   cardManager: {fileID: 277426098}
-  replaceCardMenu: {fileID: 0}
+  replaceCardMenu: {fileID: 368926154}
   levelNameList: []
   levelDespList: []
 --- !u!1 &1522210009
