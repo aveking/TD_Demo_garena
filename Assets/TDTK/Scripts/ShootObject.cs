@@ -77,8 +77,6 @@ namespace TDTK
             if (destroyEffect != null) ObjectPoolManager.New(destroyEffect);
         }
 
-
-
         void OnEnable()
         {
             //for(int i=0; i<trailList.Count; i++) StartCoroutine(ClearTrail(trailList[i]));
@@ -87,8 +85,6 @@ namespace TDTK
         {
 
         }
-
-
 
         public void Shoot(AttackInstance attInst = null, Transform sp = null)
         {
@@ -102,6 +98,7 @@ namespace TDTK
             target = attInstance.tgtUnit;
             targetPos = target.GetTargetT().position;
             hitThreshold = Mathf.Max(0.1f, target.hitThreshold);
+            hitThreshold = 1.5f; //让子弹的碰撞离圆心远点
 
             shootPoint = sp;
             if (shootPoint != null) thisT.rotation = shootPoint.rotation;
@@ -118,8 +115,6 @@ namespace TDTK
             //Debug.Log($"shoot type={type} speed={speed}");
             //speed = 1f;
         }
-
-
 
         public void ShootFPS(AttackInstance attInst = null, Transform sp = null)
         {
@@ -285,7 +280,7 @@ namespace TDTK
         private Vector3 targetPos;
         public float maxShootAngle = 30f;
         public float maxShootRange = 0.5f;
-        private float hitThreshold = 0.15f;
+        private float hitThreshold = 8.15f;
 
 
         public float GetMaxShootRange()

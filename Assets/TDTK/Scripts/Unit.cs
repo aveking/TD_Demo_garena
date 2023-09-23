@@ -604,8 +604,10 @@ namespace TDTK
                 //1、3秒cd到了将吸收的子弹数除4，反射攻击
                 //2、当吸收到20个子弹的时候，直接反射攻击，delay 0.5s CD重置,
 
-                //Debug.Log("播放吸收子弹的特效");
+
                 HP -= attInstance.damageHP;
+                Debug.Log($"播放吸收子弹的特效 HP={HP} attInstance.damageHP={attInstance.damageHP}");
+                global_gamesetting._inst.RefreshBossHP_UI(HP);
 
                 BOSS_one_att_inst();
             }
