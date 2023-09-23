@@ -8276,11 +8276,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 102276, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 123610, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 147636, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Name
       value: "HUD_UI\u6548\u679C\u4EE3\u7801"
       objectReference: {fileID: 0}
     - target: {fileID: 166760, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170838, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 196046, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -8386,27 +8402,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22409074, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22409074, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22409074, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 22409074, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 22409074, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 22409074, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 22409470, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8466,11 +8482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22425424, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22425424, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22426390, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8478,11 +8494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22430422, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22430422, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22437068, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8662,19 +8678,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22456020, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22456020, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22462456, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22463118, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22466866, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8710,27 +8726,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22476826, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22476826, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22476826, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 22476826, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 22476826, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 22476826, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 22477546, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -13864,6 +13880,365 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c5ba52bbcdf268499edb07b706d544f, type: 3}
+--- !u!1 &593729848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593729849}
+  - component: {fileID: 593729850}
+  m_Layer: 0
+  m_Name: "SpawnManager_\u6BCF\u6CE2\u5175\u7684\u914D\u7F6E (1)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &593729849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593729848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853741785}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &593729850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593729848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3f8ab49e09bdd45a857a7dae19ab31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BOSS_Unit: {fileID: 100018, guid: 6c4c7048dce139f4fbf5f6099f64269f, type: 3}
+  Minion_Unit: {fileID: 100010, guid: 46eca380f7c75a34996fe83d89571574, type: 3}
+  spawnMode: 1
+  spawnLimit: 0
+  allowSkip: 1
+  autoStart: 0
+  autoStartDelay: 5
+  procedurallyGenerateWave: 1
+  defaultPath: {fileID: 1665872697}
+  spawning: 0
+  activeUnitCount: 0
+  totalSpawnCount: 0
+  waveClearedCount: 0
+  waveList:
+  - waveID: 0
+    subWaveList:
+    - unit: {fileID: 100010, guid: 2c54305cd787a2345ae4b943fd696a98, type: 3}
+      unitC: {fileID: 0}
+      count: 50
+      interval: 0.25
+      delay: 0
+      path: {fileID: 0}
+      overrideHP: 5
+      overrideShield: 0.9459867
+      overrideMoveSpd: 2.2296143
+      overrideLifeCost: -1
+      overrideScoreCost: -1
+      overrideValue: 
+      overrideValueMin: 
+      overrideValueMax: 
+    lifeGain: 0
+    energyGain: 0
+    scoreGain: 100
+    rscGainList: 1300000001000000
+    activeUnitCount: 0
+    spawned: 0
+    cleared: 0
+    duration: 32.83815
+    subWaveSpawnedCount: 0
+  waveGenerator:
+    similarSubWave: 0
+    subWaveCount:
+      startValue: 1
+      incMultiplier: 0.5
+      devMultiplier: 0.5
+      minValue: 1
+      maxValue: 3
+    unitCount:
+      startValue: 6
+      incMultiplier: 1
+      devMultiplier: 0.2
+      minValue: 1
+      maxValue: 50
+    pathList:
+    - {fileID: 1665872697}
+    utiliseAllPath: 0
+    rscSettingList:
+    - startValue: 20
+      incMultiplier: 3
+      devMultiplier: 0.2
+      minValue: 1
+      maxValue: 500
+    unitSettingList:
+    - unit: {fileID: 100002, guid: 5830a3039683ba34e901186e5592427d, type: 3}
+      unitC: {fileID: 11400000, guid: 5830a3039683ba34e901186e5592427d, type: 3}
+      enabled: 1
+      minWave: 0
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 5
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+    - unit: {fileID: 100008, guid: ebe334bb405fc82488f7ab2fcafba625, type: 3}
+      unitC: {fileID: 11400000, guid: ebe334bb405fc82488f7ab2fcafba625, type: 3}
+      enabled: 1
+      minWave: 0
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 5
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+    - unit: {fileID: 100010, guid: 2c54305cd787a2345ae4b943fd696a98, type: 3}
+      unitC: {fileID: 11400000, guid: 2c54305cd787a2345ae4b943fd696a98, type: 3}
+      enabled: 1
+      minWave: 0
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 5
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+    - unit: {fileID: 100010, guid: b66b57e28e3bb6f41aa9ce1c975228b4, type: 3}
+      unitC: {fileID: 11400000, guid: b66b57e28e3bb6f41aa9ce1c975228b4, type: 3}
+      enabled: 1
+      minWave: 0
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 5
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+    - unit: {fileID: 100000, guid: 1fad5e7ae10e5724baf5e80c4bd8c989, type: 3}
+      unitC: {fileID: 11400000, guid: 1fad5e7ae10e5724baf5e80c4bd8c989, type: 3}
+      enabled: 1
+      minWave: 4
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 5
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+    - unit: {fileID: 100004, guid: b67fe005069317a408bafe8ace5aa1d9, type: 3}
+      unitC: {fileID: 11400000, guid: b67fe005069317a408bafe8ace5aa1d9, type: 3}
+      enabled: 1
+      minWave: 1
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 3
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+    - unit: {fileID: 100010, guid: 06dfe7fd3040d094f9126a40fbf13d3c, type: 3}
+      unitC: {fileID: 11400002, guid: 06dfe7fd3040d094f9126a40fbf13d3c, type: 3}
+      enabled: 1
+      minWave: 5
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 5
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+    - unit: {fileID: 100012, guid: 66126164a4e110b4eb84dee01a6fb8c1, type: 3}
+      unitC: {fileID: 11400000, guid: 66126164a4e110b4eb84dee01a6fb8c1, type: 3}
+      enabled: 1
+      minWave: 7
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 5
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+    - unit: {fileID: 100018, guid: aa90bd9c613ccfd4da68e4f16ffa04b6, type: 3}
+      unitC: {fileID: 11400002, guid: aa90bd9c613ccfd4da68e4f16ffa04b6, type: 3}
+      enabled: 1
+      minWave: 8
+      HP:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 8
+        maxValue: 50
+      shield:
+        startValue: 0
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 0
+        maxValue: 25
+      speed:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
+      interval:
+        startValue: 1
+        incMultiplier: 1
+        devMultiplier: 0.2
+        minValue: 1
+        maxValue: 6
 --- !u!1 &594542120
 GameObject:
   m_ObjectHideFlags: 0
@@ -20375,6 +20750,7 @@ Transform:
   m_Children:
   - {fileID: 2143920972}
   - {fileID: 1282946404}
+  - {fileID: 593729849}
   - {fileID: 1145026324}
   - {fileID: 2022541643}
   - {fileID: 1665872695}
@@ -31284,7 +31660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1282946404
 Transform:
   m_ObjectHideFlags: 0
