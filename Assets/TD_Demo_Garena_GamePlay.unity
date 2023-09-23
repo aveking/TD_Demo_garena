@@ -13239,7 +13239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &569461208
 Transform:
   m_ObjectHideFlags: 0
@@ -13266,8 +13266,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0, g: 1, b: 0.91724133, a: 1}
-  m_Intensity: 2
+  m_Color: {r: 0.022027409, g: 0.897124, b: 0.9339623, a: 0.6156863}
+  m_Intensity: 0.5
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -16505,7 +16505,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  m_Color: {r: 0.7725491, g: 0.7294118, b: 0.5294118, a: 1}
   m_Intensity: 1.3
   m_Range: 10
   m_SpotAngle: 30
@@ -16515,7 +16515,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.5
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -16564,13 +16564,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22081749, y: -0.7727544, z: 0.36034125, w: 0.4735447}
+  m_LocalRotation: {x: 0.22699519, y: -0.7716344, z: 0.39316726, w: 0.44550323}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2014661837}
-  m_LocalEulerAnglesHint: {x: 50, y: -117, z: 0}
+  m_LocalEulerAnglesHint: {x: 54, y: -120, z: 0}
 --- !u!1 &709139478
 GameObject:
   m_ObjectHideFlags: 0
@@ -19068,7 +19068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &816188837
 Transform:
   m_ObjectHideFlags: 0
@@ -19095,8 +19095,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.35294116, b: 0.35294116, a: 1}
-  m_Intensity: 3
+  m_Color: {r: 1, g: 0.35294116, b: 0.35294116, a: 0.54509807}
+  m_Intensity: 0.5
   m_Range: 80
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -35881,7 +35881,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3d8367cece3b5b94b9fefc8fddb97cb7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
