@@ -187,8 +187,11 @@ namespace TDTK
 
             //if (Boss_normal_back_attack_auto_cd > 0f) Boss_normal_back_attack_auto_cd -= Time.deltaTime;
 
-
-
+            if (boss_flag == true)
+            {
+                if (hand_cards.card4_cd > 0f) transform.localScale = Vector3.one * (hand_cards.card4_bigger);
+                else transform.localScale = Vector3.one * 2f;
+            }
         }
 
         int break_shield_buff = 0;//Boss的狂暴处理
@@ -533,6 +536,7 @@ namespace TDTK
                     }
 
                     yield return new WaitForSeconds(GetCooldown() - animationDelay - shootPoints.Count * delayBetweenShootPoint);
+                    while (hand_cards.card5_tower_stop_cd > 0f) yield return null;
 
                     if (GameControl.ResetTargetAfterShoot()) target = null;
                     turretOnCooldown = false;
@@ -605,16 +609,23 @@ namespace TDTK
                 //1、3秒cd到了将吸收的子弹数除4，反射攻击
                 //2、当吸收到20个子弹的时候，直接反射攻击，delay 0.5s CD重置,
 
-                if (hand_cards.card3_armor > 0)
+                if (hand_cards.card4_cd <= 0f)
                 {
-                    hand_cards.card3_armor -= attInstance.damageHP;
-                    Debug.Log($"hand_cards.card3_armor={hand_cards.card3_armor}");
-                }
-                else HP -= attInstance.damageHP;
-                //Debug.Log($"播放吸收子弹的特效 HP={HP} attInstance.damageHP={attInstance.damageHP}");
-                global_gamesetting._inst.RefreshBossHP_UI(HP);
 
-                BOSS_one_att_inst();
+                    if (hand_cards.card3_armor > 0)
+                    {
+                        hand_cards.card3_armor -= attInstance.damageHP;
+                        Debug.Log($"hand_cards.card3_armor={hand_cards.card3_armor}");
+                    }
+                    else HP -= attInstance.damageHP;
+                    //Debug.Log($"播放吸收子弹的特效 HP={HP} attInstance.damageHP={attInstance.damageHP}");
+                    global_gamesetting._inst.RefreshBossHP_UI(HP);
+
+                    //BOSS_one_att_inst();
+
+
+                }
+
             }
 
 
@@ -752,6 +763,8 @@ namespace TDTK
             while (true)
             {
                 yield return new WaitForSeconds(GetCooldown());
+                while (hand_cards.card5_tower_stop_cd > 0f) yield return null;
+
                 while (stunned || IsInConstruction()) yield return null;
                 SpawnEffectObject();
             }

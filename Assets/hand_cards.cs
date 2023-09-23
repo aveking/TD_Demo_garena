@@ -30,8 +30,17 @@ public class hand_cards : MonoBehaviour
         if (card2_speed_cd > 0f)
         {
             card2_speed_cd -= Time.deltaTime;
-            if (card2_speed_cd <= 0) card2_speed_rate = 1f;
+            if (card2_speed_cd <= 0f) card2_speed_rate = 1f;
         }
+
+        if (card4_cd > 0f)
+        {
+            card4_cd -= Time.deltaTime;
+            if (card4_cd <= 0f) card4_bigger = 1f;
+        }
+
+        if (card5_stop_cd > 0f) card5_stop_cd -= Time.deltaTime;
+        if (card5_tower_stop_cd > 0f) card5_tower_stop_cd -= Time.deltaTime;
     }
 
     private void OnDestroy()
@@ -211,20 +220,27 @@ public class hand_cards : MonoBehaviour
         //    return string.Format("获得{0}点护甲", (level + quality * 6) / 2);
     }
 
+    public static float card4_cd = 0f;
+    public static float card4_bigger = 1f;
     void Play_Card4()
     {
         int level = card_setting.cards_lv[4] + 1;
         int quality = card_setting.cards_ql[4] + 1;
 
         //    return string.Format("{0}秒内变大{1}倍,免疫攻击", 0.5 + (0.3 * level), 2 + quality);
+
+        card4_cd = 0.5f + (0.3f * level);
+        card4_bigger = 2 + quality;
     }
 
+    public static float card5_stop_cd = 0f;
+    public static float card5_tower_stop_cd = 0f;
     void Play_Card5()
     {
         int level = card_setting.cards_lv[5] + 1;
         int quality = card_setting.cards_ql[5] + 1;
-
+        card5_stop_cd = 0.1f + (0.5f * level);
+        card5_tower_stop_cd = 0.1f + (0.5f * quality);
         //    return string.Format("弹幕时停{0}秒，炮塔时停{1}秒", 0.1 + (0.5 * level), 0.1 + (0.5 * quality));
-
     }
 }

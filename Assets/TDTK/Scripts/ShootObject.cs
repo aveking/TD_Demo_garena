@@ -360,6 +360,8 @@ namespace TDTK
                     //ObjectPoolManager.Unspawn(thisObj);
                     break; //被魔法书阻挡掉了
                 }
+                while (hand_cards.card5_stop_cd > 0f) yield return null;
+
 
                 if (target != null) targetPos = target.GetTargetT().position;
 

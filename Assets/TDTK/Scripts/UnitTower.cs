@@ -362,6 +362,7 @@ namespace TDTK
             while (true)
             {
                 yield return new WaitForSeconds(GetCooldown());
+                while (hand_cards.card5_tower_stop_cd > 0f) yield return null;
 
                 while (stunned || IsInConstruction()) yield return null;
 
@@ -382,6 +383,7 @@ namespace TDTK
             while (true)
             {
                 yield return new WaitForSeconds(GetCooldown());
+                while (hand_cards.card5_tower_stop_cd > 0f) yield return null;
 
                 while (stunned || IsInConstruction()) yield return null;
                 //while(stunned || IsInConstruction() || SpawnManager.GetActiveUnitCount()==0) yield return null;
