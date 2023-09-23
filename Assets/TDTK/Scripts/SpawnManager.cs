@@ -292,6 +292,8 @@ namespace TDTK
             wave.subWaveList[1].overrideMoveSpd = 0.5f * global_gamesetting._inst.boss_move_speed;
             wave.subWaveList[1].delay = 0.5f;
 
+            global_gamesetting._inst.started_game = true;
+
             mp_mana._inst.start_game = true;
 
             if (spawnMode == _SpawnMode.Continous)

@@ -53,7 +53,7 @@ namespace TDTK
 
             butFF.Init();
 
-            butPerkMenuObj.SetActive(PerkManager.IsOn());
+            //butPerkMenuObj.SetActive(PerkManager.IsOn());
 
             OnLife(0);
             OnNewWave(0);

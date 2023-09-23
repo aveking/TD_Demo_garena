@@ -606,7 +606,7 @@ namespace TDTK
 
 
                 HP -= attInstance.damageHP;
-                Debug.Log($"播放吸收子弹的特效 HP={HP} attInstance.damageHP={attInstance.damageHP}");
+                //Debug.Log($"播放吸收子弹的特效 HP={HP} attInstance.damageHP={attInstance.damageHP}");
                 global_gamesetting._inst.RefreshBossHP_UI(HP);
 
                 BOSS_one_att_inst();
