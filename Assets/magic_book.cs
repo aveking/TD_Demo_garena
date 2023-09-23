@@ -62,7 +62,7 @@ public class magic_book : MonoBehaviour
             hand_cards.card1_cd -= Time.deltaTime;
             if (hand_cards.card1_cd > 0)
             {
-                if (card1_obj.activeSelf == false) card1_obj.SetActive(true);
+                if (card1_obj.activeInHierarchy == false) card1_obj.SetActive(true);
             }
             else card1_obj.SetActive(false);
         }

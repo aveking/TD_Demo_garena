@@ -114,7 +114,7 @@ namespace TDTK
             for (int i = 0; i < card_setting.CARD_NUM; i++)
             {
                 Card card = cardManager.GetCard(i);
-                card_setting.ChangeCard(card.CardType, card.Level + 1, card.Quality + 1, card.GetDescription());
+                card_setting.ChangeCard(card.CardType, card.Level, card.Quality, card.GetDescription());
             }
 
 #if UNITY_5_3_OR_NEWER
