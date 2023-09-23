@@ -467,40 +467,40 @@ namespace TDTK
 
             if (boss_flag)
             {
-                while (true)
-                {
-                    while (target == null || stunned || IsInConstruction() || !targetInLOS) yield return null;
-                    while (boss_back_attack_cnt <= 0) yield return null;
+                //处理Boss的攻击 ， 久的模板
+                //while (true)
+                //{
+                //    while (target == null || stunned || IsInConstruction() || !targetInLOS) yield return null;
+                //    while (boss_back_attack_cnt <= 0) yield return null;
+                //    boss_back_attack_cnt--;
+                //    turretOnCooldown = true;
+                //    Unit currentTarget = target;
+                //    float animationDelay = PlayAnimAttack();
+                //    if (animationDelay > 0) yield return new WaitForSeconds(animationDelay);
+                //    AttackInstance attInstance = new AttackInstance();
+                //    attInstance.srcUnit = this;
+                //    attInstance.tgtUnit = currentTarget;
+                //    attInstance.Process();
+                //    for (int i = 0; i < shootPoints.Count; i++)
+                //    {
+                //        Transform sp = shootPoints[i];
+                //        //Transform objT=(Transform)Instantiate(GetShootObjectT(), sp.position, sp.rotation);
+                //        GameObject sObj = ObjectPoolManager.Spawn(GetShootObject().gameObject, sp.position, sp.rotation);
+                //        ShootObject shootObj = sObj.GetComponent<ShootObject>();
+                //        shootObj.Shoot(attInstance, sp);
+                //        if (delayBetweenShootPoint > 0) yield return new WaitForSeconds(delayBetweenShootPoint);
+                //    }
+                //    yield return new WaitForSeconds(GetCooldown() - animationDelay - shootPoints.Count * delayBetweenShootPoint);
+                //    if (GameControl.ResetTargetAfterShoot()) target = null;
+                //    turretOnCooldown = false;
+                //}
 
-                    boss_back_attack_cnt--;
-                    turretOnCooldown = true;
+                //处理Boss书的防御
 
-                    Unit currentTarget = target;
 
-                    float animationDelay = PlayAnimAttack();
-                    if (animationDelay > 0) yield return new WaitForSeconds(animationDelay);
 
-                    AttackInstance attInstance = new AttackInstance();
-                    attInstance.srcUnit = this;
-                    attInstance.tgtUnit = currentTarget;
-                    attInstance.Process();
 
-                    for (int i = 0; i < shootPoints.Count; i++)
-                    {
-                        Transform sp = shootPoints[i];
-                        //Transform objT=(Transform)Instantiate(GetShootObjectT(), sp.position, sp.rotation);
-                        GameObject sObj = ObjectPoolManager.Spawn(GetShootObject().gameObject, sp.position, sp.rotation);
-                        ShootObject shootObj = sObj.GetComponent<ShootObject>();
-                        shootObj.Shoot(attInstance, sp);
 
-                        if (delayBetweenShootPoint > 0) yield return new WaitForSeconds(delayBetweenShootPoint);
-                    }
-
-                    yield return new WaitForSeconds(GetCooldown() - animationDelay - shootPoints.Count * delayBetweenShootPoint);
-
-                    if (GameControl.ResetTargetAfterShoot()) target = null;
-                    turretOnCooldown = false;
-                }
             }
             else
             {
@@ -604,7 +604,11 @@ namespace TDTK
                 //1、3秒cd到了将吸收的子弹数除4，反射攻击
                 //2、当吸收到20个子弹的时候，直接反射攻击，delay 0.5s CD重置,
 
-                //Debug.Log("播放吸收子弹的特效");
+
+                HP -= attInstance.damageHP;
+                Debug.Log($"播放吸收子弹的特效 HP={HP} attInstance.damageHP={attInstance.damageHP}");
+                global_gamesetting._inst.RefreshBossHP_UI(HP);
+
                 BOSS_one_att_inst();
             }
 

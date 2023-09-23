@@ -50,6 +50,9 @@ namespace TDTK
 
         public void Init()
         {
+            map_h = (int)global_gamesetting._inst.stage_h;
+            int tower_cnt = (int)global_gamesetting._inst.stage_tower_cnt;
+
             mapnode = new int[map_w, map_h];
             int pos_w = map_w >> 1;
             int branch_L = 30;
@@ -102,8 +105,8 @@ namespace TDTK
 
             //Debug.LogError($"wpList.Count={wpList.Count}");
 
-            int max_rnd = 512 + 1;
-            int add_step = 64 + 1;
+            int max_rnd = (int)(global_gamesetting._inst.stage_tower_density + 1);
+            int add_step = (int)(global_gamesetting._inst.stage_tower_density2 + 1);
             int check_rnd = max_rnd;
             for (int i = 0; i < map_h; ++i)
             {
@@ -144,8 +147,9 @@ namespace TDTK
                         else
                         {
                             int rnd = Random.Range(0, 1000);
-                            if (i >= 7 && i < map_h - 7 && rnd < check_rnd)
+                            if (tower_cnt > 0 && i >= 7 && i < map_h - 7 && rnd < check_rnd)
                             {
+                                --tower_cnt;
                                 Transform ai = GameObject.Instantiate(Platform_TD).transform;
                                 ai.position = new Vector3(i * NODE_SIZE, 0f, (j - (map_w >> 1)) * NODE_SIZE);
                                 check_rnd = 0;
@@ -162,9 +166,6 @@ namespace TDTK
                                 }
                             }
 
-
-
-
                         }
                     }
 
@@ -172,6 +173,9 @@ namespace TDTK
 
 
             }
+
+
+
 
 
             wpSectionList = new List<WPSection>();

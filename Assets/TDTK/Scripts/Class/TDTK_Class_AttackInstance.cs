@@ -107,7 +107,7 @@ namespace TDTK
                 pierceShield = true;
                 //new TextOverlay(impactPoint,"Shield Pierced", new Color(0f, 1f, 1f, 1f));
             }
-            if (srcWeapon.DamageShieldOnly()) damageHP = 0;
+            //if (srcWeapon.DamageShieldOnly()) damageHP = 0;
 
             if (damageHP >= tgtUnit.HP)
             {
@@ -176,17 +176,17 @@ namespace TDTK
             float dmgModifier = DamageTable.GetModifier(tgtUnit.armorType, srcUnit.damageType);
             damage *= dmgModifier;
 
-            if (damage >= tgtUnit.shield)
-            {
-                damageShield = tgtUnit.shield;
-                damageHP = damage - tgtUnit.shield;
-            }
-            else
-            {
-                damageShield = damage;
-                damageHP = 0;
-            }
-
+            //if (damage >= tgtUnit.shield)
+            //{
+            //    damageShield = tgtUnit.shield;
+            //    damageHP = damage - tgtUnit.shield;
+            //}
+            //else
+            //{
+            //    damageShield = damage;
+            //    damageHP = 0;
+            //}
+            damageHP = damage;
 
             if (Random.Range(0f, 1f) < srcUnit.GetShieldPierce() && damageShield > 0)
             {
@@ -195,7 +195,7 @@ namespace TDTK
                 pierceShield = true;
                 //new TextOverlay(impactPoint,"Shield Pierced", new Color(0f, 1f, 1f, 1f));
             }
-            if (srcUnit.DamageShieldOnly()) damageHP = 0;
+            //if (srcUnit.DamageShieldOnly()) damageHP = 0;
 
             if (damageHP >= tgtUnit.HP)
             {
