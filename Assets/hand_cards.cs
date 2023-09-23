@@ -26,6 +26,12 @@ public class hand_cards : MonoBehaviour
         AutoAddCardToHand();
         Update_CardBridge();
         Update_CardDrag();
+
+        if (card2_speed_cd > 0f)
+        {
+            card2_speed_cd -= Time.deltaTime;
+            if (card2_speed_cd <= 0) card2_speed_rate = 1f;
+        }
     }
 
     private void OnDestroy()
@@ -183,20 +189,25 @@ public class hand_cards : MonoBehaviour
         //return string.Format("强力魔典持续{0}秒，最多攻击{1}次", 3 + (level / 2), level + (quality * 6));
     }
 
+    public static float card2_speed_cd = 0f;
+    public static float card2_speed_rate = 1f;
     void Play_Card2()
     {
         int level = card_setting.cards_lv[2] + 1;
         int quality = card_setting.cards_ql[2] + 1;
 
+        card2_speed_cd = 1 + (level / 2);
+        card2_speed_rate = (100 + 60 + (quality * 25)) / 100f;
         //    return string.Format("{0}秒内移动+{1}%", 1 + (level / 2), 60 + (quality * 25));
-
     }
 
+    public static float card3_armor = 0f;
     void Play_Card3()
     {
         int level = card_setting.cards_lv[3] + 1;
         int quality = card_setting.cards_ql[3] + 1;
 
+        card3_armor = (level + quality * 6) / 2;
         //    return string.Format("获得{0}点护甲", (level + quality * 6) / 2);
     }
 

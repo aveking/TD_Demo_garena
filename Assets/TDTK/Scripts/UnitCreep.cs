@@ -138,6 +138,7 @@ namespace TDTK
         public override void Update()
         {
             base.Update();
+
         }
 
         public override void OnEnable()
@@ -257,9 +258,9 @@ namespace TDTK
 
             //move, with speed take distance into accrount so the unit wont over shoot
             Vector3 dir = (point - thisT.position).normalized;
-            thisT.Translate(dir * Mathf.Min(dist, moveSpeed * slowMultiplier * Time.fixedDeltaTime), Space.World);
+            thisT.Translate(dir * Mathf.Min(dist, moveSpeed * slowMultiplier * Time.fixedDeltaTime * hand_cards.card2_speed_rate), Space.World);
 
-            distFromDestination -= (moveSpeed * slowMultiplier * Time.fixedDeltaTime);
+            distFromDestination -= (moveSpeed * slowMultiplier * Time.fixedDeltaTime * hand_cards.card2_speed_rate);
 
             //moved=true;
 
@@ -270,7 +271,7 @@ namespace TDTK
         void LateUpdate()
         {
             //PlayAnimMove(moved ? moveSpeed * slowMultiplier : 0);
-            PlayAnimMove(moveSpeed * slowMultiplier);
+            PlayAnimMove(moveSpeed * slowMultiplier * hand_cards.card2_speed_rate);
         }
 
 
@@ -351,7 +352,7 @@ namespace TDTK
 
 
 
-        public float GetMoveSpeed() { return moveSpeed * slowMultiplier; }
+        public float GetMoveSpeed() { return moveSpeed * slowMultiplier * hand_cards.card2_speed_rate; }
 
         private float distFromDestination = 0;
         public override float GetDistFromDestination() { return distFromDestination; }
