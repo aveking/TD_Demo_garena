@@ -141,6 +141,7 @@ namespace TDTK
             {
                 Debug.LogWarning("Attacking unit (" + srcUnit.unitName + ") has default hitChance of 0%, is this intended?", srcUnit);
             }
+            if (tgtUnit == null) return;
 
             float hitChance = Mathf.Clamp(srcUnit.GetHit() - tgtUnit.GetDodge(), 0, 1);
             if (Random.Range(0f, 1f) > hitChance)

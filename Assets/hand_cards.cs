@@ -129,7 +129,7 @@ public class hand_cards : MonoBehaviour
         MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition = screen_pos;
     }
 
-    int[] card_costmp = { 3, 4, 2, 3, 5, 6, 7, 8, 9 };
+    int[] card_costmp = { 3, 4, 2, 3, 5, 4, 7, 8, 9 };
     void DragOverCard()
     {
         //Debug.Log(MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition);
@@ -142,6 +142,7 @@ public class hand_cards : MonoBehaviour
             {
                 switch (card_id)
                 {
+                    case 0: Play_Card0(); break;
                     case 1: Play_Card1(); break;
                     case 2: Play_Card2(); break;
                     case 3: Play_Card3(); break;
@@ -154,6 +155,11 @@ public class hand_cards : MonoBehaviour
                 --handcard_t;
             }
         }
+    }
+
+    void Play_Card0()
+    {
+
     }
 
     void Play_Card1()
