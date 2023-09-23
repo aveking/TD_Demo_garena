@@ -18,6 +18,13 @@ public class magic_book : MonoBehaviour
         }
     }
 
+    static public int books_cnt;// = 1 + quality / 2;
+    static public float books_keepcd;// = 5 + level * 2;
+    static public float books_attack_rate = 1f;// = 100f / (100 + 5 + 5 * quality);
+
+    public GameObject[] sub_books;
+    public float sub_books_cd = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +39,22 @@ public class magic_book : MonoBehaviour
     float cd = 2f;
     void Update()
     {
+        if (sub_books_cd > 0f)
+        {
+            sub_books_cd -= Time.deltaTime;
+            if (sub_books_cd <= 0f) for (int i = 0; i < sub_books.Length; ++i) sub_books[i].gameObject.SetActive(false);
+        }
+
+        if (sub_books != null)
+        {
+            if (books_keepcd > 0)
+            {
+                sub_books_cd = books_keepcd;
+                books_keepcd = 0f;
+                for (int i = 0; i < sub_books.Length && i < books_cnt; ++i) sub_books[i].gameObject.SetActive(true);
+            }
+        }
+
         cd -= Time.deltaTime;
         if (cd <= 0f)
         {
@@ -52,7 +75,7 @@ public class magic_book : MonoBehaviour
 
             if (near_one != null)
             {
-                cd = 2f;
+                cd = 2f * books_attack_rate;
 
                 Vector3 dir = (a - near_one.position);
                 dir.y = 0;

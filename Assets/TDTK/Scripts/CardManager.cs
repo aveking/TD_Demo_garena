@@ -141,7 +141,7 @@ namespace TDTK
 
         public Card DrawCard()
         {
-            if (drawNum <=0)
+            if (drawNum <= 0)
                 return null;
 
             Card card = new Card
@@ -208,21 +208,21 @@ namespace TDTK
 
         public string GetDescription()
         {
-            int quality = Quality +1;
-            int level = Level+1;
+            int quality = Quality + 1;
+            int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("召唤{0}本魔典作战{1}秒，攻速+{2}%", 1 + quality / 2, 5 + level * 2, 5 + 5 * quality);
+                return string.Format("召唤{0}本魔典\n作战{1}秒，攻速+{2}%", 1 + quality / 2, 5 + level * 2, 5 + 5 * quality);
             else if (CardType == 1)
-                return string.Format("强力魔典持续{0}秒，最多攻击{1}次", 3 + (level / 2) , level + (quality * 6) );
+                return string.Format("强力魔典持续{0}秒，最多攻击{1}次", 3 + (level / 2), level + (quality * 6));
             else if (CardType == 2)
-                return string.Format("{0}秒内移动+{1}%", 1 + (level / 2) , 60 + (quality * 25));
+                return string.Format("{0}秒内移动+{1}%", 1 + (level / 2), 60 + (quality * 25));
             else if (CardType == 3)
                 return string.Format("获得{0}点护甲", (level + quality * 6) / 2);
             else if (CardType == 4)
-                return string.Format("{0}秒内变大{1}倍,免疫攻击",0.5 +  (0.3 * level),2 + quality);
-            else 
-                return string.Format("弹幕时停{0}秒，炮塔时停{1}秒",0.1 +  (0.5 * level),0.1 + (0.5 * quality));
+                return string.Format("{0}秒内变大{1}倍,免疫攻击", 0.5 + (0.3 * level), 2 + quality);
+            else
+                return string.Format("弹幕时停{0}秒，炮塔时停{1}秒", 0.1 + (0.5 * level), 0.1 + (0.5 * quality));
         }
     }
 
