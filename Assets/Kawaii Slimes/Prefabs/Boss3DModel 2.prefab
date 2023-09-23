@@ -55,12 +55,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100010}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0.55}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.31, y: -1.5, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 466094}
+  m_Father: {fileID: 442042}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &100012
 GameObject:
@@ -273,7 +273,7 @@ MonoBehaviour:
     useCustomDesp: 0
     desp: 
   localShootObject: {fileID: 0}
-  targetPriority: 4
+  targetPriority: 3
   turretObject: {fileID: 408302}
   barrelObject: {fileID: 0}
   shootPoints:
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 3300616}
   - component: {fileID: 2357738}
   m_Layer: 0
-  m_Name: Gun7
+  m_Name: sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,10 +360,11 @@ Transform:
   m_GameObject: {fileID: 117366}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 4, z: 0}
+  m_LocalPosition: {x: 2.22, y: 3.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 400010}
   - {fileID: 400008}
   m_Father: {fileID: 408302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,7 +375,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117366}
-  m_Mesh: {fileID: 4300120, guid: 51406b7de48b3a0439af7ba6d89a8e3e, type: 3}
+  m_Mesh: {fileID: 1296329013392810008, guid: 44691451e760515499e1cf547b6972cd, type: 3}
 --- !u!23 &2357738
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -395,91 +396,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d6fc83e5ee137c54da9e50b55c5661bb, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &160828
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 466094}
-  - component: {fileID: 3374274}
-  - component: {fileID: 2381522}
-  m_Layer: 0
-  m_Name: Gun7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &466094
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160828}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 2.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 400010}
-  m_Father: {fileID: 408302}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3374274
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160828}
-  m_Mesh: {fileID: 4300120, guid: 51406b7de48b3a0439af7ba6d89a8e3e, type: 3}
---- !u!23 &2381522
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160828}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: d6fc83e5ee137c54da9e50b55c5661bb, type: 2}
+  - {fileID: 2100000, guid: def2dec792f37ea47b4343440b1a34e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -532,13 +449,12 @@ Transform:
   m_LocalScale: {x: 0.33333334, y: 0.3333333, z: 0.3333333}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 442042}
   - {fileID: 7067476575229748069}
   - {fileID: 6618700488113412682}
   - {fileID: 3404428780158694645}
   - {fileID: 1905296754287708184}
   - {fileID: 6238630518749450263}
-  - {fileID: 466094}
-  - {fileID: 442042}
   m_Father: {fileID: 3488632822867149455}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3360372
@@ -15355,6 +15271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sub_books: []
   sub_books_cd: 0
+  card1_obj: {fileID: 0}
 --- !u!1 &427615404794278169
 GameObject:
   m_ObjectHideFlags: 0
@@ -15438,6 +15355,7 @@ MonoBehaviour:
   - {fileID: 4315062695892822127}
   - {fileID: 2691762440179446852}
   sub_books_cd: 0
+  card1_obj: {fileID: 117366}
 --- !u!1 &836127788604437337
 GameObject:
   m_ObjectHideFlags: 0
@@ -20517,6 +20435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sub_books: []
   sub_books_cd: 0
+  card1_obj: {fileID: 0}
 --- !u!1 &2944201794501735050
 GameObject:
   m_ObjectHideFlags: 0
@@ -20800,6 +20719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sub_books: []
   sub_books_cd: 0
+  card1_obj: {fileID: 0}
 --- !u!1 &4409046059988627345
 GameObject:
   m_ObjectHideFlags: 0
@@ -20847,6 +20767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sub_books: []
   sub_books_cd: 0
+  card1_obj: {fileID: 0}
 --- !u!1 &4625978826659628003
 GameObject:
   m_ObjectHideFlags: 0
