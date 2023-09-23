@@ -37771,8 +37771,8 @@ MonoBehaviour:
   enableTouchPan: 1
   enableTouchZoom: 1
   enableTouchRotate: 0
-  minPosX: 10
-  maxPosX: 60
+  minPosX: -9999999
+  maxPosX: 9999999
   minPosZ: -5
   maxPosZ: 5
   minZoomDistance: 8
@@ -45465,6 +45465,7 @@ MonoBehaviour:
   - {fileID: 26910237}
   - {fileID: 1819106761}
   - {fileID: 1002389297}
+  boss_currenthp: 200
 --- !u!4 &1868019687
 Transform:
   m_ObjectHideFlags: 0

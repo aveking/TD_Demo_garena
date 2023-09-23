@@ -59,6 +59,7 @@ public class global_gamesetting : MonoBehaviour
     void Start()
     {
         _inst = this;
+        magic_book.all_Projectile.Clear();
 
         Boss_HP_txt.text = boss_maxhp.ToString("0") + "/" + boss_maxhp.ToString("0");
 
