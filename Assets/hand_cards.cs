@@ -159,31 +159,61 @@ public class hand_cards : MonoBehaviour
 
     void Play_Card0()
     {
+        int level = card_setting.cards_lv[0] + 1;
+        int quality = card_setting.cards_ql[0] + 1;
 
+        magic_book.books_cnt = 1 + quality / 2;
+        magic_book.books_keepcd = 5 + level * 2;
+        magic_book.books_attack_rate = 100f / (100 + 5 + 5 * quality);
+
+        //    return string.Format("召唤{0}本魔典\n作战{1}秒，攻速+{2}%", 1 + quality / 2, 5 + level * 2, 5 + 5 * quality);
     }
 
+    public static float card1_cd = 0f;
+    public static int card1_attack_cnt = 0;
     void Play_Card1()
     {
+        int level = card_setting.cards_lv[1] + 1;
+        int quality = card_setting.cards_ql[1] + 1;
+        Debug.Log($"level = {level} quality={quality}");
 
+        card1_cd = 3 + (level / 2);
+        card1_attack_cnt = level + (quality * 6);
+
+        //return string.Format("强力魔典持续{0}秒，最多攻击{1}次", 3 + (level / 2), level + (quality * 6));
     }
 
     void Play_Card2()
     {
+        int level = card_setting.cards_lv[2] + 1;
+        int quality = card_setting.cards_ql[2] + 1;
+
+        //    return string.Format("{0}秒内移动+{1}%", 1 + (level / 2), 60 + (quality * 25));
 
     }
 
     void Play_Card3()
     {
+        int level = card_setting.cards_lv[3] + 1;
+        int quality = card_setting.cards_ql[3] + 1;
 
+        //    return string.Format("获得{0}点护甲", (level + quality * 6) / 2);
     }
 
     void Play_Card4()
     {
+        int level = card_setting.cards_lv[4] + 1;
+        int quality = card_setting.cards_ql[4] + 1;
 
+        //    return string.Format("{0}秒内变大{1}倍,免疫攻击", 0.5 + (0.3 * level), 2 + quality);
     }
 
     void Play_Card5()
     {
+        int level = card_setting.cards_lv[5] + 1;
+        int quality = card_setting.cards_ql[5] + 1;
+
+        //    return string.Format("弹幕时停{0}秒，炮塔时停{1}秒", 0.1 + (0.5 * level), 0.1 + (0.5 * quality));
 
     }
 }

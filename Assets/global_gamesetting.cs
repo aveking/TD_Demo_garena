@@ -17,6 +17,8 @@ public static class card_setting
         cards_lv[_idx] = _lv;
         cards_ql[_idx] = _ql;
         cards_des[_idx] = _des;
+
+        //Debug.LogError($"_idx={_idx} _lv={_lv} _ql={_ql} _des={_des}");
     }
 }
 
@@ -59,6 +61,7 @@ public class global_gamesetting : MonoBehaviour
     void Start()
     {
         _inst = this;
+        magic_book.all_Projectile.Clear();
 
         Boss_HP_txt.text = boss_maxhp.ToString("0") + "/" + boss_maxhp.ToString("0");
 

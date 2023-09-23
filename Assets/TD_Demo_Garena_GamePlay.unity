@@ -39116,8 +39116,8 @@ MonoBehaviour:
   enableTouchPan: 1
   enableTouchZoom: 1
   enableTouchRotate: 0
-  minPosX: 10
-  maxPosX: 60
+  minPosX: -9999999
+  maxPosX: 9999999
   minPosZ: -5
   maxPosZ: 5
   minZoomDistance: 8

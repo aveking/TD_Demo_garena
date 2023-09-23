@@ -334,6 +334,7 @@ namespace TDTK
 
         IEnumerator ProjectileRoutine() //炮弹，模拟程序
         {
+            magic_book.Push_One(thisT);
             ShootEffect();
 
             float timeShot = Time.time;
@@ -353,6 +354,13 @@ namespace TDTK
             //while the shootObject havent hit the target
             while (!hit)
             {
+                if (thisT.gameObject.layer == 30)
+                {
+                    if (attInstance.destroy) DestroyEffect(targetPos);
+                    //ObjectPoolManager.Unspawn(thisObj);
+                    break; //被魔法书阻挡掉了
+                }
+
                 if (target != null) targetPos = target.GetTargetT().position;
 
                 //calculating distance to targetPos
@@ -394,11 +402,15 @@ namespace TDTK
                 thisT.Translate(Vector3.forward * Mathf.Min(speed * Time.deltaTime, curDist));
                 //Debug.Log($"fix frame move shoot type={type} speed={speed}");
 
+
+
                 curDist = Vector3.Distance(thisT.position, targetPos);
                 if (curDist < hitThreshold && !hit) { Hit(); break; }
 
                 yield return new WaitForSeconds(Time.fixedDeltaTime);
             }
+
+            magic_book.Pop_One(thisT);
         }
 
 
