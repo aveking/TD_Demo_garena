@@ -35,11 +35,15 @@ namespace TDTK
         public List<string> levelDespList = new List<string>();
 
 
-        private int offsetX = 320;
-        private int offsetY = 380;
+        private int offsetX = 200;
+        private int offsetY = 180;
+        
         // Start is called before the first frame update
         void Start()
         {
+            // Reset stage
+            Achievement.curStage = 0;
+
             lableList.Add("抽卡");
             lableList.Add("前往探险 >");
 
@@ -114,6 +118,7 @@ namespace TDTK
             for (int i = 0; i < card_setting.CARD_NUM; i++)
             {
                 Card card = cardManager.GetCard(i);
+                card_setting.draw_num = cardManager.drawNum;
                 card_setting.ChangeCard(card.CardType, card.Level, card.Quality, card.GetDescription());
             }
 

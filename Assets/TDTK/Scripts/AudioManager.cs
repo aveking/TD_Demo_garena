@@ -36,7 +36,6 @@ namespace TDTK {
 			obj.AddComponent<AudioManager>();
 		}
 		
-		
 		void Awake(){
 			if(instance!=null){
 				Destroy(gameObject);
@@ -52,15 +51,15 @@ namespace TDTK {
 			
 			if(playMusic && musicList!=null && musicList.Count>0){
 				musicSource=thisObj.AddComponent<AudioSource>();
-				musicSource.loop=false;
+				musicSource.loop=true;
 				//musicSource.playOnAwake=false;
 				musicSource.volume=musicVolume;
 				
 				musicSource.ignoreListenerVolume=true;
 				
-				if(shuffle) currentTrackID=Random.Range(0, musicList.Count);
-				musicSource.clip=musicList[currentTrackID];
-				musicSource.Play();
+				// if(shuffle) currentTrackID=Random.Range(0, musicList.Count);
+				// musicSource.clip=musicList[currentTrackID];
+				// musicSource.Play();
 			}
 			
 			audioSourceList=new List<AudioSource>();
@@ -83,21 +82,23 @@ namespace TDTK {
 		
 		
 		void Update(){
-			if(musicSource!=null && !musicSource.isPlaying){
-				if(shuffle) musicSource.clip=musicList[Random.Range(0, musicList.Count)];
-				else{
-					musicSource.clip=musicList[currentTrackID];
-					currentTrackID+=1;
-					if(currentTrackID==musicList.Count) currentTrackID=0;
-				}
+			// if(musicSource!=null && !musicSource.isPlaying){
+			// 	if(shuffle) musicSource.clip=musicList[Random.Range(0, musicList.Count)];
+			// 	else{
+			// 		musicSource.clip=musicList[currentTrackID];
+			// 		currentTrackID+=1;
+			// 		if(currentTrackID==musicList.Count) currentTrackID=0;
+			// 	}
 				
-				musicSource.Play();
-			}
+			// 	musicSource.Play();
+			// }
 		}
 		
 		
 		void OnEnable(){
 			TDTK.onLifeE += OnLostLife;
+			TDTK.onGameStartE += OnGameStart;
+			TDTK.onGameStageE += OnGameStage;
 			TDTK.onGameOverE += OnGameOver;
 			
 			TDTK.onNewWaveE += OnNewWave;
@@ -123,6 +124,8 @@ namespace TDTK {
 		
 		void OnDisable(){
 			TDTK.onLifeE -= OnLostLife;
+			TDTK.onGameStartE -= OnGameStart;
+			TDTK.onGameStageE -= OnGameStage;
 			TDTK.onGameOverE -= OnGameOver;
 			
 			TDTK.onNewWaveE -= OnNewWave;
@@ -148,8 +151,24 @@ namespace TDTK {
 		
 		
 		[Header("Sound Effect")]
+		public AudioClip gameStartSound;
 		public AudioClip gameWonSound;
 		public AudioClip gameLostSound;
+
+		void OnGameStart()
+		{
+			_PlaySound(gameStartSound);
+		}
+
+		void OnGameStage(int stage)
+		{
+            if (stage % 3 == 0)
+            {
+				musicSource.clip = musicList[stage/3];
+				musicSource.Play();
+			}
+		}
+
 		void OnGameOver(bool playerWon){ 
 			if(playerWon){ if(gameWonSound!=null) _PlaySound(gameWonSound);  }
 			else{ if(gameLostSound!=null) _PlaySound(gameLostSound);  }

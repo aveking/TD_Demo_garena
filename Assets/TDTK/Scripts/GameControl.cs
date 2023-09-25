@@ -150,9 +150,9 @@ namespace TDTK
             if (indicatorControl != null) indicatorControl.Init();
 
 
-            //if(loadAudioManager){
-            //	Instantiate(Resources.Load("AudioManager", typeof(GameObject)));
-            //}
+            if(true){
+            	Instantiate(Resources.Load("AudioManager", typeof(GameObject)));
+            }
 
             Time.timeScale = 1;
         }

@@ -87,6 +87,7 @@ namespace TDTK
             {
                 if (buttonList[i].rootObj == butObj)
                 {
+                    TDTK.OnGameStart();
 #if UNITY_5_3_OR_NEWER
                     SceneManager.LoadScene(levelNameList[i]);
 #else

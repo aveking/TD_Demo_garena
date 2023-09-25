@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using TDTK;
+using Unity.VisualScripting;
 
 namespace TDTK {
 
@@ -37,6 +38,14 @@ namespace TDTK {
 		public static event FastForwardHandler onFastForwardE;			//call when toggle fastforward
 		public static void OnFastForward(bool ff){ if(onFastForwardE!=null) onFastForwardE(ff); }
 		
+		public delegate void GameStartHandler();
+		public static event GameStartHandler onGameStartE;
+		public static void OnGameStart() { if(onGameStartE!=null) onGameStartE();}
+
+		public delegate void GameStageHandler(int stage);
+		public static event GameStageHandler onGameStageE;
+		public static void OnGameStage(int stage) { if(onGameStageE!=null) onGameStageE(stage); }
+
 		public delegate void GameOverHandler(bool playerWon);
 		public static event GameOverHandler onGameOverE;			//call when game is over
 		public static void OnGameOver(bool playerWon){ if(onGameOverE!=null) onGameOverE(playerWon); }

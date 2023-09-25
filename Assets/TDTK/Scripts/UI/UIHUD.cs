@@ -14,6 +14,7 @@ namespace TDTK
 
         public Text txtLife;
         public Text txtWave;
+        public Text drawNum;
 
         public List<UIObject> rscItemList = new List<UIObject>();
 
@@ -31,6 +32,7 @@ namespace TDTK
         void Awake()
         {
             instance = this;
+            TDTK.OnGameStage(Achievement.curStage++);
         }
 
 
@@ -146,6 +148,8 @@ namespace TDTK
                 else txtTimer.text = "Next Wave in " + (Mathf.Floor(timeToNextSpawn / 60)).ToString("f0") + "m";
             }
             else txtTimer.text = "";
+
+            drawNum.text = string.Format("x {0}", card_setting.draw_num);
         }
 
     }

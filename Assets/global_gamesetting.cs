@@ -7,6 +7,8 @@ public static class card_setting
 {
     public const int CARD_NUM = 6;
 
+    public static int draw_num;
+
     public static int[] cards_lv = new int[CARD_NUM];//�ȼ�
     public static int[] cards_ql = new int[CARD_NUM];//Ʒ��
     public static string[] cards_des = new string[CARD_NUM];//����
@@ -20,6 +22,15 @@ public static class card_setting
 
         //Debug.LogError($"_idx={_idx} _lv={_lv} _ql={_ql} _des={_des}");
     }
+}
+
+public static class Achievement
+{
+    public static int curStage = 0;
+    public static bool win5 = false;
+    public static bool win10 = false;
+    public static bool win20 = false;
+    
 }
 
 public class global_gamesetting : MonoBehaviour
