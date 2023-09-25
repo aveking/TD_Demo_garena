@@ -57,7 +57,7 @@ namespace TDTK
         public static void Show(bool won) { instance._Show(won); }
         public void _Show(bool won)
         {
-            if (won) lbTitle.text = "Level Cleared!";
+            if (won) lbTitle.text = "闯关结束";
             else lbTitle.text = "Level Lost";
 
             if (!(UIMainControl.AlwaysShowNextButton() || won) && buttonNext != null) buttonNext.SetActive(false);

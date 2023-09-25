@@ -53717,10 +53717,10 @@ MonoBehaviour:
   playerWon: 0
   levelID: 1
   capLife: 1
-  playerLifeCap: 20
-  playerLife: 20
-  enableLifeGen: 0
-  lifeRegenRate: 0
+  playerLifeCap: 200000
+  playerLife: 200000
+  enableLifeGen: 1
+  lifeRegenRate: 100
   sellTowerRefundRatio: 0.5
   resetTargetAfterShoot: 1
   nextScene: TDTK_Demo_Maze

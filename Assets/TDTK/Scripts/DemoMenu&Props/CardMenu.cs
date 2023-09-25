@@ -36,7 +36,7 @@ namespace TDTK
 
 
         private int offsetX = 320;
-        private int offsetY = 360;
+        private int offsetY = 380;
         // Start is called before the first frame update
         void Start()
         {
