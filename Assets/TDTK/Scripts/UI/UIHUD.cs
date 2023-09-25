@@ -141,15 +141,15 @@ namespace TDTK
         // Update is called once per frame
         void Update()
         {
-            float timeToNextSpawn = SpawnManager.GetTimeToNextSpawn();
-            if (timeToNextSpawn > 0)
-            {
-                if (timeToNextSpawn < 60) txtTimer.text = "Next Wave in " + timeToNextSpawn.ToString("f1") + "s";
-                else txtTimer.text = "Next Wave in " + (Mathf.Floor(timeToNextSpawn / 60)).ToString("f0") + "m";
-            }
-            else txtTimer.text = "";
+            //float timeToNextSpawn = SpawnManager.GetTimeToNextSpawn();
+            //if (timeToNextSpawn > 0)
+            //{
+            //    if (timeToNextSpawn < 60) txtTimer.text = "Next Wave in " + timeToNextSpawn.ToString("f1") + "s";
+            //    else txtTimer.text = "Next Wave in " + (Mathf.Floor(timeToNextSpawn / 60)).ToString("f0") + "m";
+            //}
+            //else txtTimer.text = "";
 
-            drawNum.text = string.Format("x {0}", card_setting.draw_num);
+            //drawNum.text = string.Format("x {0}", card_setting.draw_num);
         }
 
     }

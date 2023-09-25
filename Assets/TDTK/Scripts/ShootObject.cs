@@ -357,6 +357,8 @@ namespace TDTK
                 if (thisT.gameObject.layer == 30)
                 {
                     if (attInstance.destroy) DestroyEffect(targetPos);
+                    global_gamesetting._inst?.PlayHitEffect(thisT.position);
+                    thisT.gameObject.SetActive(false);
                     //ObjectPoolManager.Unspawn(thisObj);
                     break; //被魔法书阻挡掉了
                 }
@@ -518,6 +520,7 @@ namespace TDTK
                             {
                                 target.ApplyEffect(attInstance);
                                 if (attInstance.destroy) DestroyEffect(targetPos);
+                                //global_gamesetting._inst?.PlayHitEffect(thisT.position);
                             }
                             else
                             {
@@ -528,6 +531,7 @@ namespace TDTK
                                 tgtList[i].ApplyEffect(attInst);
 
                                 if (attInst.destroy) DestroyEffect(tgtList[i].thisT.position);
+                                //global_gamesetting._inst?.PlayHitEffect(thisT.position);
                             }
                         }
                     }

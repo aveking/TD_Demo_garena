@@ -26,6 +26,7 @@ public class magic_book : MonoBehaviour
     public float sub_books_cd = 0;
 
     public GameObject card1_obj;
+    public bool card1_enable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +63,9 @@ public class magic_book : MonoBehaviour
             hand_cards.card1_cd -= Time.deltaTime;
             if (hand_cards.card1_cd > 0)
             {
-                if (card1_obj.activeInHierarchy == false) card1_obj.SetActive(true);
+                if (card1_enable == false) card1_obj.SetActive(card1_enable = true);
             }
-            else card1_obj.SetActive(false);
+            else card1_obj.SetActive(card1_enable = false);
         }
 
         cd -= Time.deltaTime;

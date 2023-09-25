@@ -35,8 +35,8 @@ namespace TDTK
         public List<string> levelDespList = new List<string>();
 
 
-        private int offsetX = 200;
-        private int offsetY = 180;
+        private int offsetX = 320; //注意这里的screen w=1920 h=1080
+        private int offsetY = 380;
         
         // Start is called before the first frame update
         void Start()

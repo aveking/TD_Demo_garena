@@ -30,7 +30,7 @@ public static class Achievement
     public static bool win5 = false;
     public static bool win10 = false;
     public static bool win20 = false;
-    
+
 }
 
 public class global_gamesetting : MonoBehaviour
@@ -106,6 +106,17 @@ public class global_gamesetting : MonoBehaviour
     {
         boss_currenthp = _hp;
         Boss_HP_txt.text = _hp.ToString("0") + "/" + boss_maxhp.ToString("0");
+    }
+
+    int loc = 0;
+    public void PlayHitEffect(Vector3 _pos)
+    {
+        int last = loc - 1;
+        if (last < 0) last = transform.childCount - 1;
+        transform.GetChild(last).gameObject.SetActive(false);
+        transform.GetChild(loc).transform.position = _pos;
+        transform.GetChild(loc++).gameObject.SetActive(true);
+        if (loc >= transform.childCount) loc = 0;
     }
 
     private void Update()
