@@ -40,6 +40,8 @@ public static class Achievement
 
 public class global_gamesetting : MonoBehaviour
 {
+    public AudioSource boss_as;
+
     public float tower_attack_rate = 1f;
     public float tower_bullet_fly_speed = 1f;
     public float boss_move_speed = 1f;
@@ -109,6 +111,8 @@ public class global_gamesetting : MonoBehaviour
 
     public void RefreshBossHP_UI(float _hp)
     {
+        boss_as.Stop();
+        boss_as.Play();
         boss_currenthp = _hp;
         Boss_HP_txt.text = _hp.ToString("0") + "/" + boss_maxhp.ToString("0");
     }
