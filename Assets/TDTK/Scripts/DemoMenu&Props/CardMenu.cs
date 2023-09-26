@@ -37,10 +37,13 @@ namespace TDTK
 
         private int offsetX = 320; //注意这里的screen w=1920 h=1080
         private int offsetY = 380;
-        
+
         // Start is called before the first frame update
         void Start()
         {
+            offsetX = (int)((320f * Screen.width) / 1920);
+            offsetY = (int)((380 * Screen.height) / 1080);
+
             // Reset stage
             Achievement.curStage = 0;
 
