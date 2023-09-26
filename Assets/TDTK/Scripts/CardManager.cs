@@ -215,17 +215,17 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("再召唤{0}本魔典{1}秒，施法+{2}%", quality, 5 + level, 3 * level + 4 * quality);
+                return string.Format("再召唤{0}本拦截魔典{1}秒，施法+{2}%", quality, 5 + level, 3 * level + 4 * quality);
             else if (CardType == 1)
                 return string.Format("{0}秒内攻击塔{1}次", 3 + 2 * quality, level * 3 + (quality * 4));
             else if (CardType == 2)
                 return string.Format("{0}秒内移动+{1}%", 2 + 0.8 * level, 45 + (quality * 25));
             else if (CardType == 3)
-                return string.Format("获得耐久为{0}的护盾", (level + quality * 6) * 2);
+                return string.Format("获得护盾，耐久{0}", (level + quality * 6) * 2);
             else if (CardType == 4)
                 return string.Format("{0}秒内变大{1}倍,免疫攻击", 2f + 0.8f * level, 1 + 0.5f * quality);
             else
-                return string.Format("弹幕定住{0}秒，炮塔沉默{1}秒", 2 + 0.8 * level, 2 + 0.8 * quality);
+                return string.Format("定住弹幕{0}秒，炮塔{1}秒", 2 + 0.8 * level, 2 + 0.8 * quality);
         }
     }
 
