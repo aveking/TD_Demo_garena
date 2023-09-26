@@ -7,7 +7,7 @@ public static class card_setting
 {
     public const int CARD_NUM = 6;
 
-    public static int draw_num = 8;
+    public static int draw_num = 5;
 
     public static int[] cards_lv = new int[CARD_NUM];//�ȼ�
     public static int[] cards_ql = new int[CARD_NUM];//Ʒ��
@@ -15,7 +15,7 @@ public static class card_setting
 
     public static void AddDrawNum()
     {
-        draw_num += 8;
+        draw_num += 6;
     }
 
     public static void ChangeCard(int _idx, int _lv, int _ql, string _des)

@@ -71,6 +71,23 @@ public class ObjectPoolManager : MonoBehaviour{
 		}
 		Destroy(obj);
 	}
+
+	public int _Count()
+	{
+		// int count = 0;
+		// for(int i=0; i<poolList.Count; i++)
+		// {
+		// 	Debug.Log("Hello: " + i + ":" + poolList[i].GetTotalObjectCount());
+		// 	count += poolList[i].GetTotalObjectCount();
+		// }
+
+		return poolList[1].GetTotalObjectCount();
+	}
+
+	public static int Count()
+	{
+		return instance._Count();
+	}
 	
 	
 	public static int New(Transform objT, int count=2){ if(instance==null) Init(); return instance._New(objT.gameObject, count); }

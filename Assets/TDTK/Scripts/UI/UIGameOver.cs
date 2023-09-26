@@ -20,6 +20,7 @@ namespace TDTK
         public Text lbReward;
 
         public GameObject buttonNext;
+        public GameObject buttonMenu;
 
 
         public void Awake()
@@ -41,6 +42,7 @@ namespace TDTK
             {
                 //GameControl.LoadNextScene();
                 global_gamesetting.current_stagelv++;
+                card_setting.AddDrawNum();
                 GameControl.RestartScene();
             }
         }
@@ -59,18 +61,24 @@ namespace TDTK
         public static void Show(bool won) { instance._Show(won); }
         public void _Show(bool won)
         {
-            if (won) lbTitle.text = "闯关结束";
-            else lbTitle.text = "Level Lost";
+            if (won) lbTitle.text = "You Win!";
+            else lbTitle.text = "You Lose!";
 
-            if (!(UIMainControl.AlwaysShowNextButton() || won) && buttonNext != null) 
-            {
-                buttonNext.SetActive(false);
-                lbReward.enabled =false;
-            }
+            // if (!(UIMainControl.AlwaysShowNextButton() || won) && buttonNext != null) 
+            // {
+            //     buttonNext.SetActive(false);
+            // }
 
             if (won)
-                card_setting.AddDrawNum();
+            {
+                buttonMenu.SetActive(false);
+            }
+            else
+            {
+                buttonNext.SetActive(false);
+            }
 
+            lbReward.enabled = won;
             UIMainControl.FadeIn(canvasGroup, 0.25f, thisObj);
         }
         public static void Hide() { instance._Hide(); }

@@ -26,6 +26,8 @@ namespace TDTK
 
         public GameObject butPerkMenuObj;
 
+        public Image imgArmor;
+
         private static UIHUD instance;
         public static UIHUD GetInstance() { return instance; }
 
@@ -150,6 +152,11 @@ namespace TDTK
             //}
             //else txtTimer.text = "";
 
+            //Debug.Log(GameControl.GetPlayerLife());
+            if (global_gamesetting._inst.boss_currenthp <= 0)
+            {
+                GameControl.GameOver();
+            }
         }
 
     }

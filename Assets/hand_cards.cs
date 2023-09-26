@@ -181,9 +181,9 @@ public class hand_cards : MonoBehaviour
 
         magic_book.books_cnt = quality;
         magic_book.books_keepcd = 4 + level;
-        magic_book.books_attack_rate = 100f / (100 + 2 * level + 3 * quality);
+        magic_book.books_attack_rate = 100f / (100 + 3 * level + 4 * quality);
 
-        //    return string.Format("�ٻ�{0}��ħ��\n��ս{1}�룬����+{2}%", quality, 4 + level, 2 * level + 3 * quality;
+        //    return string.Format("�ٻ�{0}��ħ��\n��ս{1}�룬����+{2}%", quality, 4 + level, 3 * level + 4 * quality;
     }
 
     public static float card1_cd = 0f;
@@ -194,10 +194,10 @@ public class hand_cards : MonoBehaviour
         int quality = card_setting.cards_ql[1] + 1;
         Debug.Log($"level = {level} quality={quality}");
 
-        card1_cd = 2f + 0.8f * level;
-        card1_attack_cnt = level + (quality * 6);
+        card1_cd = 3f + 2f * quality;
+        card1_attack_cnt = (level * 3) + (quality * 4);
 
-        //return string.Format("ǿ��ħ�����{0}�룬��๥��{1}��", 2 + 0.8f * level, level + (quality * 6));
+        //return string.Format("ǿ��ħ�����{0}�룬��๥��{1}��", 3f + 2f * quality, (level * 3)  + (quality * 4));
     }
 
     public static float card2_speed_cd = 0f;
@@ -232,7 +232,7 @@ public class hand_cards : MonoBehaviour
         //    return string.Format("{0}���ڱ��{1}��,���߹���", 0.5  2f + 0.8f * level, 3 + quality);
 
         card4_cd = 2f + 0.8f * level;
-        card4_bigger = 3f + (1f * quality);
+        card4_bigger = 1f + (0.5f * quality);
     }
 
     public static float card5_stop_cd = 0f;
