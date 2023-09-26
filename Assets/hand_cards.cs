@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class hand_cards : MonoBehaviour
 {
-    public Transform[] Deck_Cards; //active¾ÍËãÔÚÊÖÅÆÁË
+    public Transform[] Deck_Cards; //activeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     float all_width = 296f;
     float two_width = 192f;
     float card_rot = 4f;
@@ -16,13 +16,13 @@ public class hand_cards : MonoBehaviour
 
     private void Start()
     {
-        //Õ½¶·ÖÐÊÖÅÆÇø³é¿¨²¹¿¨ÏµÍ³ÊµÏÖ£ºÕ½¶·³õÊ¼Ê±´Ó¿¨³ØÀïËæ»ú³é3ÕÅÅÆµ½ÊÖÅÆÇø£¬³öÅÆÊ±ÏûºÄ¶ÔÓ¦ÊýÁ¿µÄË®¾§£¬´òÒ»ÕÅºó³é²¹Ò»ÕÅ
+        //Õ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é¿¨ï¿½ï¿½ï¿½ï¿½ÏµÍ³Êµï¿½Ö£ï¿½Õ½ï¿½ï¿½ï¿½ï¿½Ê¼Ê±ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ä¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Åºï¿½é²¹Ò»ï¿½ï¿½
         for (int i = 0; i < Deck_Cards.Length; ++i) Deck_Cards[i].gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        //×Ô¶¯²¹ÅÆµ½ÊÖÅÆÖÐ
+        //ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         AutoAddCardToHand();
         Update_CardBridge();
         Update_CardDrag();
@@ -69,11 +69,11 @@ public class hand_cards : MonoBehaviour
 
     void Update_CardBridge()
     {
-        //½áºÏCanvasScaler.csÖÐµÄ²ÎÊý
+        //ï¿½ï¿½ï¿½CanvasScaler.csï¿½ÐµÄ²ï¿½ï¿½ï¿½
         float scaleFactor = Mathf.Min(Screen.width / 960f, Screen.height / 640f);
         float card_show_y = -Screen.height * 0.5f / scaleFactor - (CARD_UI_HEIGHT * 0.382f);
 
-        //ÏÈËãÒ»ÌõsinÇúÏß³öÀ´
+        //ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½sinï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½
         if (handcard_t == 1)
         {
             target_pos_a[0] = new Vector3(0f, card_show_y, 0f);// Vector3.zero;
@@ -90,7 +90,7 @@ public class hand_cards : MonoBehaviour
             }
         }
 
-        //½«ÅÆ°´ÇúÏß°ÚÉÏ
+        //ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ï¿½ß°ï¿½ï¿½ï¿½
         float start_rot = (1 - handcard_t) * card_rot * 0.5f;
         for (int i = handcard_t - 1, j = Deck_Cards.Length - 1; i >= 0; --i, start_rot += card_rot)
         {
@@ -119,7 +119,7 @@ public class hand_cards : MonoBehaviour
         if (Input.GetMouseButton(0) == false) no_touch = true;
 #endif
 
-        if (no_touch) //ÊÍ·Å
+        if (no_touch) //ï¿½Í·ï¿½
         {
             if (MyHandCard.tf_dragone != null) DragOverCard();
             MyHandCard.tf_dragone = null;
@@ -140,7 +140,7 @@ public class hand_cards : MonoBehaviour
         screen_pos.z = 0f;
 
         MyHandCard.tf_dragone.localRotation = Quaternion.identity;
-        screen_pos.y -= 512f; //hard code Æ«ÒÆ
+        screen_pos.y -= 512f; //hard code Æ«ï¿½ï¿½
         MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition = screen_pos;
     }
 
@@ -153,7 +153,9 @@ public class hand_cards : MonoBehaviour
             int card_id = MyHandCard.tf_dragone.GetComponent<MyHandCard>().card_id;
             int cost_mp = card_costmp[card_id];
             Debug.Log($"use card id = {card_id} cost={cost_mp}");
-            if (mp_mana._inst.CostMP(cost_mp))
+            bool result = mp_mana._inst.CostMP(cost_mp);
+            TDTK.TDTK.OnPlayCard(result);
+            if (result)
             {
                 switch (card_id)
                 {
@@ -177,11 +179,11 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[0] + 1;
         int quality = card_setting.cards_ql[0] + 1;
 
-        magic_book.books_cnt = 1 + quality / 2;
-        magic_book.books_keepcd = 5 + level * 2;
-        magic_book.books_attack_rate = 100f / (100 + 5 + 5 * quality);
+        magic_book.books_cnt = quality;
+        magic_book.books_keepcd = 4 + level;
+        magic_book.books_attack_rate = 100f / (100 + 2 * level + 3 * quality);
 
-        //    return string.Format("ÕÙ»½{0}±¾Ä§µä\n×÷Õ½{1}Ãë£¬¹¥ËÙ+{2}%", 1 + quality / 2, 5 + level * 2, 5 + 5 * quality);
+        //    return string.Format("ï¿½Ù»ï¿½{0}ï¿½ï¿½Ä§ï¿½ï¿½\nï¿½ï¿½Õ½{1}ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½+{2}%", quality, 4 + level, 2 * level + 3 * quality;
     }
 
     public static float card1_cd = 0f;
@@ -192,10 +194,10 @@ public class hand_cards : MonoBehaviour
         int quality = card_setting.cards_ql[1] + 1;
         Debug.Log($"level = {level} quality={quality}");
 
-        card1_cd = 3 + (level / 2);
+        card1_cd = 2f + 0.8f * level;
         card1_attack_cnt = level + (quality * 6);
 
-        //return string.Format("Ç¿Á¦Ä§µä³ÖÐø{0}Ãë£¬×î¶à¹¥»÷{1}´Î", 3 + (level / 2), level + (quality * 6));
+        //return string.Format("Ç¿ï¿½ï¿½Ä§ï¿½ï¿½ï¿½ï¿½ï¿½{0}ï¿½ë£¬ï¿½ï¿½à¹¥ï¿½ï¿½{1}ï¿½ï¿½", 2 + 0.8f * level, level + (quality * 6));
     }
 
     public static float card2_speed_cd = 0f;
@@ -205,9 +207,9 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[2] + 1;
         int quality = card_setting.cards_ql[2] + 1;
 
-        card2_speed_cd = 1 + (level / 2);
-        card2_speed_rate = (100 + 60 + (quality * 25)) / 100f;
-        //    return string.Format("{0}ÃëÄÚÒÆ¶¯+{1}%", 1 + (level / 2), 60 + (quality * 25));
+        card2_speed_cd = 2f + 0.8f * level;
+        card2_speed_rate = (100 + 45 + (quality * 25)) / 100f;
+        //    return string.Format("{0}ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½+{1}%",2 + 0.8f * level, 45 + (quality * 25));
     }
 
     public static float card3_armor = 0f;
@@ -216,8 +218,8 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[3] + 1;
         int quality = card_setting.cards_ql[3] + 1;
 
-        card3_armor = (level + quality * 6) / 2;
-        //    return string.Format("»ñµÃ{0}µã»¤¼×", (level + quality * 6) / 2);
+        card3_armor = (level + quality * 6) * 2;
+        //    return string.Format("ï¿½ï¿½ï¿½{0}ï¿½ã»¤ï¿½ï¿½", (level + quality * 6) * 2;
     }
 
     public static float card4_cd = 0f;
@@ -227,10 +229,10 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[4] + 1;
         int quality = card_setting.cards_ql[4] + 1;
 
-        //    return string.Format("{0}ÃëÄÚ±ä´ó{1}±¶,ÃâÒß¹¥»÷", 0.5 + (0.3 * level), 2 + quality);
+        //    return string.Format("{0}ï¿½ï¿½ï¿½Ú±ï¿½ï¿½{1}ï¿½ï¿½,ï¿½ï¿½ï¿½ß¹ï¿½ï¿½ï¿½", 0.5  2f + 0.8f * level, 3 + quality);
 
-        card4_cd = 0.5f + (0.3f * level);
-        card4_bigger = 2 + quality;
+        card4_cd = 2f + 0.8f * level;
+        card4_bigger = 3f + (1f * quality);
     }
 
     public static float card5_stop_cd = 0f;
@@ -239,8 +241,8 @@ public class hand_cards : MonoBehaviour
     {
         int level = card_setting.cards_lv[5] + 1;
         int quality = card_setting.cards_ql[5] + 1;
-        card5_stop_cd = 0.1f + (0.5f * level);
-        card5_tower_stop_cd = 0.1f + (0.5f * quality);
-        //    return string.Format("µ¯Ä»Ê±Í£{0}Ãë£¬ÅÚËþÊ±Í£{1}Ãë", 0.1 + (0.5 * level), 0.1 + (0.5 * quality));
+        card5_stop_cd =  2f + 0.8f * level;
+        card5_tower_stop_cd = 2f + 0.8f * quality;
+        //    return string.Format("ï¿½ï¿½Ä»Ê±Í£{0}ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ê±Í£{1}ï¿½ï¿½", 2 + (0.8 * level), 2f + (0.8 * quality));
     }
 }

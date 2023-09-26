@@ -99,6 +99,8 @@ namespace TDTK {
 			TDTK.onLifeE += OnLostLife;
 			TDTK.onGameStartE += OnGameStart;
 			TDTK.onGameStageE += OnGameStage;
+			TDTK.onPlayCardE += OnPlayCard;
+			TDTK.onCardMenuE += OnCardMenu;
 			TDTK.onGameOverE += OnGameOver;
 			
 			TDTK.onNewWaveE += OnNewWave;
@@ -126,6 +128,8 @@ namespace TDTK {
 			TDTK.onLifeE -= OnLostLife;
 			TDTK.onGameStartE -= OnGameStart;
 			TDTK.onGameStageE -= OnGameStage;
+			TDTK.onPlayCardE -= OnPlayCard;
+			TDTK.onCardMenuE -= OnCardMenu;
 			TDTK.onGameOverE -= OnGameOver;
 			
 			TDTK.onNewWaveE -= OnNewWave;
@@ -155,6 +159,9 @@ namespace TDTK {
 		public AudioClip gameWonSound;
 		public AudioClip gameLostSound;
 
+		public AudioClip playCardSuccessSound;
+		public AudioClip playCardFailSound;
+
 		void OnGameStart()
 		{
 			_PlaySound(gameStartSound);
@@ -167,6 +174,19 @@ namespace TDTK {
 				musicSource.clip = musicList[stage/3];
 				musicSource.Play();
 			}
+		}
+
+		void OnPlayCard(bool succeed)
+		{
+			if (succeed)
+				_PlaySound(playCardSuccessSound);
+			else
+				_PlaySound(playCardFailSound);
+		}
+
+		void OnCardMenu()
+		{
+			musicSource.Stop();
 		}
 
 		void OnGameOver(bool playerWon){ 

@@ -46,6 +46,14 @@ namespace TDTK {
 		public static event GameStageHandler onGameStageE;
 		public static void OnGameStage(int stage) { if(onGameStageE!=null) onGameStageE(stage); }
 
+		public delegate void PlayCardHandler(bool succeed);
+		public static event PlayCardHandler onPlayCardE;
+		public static void OnPlayCard(bool succeed) { if(onPlayCardE!=null) onPlayCardE(succeed); }
+
+		public delegate void CardMenuHandler();
+		public static event CardMenuHandler onCardMenuE;
+		public static void OnCardMenu() { if(onCardMenuE!=null) onCardMenuE(); }
+
 		public delegate void GameOverHandler(bool playerWon);
 		public static event GameOverHandler onGameOverE;			//call when game is over
 		public static void OnGameOver(bool playerWon){ if(onGameOverE!=null) onGameOverE(playerWon); }

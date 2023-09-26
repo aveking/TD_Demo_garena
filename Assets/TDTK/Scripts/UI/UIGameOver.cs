@@ -17,6 +17,7 @@ namespace TDTK
         private static UIGameOver instance;
 
         public Text lbTitle;
+        public Text lbReward;
 
         public GameObject buttonNext;
 
@@ -50,6 +51,7 @@ namespace TDTK
         public void OnMenuButton()
         {//返回抽卡菜单
          //GameControl.LoadMainMenu();
+            TDTK.OnCardMenu();
             SceneManager.LoadScene("TD_Demo_Garena_Card");
         }
 
@@ -60,7 +62,14 @@ namespace TDTK
             if (won) lbTitle.text = "闯关结束";
             else lbTitle.text = "Level Lost";
 
-            if (!(UIMainControl.AlwaysShowNextButton() || won) && buttonNext != null) buttonNext.SetActive(false);
+            if (!(UIMainControl.AlwaysShowNextButton() || won) && buttonNext != null) 
+            {
+                buttonNext.SetActive(false);
+                lbReward.enabled =false;
+            }
+
+            if (won)
+                card_setting.AddDrawNum();
 
             UIMainControl.FadeIn(canvasGroup, 0.25f, thisObj);
         }

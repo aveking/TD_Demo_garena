@@ -50,6 +50,7 @@ namespace TDTK
             }
 
             txtTimer.text = "";
+            drawNum.text = string.Format("x {0}", card_setting.draw_num);
             butSpawn.Init();
             butSpawnDefaultPos = butSpawn.rectT.localPosition;
 
@@ -149,7 +150,6 @@ namespace TDTK
             //}
             //else txtTimer.text = "";
 
-            //drawNum.text = string.Format("x {0}", card_setting.draw_num);
         }
 
     }

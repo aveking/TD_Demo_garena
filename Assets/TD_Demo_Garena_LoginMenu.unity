@@ -2100,13 +2100,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
+      propertyPath: gameWonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a71a6b15056b84866a28615d938b0b09, type: 3}
+    - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
+      propertyPath: gameLostSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e57bc7c7b3124f5e96c8aa2f6e6c495, type: 3}
+    - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
       propertyPath: gameStartSound
       value: 
       objectReference: {fileID: 8300000, guid: cba18f3f910944b3da87999b53bc7666, type: 3}
     - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
+      propertyPath: playCardFailSound
+      value: 
+      objectReference: {fileID: 8300000, guid: faff50f7131664b23a02a64065e98a38, type: 3}
+    - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
       propertyPath: musicList.Array.size
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
+      propertyPath: playCardSuccessSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e3c83e4a214a34301a27458c2e758d66, type: 3}
     - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
       propertyPath: musicList.Array.data[0]
       value: 
@@ -2180,7 +2196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.8}
-  m_AnchoredPosition: {x: 0, y: -113}
+  m_AnchoredPosition: {x: 0, y: -113.000015}
   m_SizeDelta: {x: 0, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014915688

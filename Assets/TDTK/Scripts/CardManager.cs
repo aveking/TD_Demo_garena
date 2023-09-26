@@ -6,7 +6,7 @@ namespace TDTK
 {
     public class CardManager : MonoBehaviour
     {
-        public int drawNum = 10;
+        public int drawNum;
 
         private int drawTimes = 0;
 
@@ -21,6 +21,9 @@ namespace TDTK
             myCards.Add(3, new Card(3, 0, 0));
             myCards.Add(4, new Card(4, 0, 0));
             myCards.Add(5, new Card(5, 0, 0));
+
+            drawNum = card_setting.draw_num;
+            
         }
 
         // Update is called once per frame
@@ -57,7 +60,7 @@ namespace TDTK
             int quality;
             int num = Random.Range(0, 10);
 
-            if (drawTimes < 10)
+            if (drawTimes < 5)
             {
                 quality = 0;
             }
@@ -68,7 +71,7 @@ namespace TDTK
                 else
                     quality = 1;
             }
-            else if (drawTimes < 50)
+            else if (drawTimes < 40)
             {
                 if (num < 2)
                     quality = 0;
@@ -77,7 +80,7 @@ namespace TDTK
                 else
                     quality = 2;
             }
-            else if (drawTimes < 100)
+            else if (drawTimes < 60)
             {
                 if (num < 2)
                     quality = 0;
@@ -88,7 +91,7 @@ namespace TDTK
                 else
                     quality = 3;
             }
-            else if (drawTimes < 150)
+            else if (drawTimes < 100)
             {
                 if (num < 1)
                     quality = 0;
@@ -212,17 +215,17 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("召唤{0}本魔典\n作战{1}秒，攻速+{2}%", 1 + quality / 2, 5 + level * 2, 5 + 5 * quality);
+                return string.Format("再召唤{0}本拦截法书{1}秒，施法速度+{2}%", quality, 5 + level, 2 * level + 3 * quality);
             else if (CardType == 1)
-                return string.Format("强力魔典持续{0}秒，最多攻击{1}次", 3 + (level / 2), level + (quality * 6));
+                return string.Format("对塔倾泻{0}秒火力，最多{1}发", 2 + 0.8 * level, level + (quality * 6));
             else if (CardType == 2)
-                return string.Format("{0}秒内移动+{1}%", 1 + (level / 2), 60 + (quality * 25));
+                return string.Format("{0}秒内移动+{1}%", 2 + 0.8 * level, 45 + (quality * 25));
             else if (CardType == 3)
-                return string.Format("获得{0}点护甲", (level + quality * 6) / 2);
+                return string.Format("化解伤害最多{0}点", (level + quality * 6) * 2);
             else if (CardType == 4)
-                return string.Format("{0}秒内变大{1}倍,免疫攻击", 0.5 + (0.3 * level), 2 + quality);
+                return string.Format("{0}秒内变大{1}倍,期间免疫攻击", 2 + 0.8 * level, 3 + quality);
             else
-                return string.Format("弹幕时停{0}秒，炮塔时停{1}秒", 0.1 + (0.5 * level), 0.1 + (0.5 * quality));
+                return string.Format("弹幕定住{0}秒，炮塔沉默{1}秒", 2 + 0.8 * level, 2 + 0.8 * quality);
         }
     }
 
