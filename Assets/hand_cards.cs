@@ -219,6 +219,7 @@ public class hand_cards : MonoBehaviour
         int quality = card_setting.cards_ql[3] + 1;
 
         card3_armor = (level + quality * 6) * 2;
+        global_gamesetting._inst.RefreshArmor();
         //    return string.Format("���{0}�㻤��", (level + quality * 6) * 2;
     }
 
@@ -241,7 +242,7 @@ public class hand_cards : MonoBehaviour
     {
         int level = card_setting.cards_lv[5] + 1;
         int quality = card_setting.cards_ql[5] + 1;
-        card5_stop_cd =  2f + 0.8f * level;
+        card5_stop_cd = 2f + 0.8f * level;
         card5_tower_stop_cd = 2f + 0.8f * quality;
         //    return string.Format("��Ļʱͣ{0}�룬����ʱͣ{1}��", 2 + (0.8 * level), 2f + (0.8 * quality));
     }

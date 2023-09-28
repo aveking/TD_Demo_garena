@@ -615,7 +615,8 @@ namespace TDTK
                     if (hand_cards.card3_armor > 0)
                     {
                         hand_cards.card3_armor -= attInstance.damageHP;
-                        Debug.Log($"hand_cards.card3_armor={hand_cards.card3_armor}");
+                        if (hand_cards.card3_armor < 0f) hand_cards.card3_armor = 0f;
+                        //Debug.Log($"hand_cards.card3_armor={hand_cards.card3_armor}");
                     }
                     else HP -= attInstance.damageHP;
                     //Debug.Log($"播放吸收子弹的特效 HP={HP} attInstance.damageHP={attInstance.damageHP}");
