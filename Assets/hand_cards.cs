@@ -82,7 +82,7 @@ public class hand_cards : MonoBehaviour
         {
             float min_width = all_width / (MAXNUM_HANDCARDS - 1);
             float cur_width = two_width - (two_width - min_width) * (handcard_t - 2) / (MAXNUM_HANDCARDS - 2);
-            float Left_Start = (1 - handcard_t) * (cur_width * 0.5f) - 256f;
+            float Left_Start = (1 - handcard_t) * (cur_width * 0.5f) - 256f + 175f;
             float cardpos_percent = handcard_t > 1 ? Mathf.PI / (handcard_t - 1) : Mathf.PI;
             for (int i = handcard_t - 1; i >= 0; --i, Left_Start += cur_width)
             {
