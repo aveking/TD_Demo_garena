@@ -8629,7 +8629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114120, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 118468, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_IsActive
@@ -8890,6 +8890,10 @@ PrefabInstance:
     - target: {fileID: 11401974, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Color.r
       value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402176, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11402616, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_PreferredWidth
@@ -9538,6 +9542,10 @@ PrefabInstance:
     - target: {fileID: 11449164, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449224, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11449314, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Enabled

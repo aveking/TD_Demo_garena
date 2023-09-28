@@ -126,7 +126,11 @@ namespace TDTK
 
 
         public void OnFFButton() { GameControl.FastForward(!GameControl.IsFastForwardOn()); }
-        public void OnFastForward(bool flag) { butFF.imgIcon.enabled = !flag; }
+        public void OnFastForward(bool flag)
+        {
+            butFF.imgIcon.enabled = !flag;
+            butFF.rootT.GetChild(1).gameObject.SetActive(flag);
+        }
 
 
         public void OnPerkButton()
