@@ -144,7 +144,7 @@ public class hand_cards : MonoBehaviour
         MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition = screen_pos;
     }
 
-    int[] card_costmp = { 3, 4, 2, 3, 5, 4, 7, 8, 9 };
+    public static int[] card_costmp = { 3, 4, 2, 3, 5, 4, 7, 8, 9 };
     void DragOverCard()
     {
         //Debug.Log(MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition);

@@ -70,6 +70,7 @@ public class global_gamesetting : MonoBehaviour
     public Text stage_ctime_txt;
 
     public Text Boss_HP_txt;
+    public Scrollbar Boss_HP_bar;
     public MyHandCard[] obj_cards;
 
     public float boss_currenthp = 200;//Boss的血量
@@ -115,6 +116,8 @@ public class global_gamesetting : MonoBehaviour
         boss_as.Play();
         boss_currenthp = _hp;
         Boss_HP_txt.text = _hp.ToString("0") + "/" + boss_maxhp.ToString("0");
+        Boss_HP_bar.size = _hp / boss_maxhp;
+        if (_hp <= 0) Boss_HP_bar.gameObject.SetActive(false);
     }
 
     int loc = 0;

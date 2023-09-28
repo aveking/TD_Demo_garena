@@ -41,7 +41,7 @@ namespace TDTK
         // Start is called before the first frame update
         void Start()
         {
-            offsetX = (int)((320f * Screen.width) / 1920);
+            offsetX = (int)((600 * Screen.width) / 1920);
             offsetY = (int)((380 * Screen.height) / 1080);
 
             // Reset stage

@@ -11,7 +11,22 @@ public class MyHandCard : MonoBehaviour, IPointerDownHandler
     public static Transform tf_dragone;
     public void OnPointerDown(PointerEventData e)
     {
-        tf_dragone = transform;
+        if (my_cg.alpha >= 1f)
+        {
+            tf_dragone = transform;
+        }
+    }
+    CanvasGroup my_cg;
+    private void Start()
+    {
+        my_cg = GetComponent<CanvasGroup>();
+    }
+
+    private void Update()
+    {
+        int cost_mp = hand_cards.card_costmp[card_id];
+        if (mp_mana._inst.mana_cnt >= cost_mp) my_cg.alpha = 1f;
+        else my_cg.alpha = 0.25f;
     }
 
     public void RefreshUI()

@@ -120,8 +120,8 @@ namespace TDTK
         public void OnSpawnButton()
         {//开始怪物出生逻辑
             SpawnManager.Spawn();
-            butSpawn.rectT.localPosition = new Vector3(0, 99999, 0);
-            butSpawn.label.text = "Next Wave";
+            //butSpawn.rectT.localPosition = new Vector3(0, 99999, 0);
+            //butSpawn.label.text = "Next Wave";
         }
 
 

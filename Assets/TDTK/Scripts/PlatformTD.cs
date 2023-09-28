@@ -116,7 +116,8 @@ namespace TDTK
 
         private void Start()
         {
-            tower_idx_my = tower_idx_build++;
+            //tower_idx_my = tower_idx_build++;
+            tower_idx_my = tower_idx_build; //修改第八关后炮台过很久才刷出来的bug
         }
 
         private void Update() //自动造塔

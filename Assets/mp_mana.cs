@@ -6,7 +6,7 @@ public class mp_mana : MonoBehaviour
     static public mp_mana _inst;
     internal bool start_game = false;
     float get_mana_cd = 0f;
-    int mana_cnt = 0;
+    public int mana_cnt = 0;
 
     void Start()
     {
