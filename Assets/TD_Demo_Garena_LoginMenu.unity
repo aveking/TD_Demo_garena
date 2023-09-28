@@ -1345,7 +1345,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u6700\u7EC8\u89E3\u91CA\u6743\u5F52 Garena \u6050\u9F8D\u6297\u72FC \u5C0F\u5718\u968A
+    \u6240\u6709\n\u7279\u5225\u611F\u8B1D\uFF1A\u96EA\u5152"
 --- !u!222 &600167400
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2196,7 +2197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.8}
-  m_AnchoredPosition: {x: 0, y: -113.000015}
+  m_AnchoredPosition: {x: 0, y: -113}
   m_SizeDelta: {x: 0, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014915688
