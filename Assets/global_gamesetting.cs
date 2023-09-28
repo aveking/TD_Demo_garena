@@ -82,7 +82,9 @@ public class global_gamesetting : MonoBehaviour
         _inst = this;
         magic_book.all_Projectile.Clear();
 
-        Boss_HP_txt.text = boss_maxhp.ToString("0") + "/" + boss_maxhp.ToString("0");
+        //Boss_HP_txt.text = boss_maxhp.ToString("0") + "/" + boss_maxhp.ToString("0");
+        hand_cards.card3_armor = 0f;
+        Boss_HP_txt.text = hand_cards.card3_armor.ToString("0."); //_hp.ToString("0") + "/" + boss_maxhp.ToString("0");
 
         stage_name_txt.text = "关卡" + current_stagelv;
         stage_h = GetStageSetting((uint)current_stagelv, array_stage_h);//关卡的长度
@@ -115,9 +117,14 @@ public class global_gamesetting : MonoBehaviour
         boss_as.Stop();
         boss_as.Play();
         boss_currenthp = _hp;
-        Boss_HP_txt.text = _hp.ToString("0") + "/" + boss_maxhp.ToString("0");
+        Boss_HP_txt.text = hand_cards.card3_armor.ToString("0."); //_hp.ToString("0") + "/" + boss_maxhp.ToString("0");
         Boss_HP_bar.size = _hp / boss_maxhp;
         if (_hp <= 0) Boss_HP_bar.gameObject.SetActive(false);
+    }
+
+    public void RefreshArmor()
+    {
+        Boss_HP_txt.text = hand_cards.card3_armor.ToString("0."); //_hp.ToString("0") + "/" + boss_maxhp.ToString("0");
     }
 
     int loc = 0;

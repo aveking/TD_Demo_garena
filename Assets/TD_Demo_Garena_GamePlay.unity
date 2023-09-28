@@ -10333,7 +10333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22437068, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10.999999
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 22438938, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -16047,7 +16047,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 999/999
+  m_Text: 0
 --- !u!114 &574884116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50456,7 +50456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e799087183eca4549adee10afa438d65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13310fbd1546f49feb085624d23e62eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
