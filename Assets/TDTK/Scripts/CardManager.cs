@@ -64,14 +64,14 @@ namespace TDTK
             {
                 quality = 0;
             }
-            else if (drawTimes < 20)
+            else if (drawTimes < 30)
             {
-                if (num < 7)
+                if (num < 5)
                     quality = 0;
                 else
                     quality = 1;
             }
-            else if (drawTimes < 40)
+            else if (drawTimes < 60)
             {
                 if (num < 2)
                     quality = 0;
@@ -80,26 +80,26 @@ namespace TDTK
                 else
                     quality = 2;
             }
-            else if (drawTimes < 60)
+            else if (drawTimes < 100)
             {
                 if (num < 2)
                     quality = 0;
                 else if (num < 5)
                     quality = 1;
-                else if (num < 9)
+                else if (num < 8)
                     quality = 2;
                 else
                     quality = 3;
             }
-            else if (drawTimes < 100)
+            else if (drawTimes < 150)
             {
                 if (num < 1)
                     quality = 0;
                 else if (num < 3)
                     quality = 1;
-                else if (num < 7)
+                else if (num < 5)
                     quality = 2;
-                else if (num < 9)
+                else if (num < 8)
                     quality = 3;
                 else
                     quality = 4;
@@ -128,13 +128,13 @@ namespace TDTK
             int level;
             int num = Random.Range(0, 20);
 
-            if (num < 8)
+            if (num < 6)
                 level = 0;
-            else if (num < 14)
+            else if (num < 11)
                 level = 1;
-            else if (num < 17)
+            else if (num < 15)
                 level = 2;
-            else if (num < 19)
+            else if (num < 18)
                 level = 3;
             else
                 level = 4;
@@ -215,17 +215,17 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("再召唤{0}本拦截魔典{1}秒，施法+{2}%", quality, 5 + level, 3 * level + 4 * quality);
+                return string.Format("+{0}本魔典{1}秒\n攻速+{2}%",  (quality - 0.5) * 2, 7 + level * 2 + quality, 18 * level);
             else if (CardType == 1)
-                return string.Format("{0}秒内攻击塔{1}次", 3 + 2 * quality, level * 3 + (quality * 4));
+                return string.Format("{0}秒内持续\n攻塔{1}次", 6 + 2 * quality,10 + level * 5 + (quality * 15));
             else if (CardType == 2)
-                return string.Format("{0}秒内移动+{1}%", 2 + 0.8 * level, 45 + (quality * 25));
+                return string.Format("{0}秒内移动\n+{1}%", 1.5f + 0.5f * level, 40 + (quality * 25));
             else if (CardType == 3)
-                return string.Format("获得护盾，耐久{0}", (level + quality * 6) * 2);
+                return string.Format("免伤{0}点", 7 + (level + quality * 5) * 3);
             else if (CardType == 4)
-                return string.Format("{0}秒内变大{1}倍,免疫攻击", 2f + 0.8f * level, 1 + 0.5f * quality);
+                return string.Format("无敌{0}秒\n变大{1}倍", 3f + 0.6f * level, 1.5f + 0.5f * quality);
             else
-                return string.Format("定住弹幕{0}秒，炮塔{1}秒", 2 + 0.8 * level, 2 + 0.8 * quality);
+                return string.Format("塔定住{0}秒\n弹幕定{1}秒", 2f + 0.5f * level, 1.5f + 0.5f * quality);
         }
     }
 

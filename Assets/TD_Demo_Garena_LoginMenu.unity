@@ -2109,6 +2109,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 6e57bc7c7b3124f5e96c8aa2f6e6c495, type: 3}
     - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
+      propertyPath: lostLifeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f91c825cb3ac42128d99ff69dbca5b7, type: 3}
+    - target: {fileID: 11400000, guid: 7c74af0a3d8ed0e4d8508208edfb317e, type: 3}
       propertyPath: gameStartSound
       value: 
       objectReference: {fileID: 8300000, guid: cba18f3f910944b3da87999b53bc7666, type: 3}

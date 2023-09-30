@@ -76,7 +76,8 @@ namespace TDTK
                     cards.Add(UICard.Clone(cards[0].rootObj, "Card" + i));
 
                     cards[i].rootT.Translate(transX, transY, 0);
-                    //cards[i].rootT.localScale = new Vector3(1.5f, 1.5f);
+
+                    cards[i].rootT.localScale = new Vector3(1.2f, 1.2f);
                     transX += offsetX;
                     if (i == 2)
                     {

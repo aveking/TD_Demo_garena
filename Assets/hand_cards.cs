@@ -144,7 +144,7 @@ public class hand_cards : MonoBehaviour
         MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition = screen_pos;
     }
 
-    public static int[] card_costmp = { 3, 4, 2, 3, 5, 4, 7, 8, 9 };
+    public static int[] card_costmp = { 3, 2, 2, 3, 5, 4, 7, 8, 9 };
     void DragOverCard()
     {
         //Debug.Log(MyHandCard.tf_dragone.GetComponent<RectTransform>().anchoredPosition);
@@ -179,11 +179,11 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[0] + 1;
         int quality = card_setting.cards_ql[0] + 1;
 
-        magic_book.books_cnt = quality;
-        magic_book.books_keepcd = 4 + level;
-        magic_book.books_attack_rate = 100f / (100 + 3 * level + 4 * quality);
+        magic_book.books_cnt = (int)((quality - 0.5f) * 2f);
+        magic_book.books_keepcd = 7 + level * 2 + quality;
+        magic_book.books_attack_rate = 100f / (100 + 18 * level);
 
-        //    return string.Format("�ٻ�{0}��ħ��\n��ս{1}�룬����+{2}%", quality, 4 + level, 3 * level + 4 * quality;
+        //    return string.Format("�ٻ�{0}��ħ��\n��ս{1}�룬����+{2}%",  (int)((quality - 0.5f) * 2f), 7 + level * 2 + quality, 18 * level;
     }
 
     public static float card1_cd = 0f;
@@ -194,10 +194,10 @@ public class hand_cards : MonoBehaviour
         int quality = card_setting.cards_ql[1] + 1;
         Debug.Log($"level = {level} quality={quality}");
 
-        card1_cd = 3f + 2f * quality;
-        card1_attack_cnt = (level * 3) + (quality * 4);
+        card1_cd = 6f + 2f * quality;
+        card1_attack_cnt = 10 + (level * 5) + (quality * 15);
 
-        //return string.Format("ǿ��ħ�����{0}�룬��๥��{1}��", 3f + 2f * quality, (level * 3)  + (quality * 4));
+        //return string.Format("ǿ��ħ�����{0}�룬��๥��{1}��", 6f + 2f * quality, 10 + (level * 5)  + (quality * 15));
     }
 
     public static float card2_speed_cd = 0f;
@@ -207,9 +207,9 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[2] + 1;
         int quality = card_setting.cards_ql[2] + 1;
 
-        card2_speed_cd = 2f + 0.8f * level;
-        card2_speed_rate = (100 + 45 + (quality * 25)) / 100f;
-        //    return string.Format("{0}�����ƶ�+{1}%",2 + 0.8f * level, 45 + (quality * 25));
+        card2_speed_cd = 1.5f + 0.5f * level;
+        card2_speed_rate = (100 + 40 + (quality * 25)) / 100f;
+        //    return string.Format("{0}�����ƶ�+{1}%",1,5f + 0.5f * level, 40 + (quality * 25));
     }
 
     public static float card3_armor = 0f;
@@ -218,9 +218,9 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[3] + 1;
         int quality = card_setting.cards_ql[3] + 1;
 
-        card3_armor = (level + quality * 6) * 2;
+        card3_armor = 7 + (level + quality * 5) * 3;
         global_gamesetting._inst.RefreshArmor();
-        //    return string.Format("���{0}�㻤��", (level + quality * 6) * 2;
+        //    return string.Format("���{0}�㻤��",7 + (level + quality * 5) * 3;
     }
 
     public static float card4_cd = 0f;
@@ -230,10 +230,10 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[4] + 1;
         int quality = card_setting.cards_ql[4] + 1;
 
-        //    return string.Format("{0}���ڱ��{1}��,���߹���", 0.5  2f + 0.8f * level, 3 + quality);
+        //    return string.Format("{0}���ڱ��{1}��,���߹���", 0.5  2f 3f+ 0.6f * level, 1.5f + 0.5f * quality);
 
-        card4_cd = 2f + 0.8f * level;
-        card4_bigger = 1f + (0.5f * quality);
+        card4_cd = 3f + 0.6f * level;
+        card4_bigger = 1.5f + (0.5f * quality);
     }
 
     public static float card5_stop_cd = 0f;
@@ -242,8 +242,8 @@ public class hand_cards : MonoBehaviour
     {
         int level = card_setting.cards_lv[5] + 1;
         int quality = card_setting.cards_ql[5] + 1;
-        card5_stop_cd = 2f + 0.8f * level;
-        card5_tower_stop_cd = 2f + 0.8f * quality;
-        //    return string.Format("��Ļʱͣ{0}�룬����ʱͣ{1}��", 2 + (0.8 * level), 2f + (0.8 * quality));
+        card5_stop_cd =  1.5f + 0.5f * quality;
+        card5_tower_stop_cd = 2f + 0.5f * level;
+        //    return string.Format("��Ļʱͣ{0}�룬����ʱͣ{1}��", 1.5f + (0.5f * quality), 2f + (0.5f * level));
     }
 }
