@@ -13,9 +13,9 @@ public static class card_setting
     public static int[] cards_ql = new int[CARD_NUM];//Ʒ��
     public static string[] cards_des = new string[CARD_NUM];//����
 
-    public static void AddDrawNum()
+    public static void AddDrawNum(int num)
     {
-        draw_num += 6;
+        draw_num += num;
     }
 
     public static void ChangeCard(int _idx, int _lv, int _ql, string _des)
