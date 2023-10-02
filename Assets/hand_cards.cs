@@ -180,8 +180,8 @@ public class hand_cards : MonoBehaviour
         int quality = card_setting.cards_ql[0] + 1;
 
         magic_book.books_cnt = (int)((quality - 0.5f) * 2f);
-        magic_book.books_keepcd = 7 + level * 2 + quality;
-        magic_book.books_attack_rate = 100f / (100 + 18 * level);
+        magic_book.books_keepcd = 15;
+        magic_book.books_attack_rate = 100f / (100 + 16 * level);
 
         //    return string.Format("�ٻ�{0}��ħ��\n��ս{1}�룬����+{2}%",  (int)((quality - 0.5f) * 2f), 7 + level * 2 + quality, 18 * level;
     }
@@ -208,7 +208,7 @@ public class hand_cards : MonoBehaviour
         int quality = card_setting.cards_ql[2] + 1;
 
         card2_speed_cd = 1.5f + 0.5f * level;
-        card2_speed_rate = (100 + 40 + (quality * 25)) / 100f;
+        card2_speed_rate = (100 + 40 + (quality * 30)) / 100f;
         //    return string.Format("{0}�����ƶ�+{1}%",1,5f + 0.5f * level, 40 + (quality * 25));
     }
 
@@ -218,7 +218,7 @@ public class hand_cards : MonoBehaviour
         int level = card_setting.cards_lv[3] + 1;
         int quality = card_setting.cards_ql[3] + 1;
 
-        card3_armor = 7 + (level + quality * 5) * 3;
+        card3_armor = (level + quality * 6) * 5;
         global_gamesetting._inst.RefreshArmor();
         //    return string.Format("���{0}�㻤��",7 + (level + quality * 5) * 3;
     }

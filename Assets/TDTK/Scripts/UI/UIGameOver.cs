@@ -42,7 +42,6 @@ namespace TDTK
             {
                 //GameControl.LoadNextScene();
                 global_gamesetting.current_stagelv++;
-                card_setting.AddDrawNum();
                 GameControl.RestartScene();
             }
         }
@@ -79,6 +78,9 @@ namespace TDTK
             }
 
             lbReward.enabled = won;
+            lbReward.text = won? "小家伙们安全到家\n获得卡包：6个" : "损失一条命\n剩余复活机会：1次";
+            card_setting.AddDrawNum(won ? 6: 1);
+            
             UIMainControl.FadeIn(canvasGroup, 0.25f, thisObj);
         }
         public static void Hide() { instance._Hide(); }

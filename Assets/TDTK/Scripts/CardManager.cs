@@ -15,15 +15,12 @@ namespace TDTK
         // Start is called before the first frame update
         void Start()
         {
-            myCards.Add(0, new Card(0, 0, 0));
-            myCards.Add(1, new Card(1, 0, 0));
-            myCards.Add(2, new Card(2, 0, 0));
-            myCards.Add(3, new Card(3, 0, 0));
-            myCards.Add(4, new Card(4, 0, 0));
-            myCards.Add(5, new Card(5, 0, 0));
-
             drawNum = card_setting.draw_num;
-            
+
+            for (int i=0; i<card_setting.CARD_NUM; i++)
+            {
+                myCards.Add(i, new Card(i, card_setting.cards_ql[i], card_setting.cards_lv[i]));
+            }
         }
 
         // Update is called once per frame
@@ -60,7 +57,7 @@ namespace TDTK
             int quality;
             int num = Random.Range(0, 10);
 
-            if (drawTimes < 5)
+            if (drawTimes < 10)
             {
                 quality = 0;
             }
@@ -215,13 +212,13 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("+{0}本魔典{1}秒\n攻速+{2}%",  (quality - 0.5) * 2, 7 + level * 2 + quality, 18 * level);
+                return string.Format("+{0}本魔典{1}秒\n攻速+{2}%",  (quality - 0.5) * 2, 15, 16 * level);
             else if (CardType == 1)
                 return string.Format("{0}秒内持续\n攻塔{1}次", 6 + 2 * quality,10 + level * 5 + (quality * 15));
             else if (CardType == 2)
-                return string.Format("{0}秒内移动\n+{1}%", 1.5f + 0.5f * level, 40 + (quality * 25));
+                return string.Format("{0}秒内移动\n+{1}%", 1.5f + 0.5f * level, 40 + (quality * 30));
             else if (CardType == 3)
-                return string.Format("免伤{0}点", 7 + (level + quality * 5) * 3);
+                return string.Format("免伤{0}点", (level + quality * 6) * 5);
             else if (CardType == 4)
                 return string.Format("无敌{0}秒\n变大{1}倍", 3f + 0.6f * level, 1.5f + 0.5f * quality);
             else
