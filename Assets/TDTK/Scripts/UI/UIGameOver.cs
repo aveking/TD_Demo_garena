@@ -5,6 +5,7 @@ using System.Collections;
 
 using TDTK;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace TDTK
 {
@@ -20,6 +21,7 @@ namespace TDTK
         public Text lbReward;
 
         public GameObject buttonNext;
+        public GameObject buttonCard;
         public GameObject buttonMenu;
 
 
@@ -35,7 +37,6 @@ namespace TDTK
             thisObj.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
         }
 
-
         public void OnNextButton()
         {
             if (global_gamesetting._inst.boss_currenthp > 0)
@@ -45,17 +46,35 @@ namespace TDTK
                 GameControl.RestartScene();
             }
         }
+
         public void OnRestartButton()
         {
             GameControl.RestartScene();
         }
+
         public void OnMenuButton()
+        {
+            TDTK.OnCardOrMainMenu();
+            Achievement.BestRecord = global_gamesetting.current_stagelv - 1 > Achievement.BestRecord ? 
+                global_gamesetting.current_stagelv - 1 : Achievement.BestRecord;
+            SceneManager.LoadScene("TD_Demo_Garena_LoginMenu");
+            ResetGame();
+        }
+
+        public void OnCardButton()
         {//返回抽卡菜单
          //GameControl.LoadMainMenu();
-            TDTK.OnCardMenu();
+            global_gamesetting.current_stagelv++;
+            TDTK.OnCardOrMainMenu();
             SceneManager.LoadScene("TD_Demo_Garena_Card");
         }
 
+        private void ResetGame()
+        {
+            card_setting.Reset();
+            Achievement.Reset();
+            global_gamesetting.Reset();
+        }
 
         public static void Show(bool won) { instance._Show(won); }
         public void _Show(bool won)
@@ -72,15 +91,25 @@ namespace TDTK
             {
                 buttonMenu.SetActive(false);
                 Achievement.Combo++;
+                if (Achievement.Combo == 18)
+                    Achievement.Wins18 = true;
+                lbReward.text = "小家伙们安全到家\n获得卡包：6个";
+            }
+            else if (Achievement.Retries > 0)
+            {
+                buttonNext.SetActive(false);
+                buttonMenu.SetActive(false);
+                Achievement.Retries--;
+                Achievement.Combo = 0;
+                lbReward.text = string.Format("损失一条命\n剩余复活机会：{0}次", Achievement.Retries);
             }
             else
             {
+                buttonCard.SetActive(false);
                 buttonNext.SetActive(false);
-                Achievement.Combo = 0;
+                lbReward.text = string.Format("你玩完了 - {0}", global_gamesetting.current_stagelv);
             }
 
-            lbReward.enabled = won;
-            lbReward.text = won? "小家伙们安全到家\n获得卡包：6个" : "损失一条命\n剩余复活机会：1次";
             card_setting.AddDrawNum(won ? 6: 1);
             
             UIMainControl.FadeIn(canvasGroup, 0.25f, thisObj);

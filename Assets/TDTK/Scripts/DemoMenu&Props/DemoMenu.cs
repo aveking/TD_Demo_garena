@@ -24,8 +24,7 @@ namespace TDTK
         //~ public List<string> levelDesp=new List<string>();
         public List<string> levelDespList = new List<string>();
         public List<UIButton> buttonList = new List<UIButton>();
-
-        //public Text labelTooltip;
+        public Text txtBestRecord;
         public Transform tt;
 
         // Use this for initialization
@@ -42,6 +41,9 @@ namespace TDTK
             displayedNameList.Add("开始游戏");
             levelNameList.Add("TD_Demo_Garena_Card");
             levelDespList.Add("garena demo\n" + genText);
+
+            txtBestRecord.enabled = Achievement.BestRecord > 0;
+            txtBestRecord.text = string.Format(txtBestRecord.text, Achievement.BestRecord);
 
             //displayedNameList.Add("Demo FixedPath");
             //levelNameList.Add("TDTK_Demo_FixedPath");

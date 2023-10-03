@@ -45,7 +45,7 @@ namespace TDTK
         public void OnMenuButton()
         {
             //GameControl.LoadMainMenu();
-            TDTK.OnCardMenu();
+            TDTK.OnCardOrMainMenu();
             UnityEngine.SceneManagement.SceneManager.LoadScene("TD_Demo_Garena_Card");
         }
 

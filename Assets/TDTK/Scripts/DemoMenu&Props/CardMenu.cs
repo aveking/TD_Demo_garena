@@ -29,9 +29,9 @@ namespace TDTK
 
         public ReplaceCardMenu replaceCardMenu;
 
-        public Image draws50;
-        public Image draws100;
-        public Image wins18;
+        public GameObject imgDraws50;
+        public GameObject imgDraws100;
+        public GameObject imgWins18;
 
         private int offsetX = 320; //注意这里的screen w=1920 h=1080
         private int offsetY = 380;
@@ -92,9 +92,10 @@ namespace TDTK
 
             DrawNum.text = string.Format("x {0}", cardManager.drawNum);
 
-            draws50.enabled = Achievement.Draws50;
-            draws100.enabled = Achievement.Draws100;
-            wins18.enabled = Achievement.Wins18;
+            Debug.Log(Achievement.Draws50);
+            imgDraws50.SetActive(Achievement.Draws50);
+            imgDraws100.SetActive(Achievement.Draws100);
+            imgWins18.SetActive(Achievement.Wins18);
         }
 
         void OnDrawCard(GameObject butObj, int pointerID = -1)

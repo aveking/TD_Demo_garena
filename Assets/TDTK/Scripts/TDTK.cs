@@ -52,7 +52,7 @@ namespace TDTK {
 
 		public delegate void CardMenuHandler();
 		public static event CardMenuHandler onCardMenuE;
-		public static void OnCardMenu() { if(onCardMenuE!=null) onCardMenuE(); }
+		public static void OnCardOrMainMenu() { if(onCardMenuE!=null) onCardMenuE(); }
 
 		public delegate void GameOverHandler(bool playerWon);
 		public static event GameOverHandler onGameOverE;			//call when game is over

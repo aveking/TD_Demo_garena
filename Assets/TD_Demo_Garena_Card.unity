@@ -4087,9 +4087,9 @@ MonoBehaviour:
   DrawNum: {fileID: 2001442166}
   cardManager: {fileID: 277426098}
   replaceCardMenu: {fileID: 368926154}
-  draws50: {fileID: 119118534}
-  draws100: {fileID: 1156985685}
-  wins18: {fileID: 333411976}
+  imgDraws50: {fileID: 119118532}
+  imgDraws100: {fileID: 1156985683}
+  imgWins18: {fileID: 333411974}
 --- !u!82 &1516982257
 AudioSource:
   m_ObjectHideFlags: 0

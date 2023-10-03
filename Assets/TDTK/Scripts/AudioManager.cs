@@ -1,8 +1,5 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-
-using TDTK;
 
 namespace TDTK {
 
@@ -171,7 +168,13 @@ namespace TDTK {
 		{
             if (stage % 3 == 0)
             {
-				musicSource.clip = musicList[stage/3];
+				int index = stage / 3;
+				index = index < musicList.Count ? index : musicList.Count-1;
+				musicSource.clip = musicList[index];
+				musicSource.Play();
+			}
+			else if (!musicSource.isPlaying)
+			{
 				musicSource.Play();
 			}
 		}
