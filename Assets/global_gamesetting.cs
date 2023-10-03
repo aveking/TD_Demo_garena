@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +5,9 @@ public static class card_setting
 {
     public const int CARD_NUM = 6;
 
-    public static int draw_num = 55;
+    public static int draw_num = 5;
+
+    public static int draw_times = 0;
 
     public static int[] cards_lv = new int[CARD_NUM];//�ȼ�
     public static int[] cards_ql = new int[CARD_NUM];//Ʒ��
@@ -31,10 +31,12 @@ public static class card_setting
 
 public static class Achievement
 {
-    public static int curStage = 0;
-    public static bool win5 = false;
-    public static bool win10 = false;
-    public static bool win20 = false;
+
+    public static uint Combo = 0;
+
+    public static bool Draws50= false;
+    public static bool Draws100 = false;
+    public static bool Wins18 = false;
 
 }
 

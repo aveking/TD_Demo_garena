@@ -71,10 +71,12 @@ namespace TDTK
             if (won)
             {
                 buttonMenu.SetActive(false);
+                Achievement.Combo++;
             }
             else
             {
                 buttonNext.SetActive(false);
+                Achievement.Combo = 0;
             }
 
             lbReward.enabled = won;

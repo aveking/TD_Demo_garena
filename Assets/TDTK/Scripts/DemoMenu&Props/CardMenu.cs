@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 
 
@@ -30,10 +29,9 @@ namespace TDTK
 
         public ReplaceCardMenu replaceCardMenu;
 
-        public List<string> levelNameList = new List<string>();
-        //~ public List<string> levelDesp=new List<string>();
-        public List<string> levelDespList = new List<string>();
-
+        public Image draws50;
+        public Image draws100;
+        public Image wins18;
 
         private int offsetX = 320; //注意这里的screen w=1920 h=1080
         private int offsetY = 380;
@@ -44,14 +42,8 @@ namespace TDTK
             offsetX = (int)((350 * Screen.width) / 1920);
             offsetY = (int)((400 * Screen.height) / 1080);
 
-            // Reset stage
-            Achievement.curStage = 0;
-
             lableList.Add("抽卡");
             lableList.Add("前往探险 >");
-
-            levelNameList.Add("TD_Demo_Garena_GamePlay");
-            levelDespList.Add("Description - Replace me");
 
             // Draw Card Button
             drawCardBtn.Init();
@@ -99,6 +91,10 @@ namespace TDTK
             }
 
             DrawNum.text = string.Format("x {0}", cardManager.drawNum);
+
+            draws50.enabled = Achievement.Draws50;
+            draws100.enabled = Achievement.Draws100;
+            wins18.enabled = Achievement.Wins18;
         }
 
         void OnDrawCard(GameObject butObj, int pointerID = -1)
@@ -127,9 +123,9 @@ namespace TDTK
             }
 
 #if UNITY_5_3_OR_NEWER
-            SceneManager.LoadScene(levelNameList[0]);
+            SceneManager.LoadScene("TD_Demo_Garena_GamePlay");
 #else
-			Application.LoadLevel(levelNameList[0]);
+			Application.LoadLevel("TD_Demo_Garena_GamePlay");
 #endif
         }
 

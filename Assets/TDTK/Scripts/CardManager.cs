@@ -7,7 +7,6 @@ namespace TDTK
     public class CardManager : MonoBehaviour
     {
         public int drawNum;
-
         private int drawTimes = 0;
 
         private Dictionary<int, Card> myCards = new Dictionary<int, Card>();
@@ -57,18 +56,18 @@ namespace TDTK
             int quality;
             int num = Random.Range(0, 10);
 
-            if (drawTimes < 10)
+            if (card_setting.draw_times < 10)
             {
                 quality = 0;
             }
-            else if (drawTimes < 30)
+            else if (card_setting.draw_times < 30)
             {
                 if (num < 5)
                     quality = 0;
                 else
                     quality = 1;
             }
-            else if (drawTimes < 60)
+            else if (card_setting.draw_times < 60)
             {
                 if (num < 2)
                     quality = 0;
@@ -77,7 +76,7 @@ namespace TDTK
                 else
                     quality = 2;
             }
-            else if (drawTimes < 100)
+            else if (card_setting.draw_times < 100)
             {
                 if (num < 2)
                     quality = 0;
@@ -88,7 +87,7 @@ namespace TDTK
                 else
                     quality = 3;
             }
-            else if (drawTimes < 150)
+            else if (card_setting.draw_times < 150)
             {
                 if (num < 1)
                     quality = 0;
@@ -151,8 +150,18 @@ namespace TDTK
                 Quality = GenQuality()
             };
 
+            card_setting.draw_times++;
             drawTimes++;
             drawNum--;
+
+            if (drawTimes== 50)
+            {
+                Achievement.Draws50 = true;
+            }
+            else if (drawTimes == 100)
+            {
+                Achievement.Draws100 = true;
+            }
 
             return card;
         }
@@ -212,17 +221,17 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("+{0}本魔典{1}秒\n攻速+{2}%",  (quality - 0.5) * 2, 15, 16 * level);
+                return string.Format("+{0}本魔典{1}秒\n攻速+{2}%",  (quality - 0.5) * 2, 15, 14 * level);
             else if (CardType == 1)
                 return string.Format("{0}秒内持续\n攻塔{1}次", 6 + 2 * quality,10 + level * 5 + (quality * 15));
             else if (CardType == 2)
-                return string.Format("{0}秒内移动\n+{1}%", 1.5f + 0.5f * level, 40 + (quality * 30));
+                return string.Format("{0}秒内移动\n+{1}%", 1.6f + 0.4f * level, 40 + (quality * 20));
             else if (CardType == 3)
-                return string.Format("免伤{0}点", (level + quality * 6) * 5);
+                return string.Format("免伤{0}点", (level + quality * 6) * 3);
             else if (CardType == 4)
-                return string.Format("无敌{0}秒\n变大{1}倍", 3f + 0.6f * level, 1.5f + 0.5f * quality);
+                return string.Format("变大{0}倍\n无敌{1}秒", 1.7f + 0.8f * level, 3f + 0.5f * quality);
             else
-                return string.Format("塔定住{0}秒\n弹幕定{1}秒", 2f + 0.5f * level, 1.5f + 0.5f * quality);
+                return string.Format("塔定住{0}秒\n弹幕定{1}秒", 2f + 0.5f * level, 1.7f + 0.3f * quality);
         }
     }
 
