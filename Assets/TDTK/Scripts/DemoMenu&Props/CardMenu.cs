@@ -43,7 +43,7 @@ namespace TDTK
             offsetY = (int)((400 * Screen.height) / 1080);
 
             lableList.Add("抽卡");
-            lableList.Add("前往探险 >");
+            lableList.Add("冲塔");
 
             // Draw Card Button
             drawCardBtn.Init();
@@ -92,7 +92,6 @@ namespace TDTK
 
             DrawNum.text = string.Format("x {0}", cardManager.drawNum);
 
-            Debug.Log(Achievement.Draws50);
             imgDraws50.SetActive(Achievement.Draws50);
             imgDraws100.SetActive(Achievement.Draws100);
             imgWins18.SetActive(Achievement.Wins18);

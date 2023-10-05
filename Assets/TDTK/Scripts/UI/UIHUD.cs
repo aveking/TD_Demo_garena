@@ -169,7 +169,8 @@ namespace TDTK
             //else txtTimer.text = "";
 
             //Debug.Log(GameControl.GetPlayerLife());
-            txtCombo.text = string.Format("Combo x {0}", Achievement.Combo);
+            txtCombo.enabled = Achievement.Combo > 0;
+            txtCombo.text = string.Format("连胜 x {0}", Achievement.Combo);
             if (global_gamesetting._inst.boss_currenthp <= 0)
             {
                 GameControl.GameOver();

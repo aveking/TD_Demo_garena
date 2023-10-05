@@ -166,9 +166,16 @@ namespace TDTK {
 
 		void OnGameStage(int stage)
 		{
-            if (stage % 3 == 0)
-            {
-				int index = stage / 3;
+            // if (stage % 3 == 0)
+            // {
+			// 	int index = stage / 3;
+			// 	index = index < musicList.Count ? index : musicList.Count-1;
+			// 	musicSource.clip = musicList[index];
+			// 	musicSource.Play();
+			// }
+			if (Achievement.Combo % 3 == 0)
+			{
+				int index = Achievement.Combo / 3;
 				index = index < musicList.Count ? index : musicList.Count-1;
 				musicSource.clip = musicList[index];
 				musicSource.Play();
@@ -177,6 +184,8 @@ namespace TDTK {
 			{
 				musicSource.Play();
 			}
+
+			
 		}
 
 		void OnPlayCard(bool succeed)

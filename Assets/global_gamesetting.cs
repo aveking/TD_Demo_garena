@@ -16,7 +16,10 @@ public static class card_setting
     public static void Reset()
     {
         draw_num = Achievement.BestRecord > 5 ? Achievement.BestRecord : 5;
-        draw_times = 0;
+        draw_times = Achievement.Draws50 ? 10: 0;
+        draw_times += Achievement.Draws100 ? 20: 0;
+        draw_times += Achievement.Wins18 ? 30: 0;
+
         for (int i=0; i <CARD_NUM; i++)
         {
             cards_lv[i] = 0;
@@ -43,7 +46,7 @@ public static class card_setting
 public static class Achievement
 {
     public static uint Retries = 3;
-    public static uint Combo = 0;
+    public static int Combo = 0;
     public static int BestRecord = 0;
 
     public static bool Draws50= false;

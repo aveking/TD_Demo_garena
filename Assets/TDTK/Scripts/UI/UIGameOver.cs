@@ -55,7 +55,7 @@ namespace TDTK
         public void OnMenuButton()
         {
             TDTK.OnCardOrMainMenu();
-            Achievement.BestRecord = global_gamesetting.current_stagelv - 1 > Achievement.BestRecord ? 
+            Achievement.BestRecord = global_gamesetting.current_stagelv - 1 > Achievement.BestRecord ?
                 global_gamesetting.current_stagelv - 1 : Achievement.BestRecord;
             SceneManager.LoadScene("TD_Demo_Garena_LoginMenu");
             ResetGame();
@@ -65,6 +65,7 @@ namespace TDTK
         {//返回抽卡菜单
          //GameControl.LoadMainMenu();
             global_gamesetting.current_stagelv++;
+            Achievement.Combo = 0;
             TDTK.OnCardOrMainMenu();
             SceneManager.LoadScene("TD_Demo_Garena_Card");
         }
@@ -92,8 +93,15 @@ namespace TDTK
                 buttonMenu.SetActive(false);
                 Achievement.Combo++;
                 if (Achievement.Combo == 18)
+                {
                     Achievement.Wins18 = true;
-                lbReward.text = "小家伙们安全到家\n获得卡包：6个";
+                    card_setting.draw_times += 30;
+                }
+
+
+                int num = 5 + (Achievement.Combo > 5? 5: Achievement.Combo);
+                lbReward.text = string.Format("小家伙们安全到家\n获得卡包：{0}个", num);
+                card_setting.AddDrawNum(num);
             }
             else if (Achievement.Retries > 0)
             {
@@ -101,7 +109,9 @@ namespace TDTK
                 buttonMenu.SetActive(false);
                 Achievement.Retries--;
                 Achievement.Combo = 0;
+                
                 lbReward.text = string.Format("损失一条命\n剩余复活机会：{0}次", Achievement.Retries);
+                card_setting.AddDrawNum(10);
             }
             else
             {
@@ -110,8 +120,6 @@ namespace TDTK
                 lbReward.text = string.Format("你玩完了 - {0}", global_gamesetting.current_stagelv);
             }
 
-            card_setting.AddDrawNum(won ? 6: 1);
-            
             UIMainControl.FadeIn(canvasGroup, 0.25f, thisObj);
         }
         public static void Hide() { instance._Hide(); }

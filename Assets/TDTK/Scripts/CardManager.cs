@@ -16,7 +16,7 @@ namespace TDTK
         {
             drawNum = card_setting.draw_num;
 
-            for (int i=0; i<card_setting.CARD_NUM; i++)
+            for (int i = 0; i < card_setting.CARD_NUM; i++)
             {
                 myCards.Add(i, new Card(i, card_setting.cards_ql[i], card_setting.cards_lv[i]));
             }
@@ -154,13 +154,15 @@ namespace TDTK
             drawTimes++;
             drawNum--;
 
-            if (drawTimes== 50)
+            if (drawTimes == 50)
             {
                 Achievement.Draws50 = true;
+                card_setting.draw_times += 10;
             }
             else if (drawTimes == 100)
             {
                 Achievement.Draws100 = true;
+                card_setting.draw_times += 20;
             }
 
             return card;
@@ -221,9 +223,9 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("+{0}本魔典{1}秒\n攻速+{2}%",  (quality - 0.5) * 2, 15, 14 * level);
+                return string.Format("+{0}本魔典{1}秒\n攻速+{2}%", (quality - 0.5) * 2, 15, 14 * level);
             else if (CardType == 1)
-                return string.Format("{0}秒内持续\n攻塔{1}次", 6 + 2 * quality,10 + level * 5 + (quality * 15));
+                return string.Format("{0}秒内持续\n攻塔{1}次", 6 + 2 * quality, 10 + level * 5 + (quality * 15));
             else if (CardType == 2)
                 return string.Format("{0}秒内移动\n+{1}%", 1.6f + 0.4f * level, 40 + (quality * 20));
             else if (CardType == 3)

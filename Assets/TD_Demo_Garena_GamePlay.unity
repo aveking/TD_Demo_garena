@@ -7215,6 +7215,7 @@ GameObject:
   - component: {fileID: 290357310}
   - component: {fileID: 290357312}
   - component: {fileID: 290357311}
+  - component: {fileID: 290357313}
   m_Layer: 5
   m_Name: costtime
   m_TagString: Untagged
@@ -7254,7 +7255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7283,6 +7284,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290357309}
   m_CullTransparentMesh: 1
+--- !u!114 &290357313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290357309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &291195661
 GameObject:
   m_ObjectHideFlags: 0
@@ -9573,44 +9589,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[0]
-      value: "Tips:\u4ECE3\u5F20\u624B\u724C\u4E2D\u9009\u4E00\u5F20\u51C6\u5907\u5C31\u7EEA\u7684\u5411\u4E0A\u62D6\u52A8\u540E\u677E\u624B\u5373\u53EF\u65BD\u653E\u5BF9\u5E94\u6280\u80FD"
+      value: "\u6E38\u620F\u5F00\u59CB\u540E\u4ECE\u624B\u724C\u4E2D\u90091\u5F20\u5145\u80FD\u5B8C\u6BD5\u7684\u5411\u4E0A\u6ED1\u52A8\u5E76\u677E\u624B\u5373\u53EF\u91CA\u653E\u6280\u80FD"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[1]
-      value: "Tips:\u6BCF\u672C\u9B54\u5178\u6BCF\u9694\u51E0\u79D2\u4F1A\u81EA\u52A8\u5F15\u7206\u4E00\u53D1\u98DE\u6765\u7684\u5B50\u5F39"
+      value: "\u6BCF\u672C\u62B5\u6297\u6CD5\u5178\u6BCF\u9694\u4E00\u5B9A\u65F6\u95F4\u4F1A\u81EA\u52A8\u62B5\u6D88\u4E00\u53D1\u98DE\u6765\u7684\u5B50\u5F39"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[2]
-      value: "Tips:\u4E09\u8FDE\u80DC\u540E\u53EF\u7D2F\u52A0\u901A\u5173\u5956\u52B1\u52A0\u6210buff\uFF08\u9000\u51FA\u6218\u6597\u754C\u9762\u65F6\u91CD\u5236\uFF09"
+      value: "\u6BCF\u5F20\u624B\u724C\u5747\u6765\u81EA\u62BD\u5361\u754C\u9762\u4E2D\u81EA\u884C\u517B\u6210\u7684\u5361\u7EC4"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[3]
-      value: "Tips:\u62BD\u5230\u5E76\u66FF\u6362\u66F4\u597D\u7684\u5361\u724C\u662F\u8FDE\u80DC\u7684\u5173\u952E"
+      value: "\u88AB\u91CD\u706B\u529B\u56F4\u653B\u65F6\u3010\u8FC5\u6377\u6B65\u4F10\u3011\u548C\u3010THE
+        WORLD\uFF01\u3011\u662F\u5FEB\u901F\u8131\u56F0\u7684\u4F73\u9009"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[4]
-      value: "Tips:\u53F3\u4E0A\u89D2\u7684\u9F7F\u8F6E\u6309\u94AE\u53EF\u968F\u65F6\u6682\u505C\u6E38\u620F"
+      value: "\u8FDE\u80DC\u65F6\u901A\u5173\u5956\u52B1\u7684\u5361\u5305\u6570\u91CF\u4F1A\u9012\u589E\uFF08\u4E0A\u9650\u4E3A10\uFF09\uFF0C\u56DE\u53BB\u62BD\u5361\u65F6\u9012\u589E\u91CD\u5236"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[5]
-      value: "Tips:\u88AB\u91CD\u706B\u529B\u5C3E\u968F\u65F6\u3010\u8FC5\u6377\u6B65\u4F10\u3011\u548C\u3010THE
-        WORLD\uFF01\u3011\u662F\u6700\u4F73\u9009\u62E9"
+      value: "\u5386\u53F2\u6700\u4F73\u6210\u7EE9\u4F1A\u5F71\u54CD\u6BCF\u8F6E\u6E38\u620F\u521D\u59CB\u65F6\u7684\u5361\u5305\u6570\u91CF\uFF0C\u9ED8\u8BA4\u6700\u5C0F\u4E3A5\u4E2A\u5361\u5305"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[6]
-      value: "Tips:\u88AB\u706B\u529B\u5305\u56F4\u65F6\u3010\u6CD5\u5929\u8C61\u5730\u3011\u53EF\u83B7\u5F97\u6700\u5927\u6536\u76CA"
+      value: "\u62B5\u6297\u6CD5\u5178\u65E0\u6CD5\u5BF9\u88AB\u5B9A\u4F4F\u7684\u5B50\u5F39\u751F\u6548"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[7]
-      value: "Tips:\u6CA1\u6709\u4E0D\u5F3A\u7684\u5361\uFF0C\u53EA\u6709\u7B49\u7EA7\u4E0D\u9AD8\u7684\u5361"
+      value: "\u3010\u706B\u529B\u538B\u5236\u3011\u5728\u3010\u62B5\u6D88\u6CD5\u5178\u3011\u751F\u6548\u671F\u95F4\u4F7F\u7528\u4F1A\u83B7\u5F97\u6700\u5927\u6536\u76CA"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[8]
-      value: "Tips:\u8FDE\u62BD50\u4E2A\u3001100\u4E2A\u5361\u5305\u65F6\u5747\u53EF\u83B7\u5F97\u5BF9\u5E94\u7684\u6210\u5C31\u5956\u52B1"
+      value: "\u6BCF\u5F00\u4E00\u4E2A\u5361\u5305\u5E78\u8FD0\u503C\u90FD\u4F1A\u9012\u589E\uFF0C\u5E78\u8FD0\u503C\u4F1A\u5F71\u54CD\u62BD\u5230\u66F4\u4F18\u8D28\u5361\u724C\u7684\u6982\u7387"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[9]
-      value: "Tips:\u4E0D\u8FD4\u56DE\u62BD\u5361\u754C\u9762\u8FDE\u95EF18\u5173\u53EF\u89E3\u9501\u5BF9\u5E94\u6210\u5C31\u5956\u52B1"
+      value: "\u8FDE\u62BD50\u4E2A\u5361\u5305\u3001100\u4E2A\u5361\u5305\u3001\u8FDE\u80DC18\u5173\uFF0C\u5747\u53EF\u83B7\u5F97\u6210\u5C31\u5956\u676F\uFF0C\u6C38\u4E45\u63D0\u9AD8\u62BD\u5361\u5E78\u8FD0\u503C"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[10]
@@ -9862,7 +9878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11466448, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Text
-      value: "\u56DE\u5230\u4E3B\u754C\u9762"
+      value: "\u786E\u8BA4"
       objectReference: {fileID: 0}
     - target: {fileID: 11466448, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Color.b
@@ -9962,7 +9978,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3be7972328977214985a4e0d8ed75937, type: 3}
     - target: {fileID: 11479370, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Text
-      value: "\u56DE\u5230\u62BD\u5361"
+      value: "\u56DE\u53BB\u62BD\u5361"
       objectReference: {fileID: 0}
     - target: {fileID: 11479370, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Color.b
@@ -10010,7 +10026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11483070, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Text
-      value: "\u7EE7\u7EED"
+      value: "\u7EE7\u7EED\u6E38\u620F"
       objectReference: {fileID: 0}
     - target: {fileID: 11483070, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: m_Color.b
@@ -15673,6 +15689,8 @@ GameObject:
   - component: {fileID: 567955178}
   - component: {fileID: 567955180}
   - component: {fileID: 567955179}
+  - component: {fileID: 567955182}
+  - component: {fileID: 567955181}
   m_Layer: 5
   m_Name: stage
   m_TagString: Untagged
@@ -15712,7 +15730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15741,6 +15759,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567955177}
   m_CullTransparentMesh: 1
+--- !u!114 &567955181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567955177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &567955182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567955177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.5087746, g: 0.8962264, b: 0.114142045, a: 0.5}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &568603630
 GameObject:
   m_ObjectHideFlags: 0
@@ -39360,6 +39408,8 @@ GameObject:
   - component: {fileID: 1430637370}
   - component: {fileID: 1430637369}
   - component: {fileID: 1430637368}
+  - component: {fileID: 1430637371}
+  - component: {fileID: 1430637372}
   m_Layer: 5
   m_Name: Combo
   m_TagString: Untagged
@@ -39383,7 +39433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 848, y: 276.30002}
+  m_AnchoredPosition: {x: 769.8, y: 276.30002}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430637368
@@ -39414,7 +39464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49803925, g: 0.6784314, b: 0.18823531, a: 1}
+  m_Color: {r: 0.9960785, g: 0.3803922, b: 0.3019608, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -39434,7 +39484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Combo x {0}
+  m_Text: "\u8FDE\u80DC x {0}"
 --- !u!222 &1430637370
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39443,6 +39493,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430637366}
   m_CullTransparentMesh: 1
+--- !u!114 &1430637371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430637366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.09433961, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1430637372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430637366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1433454470
 GameObject:
   m_ObjectHideFlags: 0

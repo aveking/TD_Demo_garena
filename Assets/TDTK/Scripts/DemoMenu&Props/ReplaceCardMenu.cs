@@ -26,12 +26,10 @@ namespace TDTK
 
             // Draw Card Button
             keepBtn.Init();
-            keepBtn.label.text = "保留原卡";
             keepBtn.SetCallback(this.OnHoverButton, this.OnExitButton, this.OnKeepCard, null);
 
             // Start Button
             replaceBtn.Init();
-            replaceBtn.label.text = "替换";
             replaceBtn.SetCallback(this.OnHoverButton, this.OnExitButton, this.OnReplaceCard, null);
         }
 
