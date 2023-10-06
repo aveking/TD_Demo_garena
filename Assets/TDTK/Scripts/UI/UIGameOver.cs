@@ -55,8 +55,8 @@ namespace TDTK
         public void OnMenuButton()
         {
             TDTK.OnCardOrMainMenu();
-            Achievement.BestRecord = global_gamesetting.current_stagelv - 1 > Achievement.BestRecord ?
-                global_gamesetting.current_stagelv - 1 : Achievement.BestRecord;
+            Achievement.BestRecord = global_gamesetting.current_stagelv > Achievement.BestRecord ?
+                global_gamesetting.current_stagelv : Achievement.BestRecord;
             SceneManager.LoadScene("TD_Demo_Garena_LoginMenu");
             ResetGame();
         }
@@ -99,8 +99,8 @@ namespace TDTK
                 }
 
 
-                int num = 5 + (Achievement.Combo > 5? 5: Achievement.Combo);
-                lbReward.text = string.Format("小家伙们安全到家\n获得卡包：{0}个", num);
+                int num = 3 + (Achievement.Combo > 5? 5: Achievement.Combo);
+                lbReward.text = string.Format("小家伙们安全到家，获得卡包：{0}个", num);
                 card_setting.AddDrawNum(num);
             }
             else if (Achievement.Retries > 0)
@@ -110,14 +110,14 @@ namespace TDTK
                 Achievement.Retries--;
                 Achievement.Combo = 0;
                 
-                lbReward.text = string.Format("损失一条命\n剩余复活机会：{0}次", Achievement.Retries);
-                card_setting.AddDrawNum(10);
+                lbReward.text = string.Format("剩余复活机会：{0}次\n从地狱带回卡包：6个", Achievement.Retries);
+                card_setting.AddDrawNum(6);
             }
             else
             {
                 buttonCard.SetActive(false);
                 buttonNext.SetActive(false);
-                lbReward.text = string.Format("你玩完了 - {0}", global_gamesetting.current_stagelv);
+                lbReward.text = string.Format("闯到第{0}关！", global_gamesetting.current_stagelv);
             }
 
             UIMainControl.FadeIn(canvasGroup, 0.25f, thisObj);

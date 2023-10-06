@@ -56,18 +56,18 @@ namespace TDTK
             int quality;
             int num = Random.Range(0, 10);
 
-            if (card_setting.draw_times < 10)
+            if (card_setting.draw_times < 8)
             {
                 quality = 0;
             }
-            else if (card_setting.draw_times < 30)
+            else if (card_setting.draw_times < 28)
             {
                 if (num < 5)
                     quality = 0;
                 else
                     quality = 1;
             }
-            else if (card_setting.draw_times < 60)
+            else if (card_setting.draw_times < 58)
             {
                 if (num < 2)
                     quality = 0;
@@ -223,17 +223,17 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("+{0}本魔典{1}秒\n攻速+{2}%", (quality - 0.5) * 2, 15, 14 * level);
+                return string.Format("{0}秒内法典\n额外+{1}本", 9 + 3 * level, quality);
             else if (CardType == 1)
-                return string.Format("{0}秒内持续\n攻塔{1}次", 6 + 2 * quality, 10 + level * 5 + (quality * 15));
+                return string.Format("{0}秒内法典\n攻速+{1}%", 7 + 3 * level, 150 + 50 * quality);
             else if (CardType == 2)
-                return string.Format("{0}秒内移动\n+{1}%", 1.6f + 0.4f * level, 40 + (quality * 20));
+                return string.Format("{0}秒内移动\n+{1}%", 1.7f + 0.3f * level, 30 + (quality * 15));
             else if (CardType == 3)
-                return string.Format("免伤{0}点", (level + quality * 6) * 3);
+                return string.Format("免伤{0}点", (level + quality * 5) * 3);
             else if (CardType == 4)
-                return string.Format("变大{0}倍\n无敌{1}秒", 1.7f + 0.8f * level, 3f + 0.5f * quality);
+                return string.Format("变大{0}倍\n无敌{1}秒", 2f + 0.6f * level, 2.8f + 0.6f * quality);
             else
-                return string.Format("塔定住{0}秒\n弹幕定{1}秒", 2f + 0.5f * level, 1.7f + 0.3f * quality);
+                return string.Format("塔暂停{0}秒\n子弹停{1}秒",2f + 0.5f * level, 1.7f + 0.3f * quality);
         }
     }
 

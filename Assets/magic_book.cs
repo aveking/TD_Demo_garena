@@ -21,9 +21,10 @@ public class magic_book : MonoBehaviour
     static public int books_cnt;// = 1 + quality / 2;
     static public float books_keepcd;// = 5 + level * 2;
     static public float books_attack_rate = 1f;// = 100f / (100 + 5 + 5 * quality);
-
+    static public float books_rate_keepcd;// = newadd
     public GameObject[] sub_books;
     public float sub_books_cd = 0;
+    public float ratecd = 0;
 
     public GameObject card1_obj;
     public bool card1_enable = false;
@@ -71,11 +72,11 @@ public class magic_book : MonoBehaviour
         cd -= Time.deltaTime;
         if (cd <= 0f)
         {
-            float sqr_d = 16f; //½üµÄÊ±ºò²ÅÓÐÐ§
+            float sqr_d = 16f; //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ð§
             Transform near_one = null;
             Vector3 a = transform.position;
 
-            //ÕÒÒ»¸öÀë×Ô¼º×î½üµÄ×Óµ¯£¬Í¨ÖªËü×ÔÎÒÏú»Ù
+            //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Í¨Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             foreach (Transform tf in all_Projectile.Keys)
             {
                 float d = (a - tf.position).sqrMagnitude;
@@ -85,17 +86,27 @@ public class magic_book : MonoBehaviour
                     near_one = tf;
                 }
             }
-
-            if (near_one != null)
+        if (near_one != null)
             {
+                cd = 2f;
+                if (books_rate_keepcd > 0)
+                {
+                    ratecd = books_rate_keepcd;
+                    books_rate_keepcd = 0;
+                }
+                if (ratecd > 0)
+                {
+                ratecd -= Time.deltaTime;
                 cd = 2f * books_attack_rate;
-
-                Vector3 dir = (a - near_one.position);
-                dir.y = 0;
-                transform.forward = dir;
-                near_one.gameObject.layer = 30;
-                //Debug.LogError($"near_one.gameObject.layer = {near_one.gameObject.layer}");
+                }
+                     Vector3 dir = (a - near_one.position);
+                     dir.y = 0;
+                     transform.forward = dir;
+                     near_one.gameObject.layer = 30;
+                     //Debug.LogError($"near_one.gameObject.layer = {near_one.gameObject.layer}");
+                
             }
+
         }
 
 
