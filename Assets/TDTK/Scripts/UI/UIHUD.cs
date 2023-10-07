@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-using System.Collections;
 using System.Collections.Generic;
-
-using TDTK;
 
 namespace TDTK
 {
@@ -15,6 +12,11 @@ namespace TDTK
         public Text txtLife;
         public Text txtWave;
         public Text drawNum;
+        public Text txtCombo;
+
+        public Text txtStageHelp;
+
+        public List<string> stageHelp;
 
         public List<UIObject> rscItemList = new List<UIObject>();
 
@@ -26,15 +28,14 @@ namespace TDTK
 
         public GameObject butPerkMenuObj;
 
-        public Image imgArmor;
-
         private static UIHUD instance;
         public static UIHUD GetInstance() { return instance; }
 
         void Awake()
         {
             instance = this;
-            TDTK.OnGameStage(Achievement.curStage++);
+            Debug.Log("BGM: "+ global_gamesetting.current_stagelv);
+            TDTK.OnGameStage(global_gamesetting.current_stagelv-1);
         }
 
 
@@ -57,6 +58,16 @@ namespace TDTK
             butSpawnDefaultPos = butSpawn.rectT.localPosition;
 
             butFF.Init();
+
+            txtStageHelp.enabled = true;
+            if (global_gamesetting.current_stagelv <= 10)
+            {
+                txtStageHelp.text = stageHelp[global_gamesetting.current_stagelv-1];
+            }
+            else
+            {
+                txtStageHelp.text = stageHelp[Random.Range(0, 10)];
+            }
 
             //butPerkMenuObj.SetActive(PerkManager.IsOn());
 
@@ -120,6 +131,7 @@ namespace TDTK
         public void OnSpawnButton()
         {//开始怪物出生逻辑
             SpawnManager.Spawn();
+            txtStageHelp.enabled = false;
             //butSpawn.rectT.localPosition = new Vector3(0, 99999, 0);
             //butSpawn.label.text = "Next Wave";
         }
@@ -157,6 +169,8 @@ namespace TDTK
             //else txtTimer.text = "";
 
             //Debug.Log(GameControl.GetPlayerLife());
+            txtCombo.enabled = Achievement.Combo > 0;
+            txtCombo.text = string.Format("连胜 x {0}", Achievement.Combo);
             if (global_gamesetting._inst.boss_currenthp <= 0)
             {
                 GameControl.GameOver();

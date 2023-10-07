@@ -180,6 +180,7 @@ namespace TDTK
             yield return StartCoroutine(WaitForRealSeconds(.1f));
             CameraControl.FadeBlur(uiBlurEffect, 0, 2);
             CameraControl.TurnBlurOn();
+            GameControl.GameOver(false);
             UIGameOver.Show(won);
         }
 

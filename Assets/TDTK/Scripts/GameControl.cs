@@ -196,6 +196,7 @@ namespace TDTK
             ResourceManager.OnGameOver(won);    //to record current resource
 
             instance.gameState = _GameState.Over;
+            Time.timeScale = 0;
             TDTK.OnGameOver(won);
         }
 

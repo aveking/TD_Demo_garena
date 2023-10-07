@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,13 +7,29 @@ public static class card_setting
 
     public static int draw_num = 5;
 
+    public static int draw_times = 0;
+
     public static int[] cards_lv = new int[CARD_NUM];//�ȼ�
     public static int[] cards_ql = new int[CARD_NUM];//Ʒ��
     public static string[] cards_des = new string[CARD_NUM];//����
 
-    public static void AddDrawNum()
+    public static void Reset()
     {
-        draw_num += 6;
+        draw_num = Achievement.BestRecord > 5 ? Achievement.BestRecord : 5;
+        draw_times = Achievement.Draws50 ? 10: 0;
+        draw_times += Achievement.Draws100 ? 20: 0;
+        draw_times += Achievement.Wins18 ? 30: 0;
+
+        for (int i=0; i <CARD_NUM; i++)
+        {
+            cards_lv[i] = 0;
+            cards_ql[i] = 0;
+        }
+    }
+
+    public static void AddDrawNum(int num)
+    {
+        draw_num += num;
     }
 
     public static void ChangeCard(int _idx, int _lv, int _ql, string _des)
@@ -31,11 +45,19 @@ public static class card_setting
 
 public static class Achievement
 {
-    public static int curStage = 0;
-    public static bool win5 = false;
-    public static bool win10 = false;
-    public static bool win20 = false;
+    public static uint Retries = 3;
+    public static int Combo = 0;
+    public static int BestRecord = 0;
 
+    public static bool Draws50= false;
+    public static bool Draws100 = false;
+    public static bool Wins18 = false;
+
+    public static void Reset()
+    {
+        Retries = 3;
+        Combo = 0;
+    }
 }
 
 public class global_gamesetting : MonoBehaviour
@@ -77,6 +99,12 @@ public class global_gamesetting : MonoBehaviour
 
     static public global_gamesetting _inst;
     // Start is called before the first frame update
+
+    public static void Reset()
+    {
+        current_stagelv = 1;
+    }
+
     void Start()
     {
         _inst = this;

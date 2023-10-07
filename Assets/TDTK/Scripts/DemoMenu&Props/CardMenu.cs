@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 
 
@@ -30,10 +29,9 @@ namespace TDTK
 
         public ReplaceCardMenu replaceCardMenu;
 
-        public List<string> levelNameList = new List<string>();
-        //~ public List<string> levelDesp=new List<string>();
-        public List<string> levelDespList = new List<string>();
-
+        public GameObject imgDraws50;
+        public GameObject imgDraws100;
+        public GameObject imgWins18;
 
         private int offsetX = 320; //注意这里的screen w=1920 h=1080
         private int offsetY = 380;
@@ -44,14 +42,8 @@ namespace TDTK
             offsetX = (int)((350 * Screen.width) / 1920);
             offsetY = (int)((400 * Screen.height) / 1080);
 
-            // Reset stage
-            Achievement.curStage = 0;
-
             lableList.Add("抽卡");
-            lableList.Add("前往探险 >");
-
-            levelNameList.Add("TD_Demo_Garena_GamePlay");
-            levelDespList.Add("Description - Replace me");
+            lableList.Add("冲塔");
 
             // Draw Card Button
             drawCardBtn.Init();
@@ -76,7 +68,8 @@ namespace TDTK
                     cards.Add(UICard.Clone(cards[0].rootObj, "Card" + i));
 
                     cards[i].rootT.Translate(transX, transY, 0);
-                    //cards[i].rootT.localScale = new Vector3(1.5f, 1.5f);
+
+                    cards[i].rootT.localScale = new Vector3(1.2f, 1.2f);
                     transX += offsetX;
                     if (i == 2)
                     {
@@ -98,6 +91,10 @@ namespace TDTK
             }
 
             DrawNum.text = string.Format("x {0}", cardManager.drawNum);
+
+            imgDraws50.SetActive(Achievement.Draws50);
+            imgDraws100.SetActive(Achievement.Draws100);
+            imgWins18.SetActive(Achievement.Wins18);
         }
 
         void OnDrawCard(GameObject butObj, int pointerID = -1)
@@ -126,9 +123,9 @@ namespace TDTK
             }
 
 #if UNITY_5_3_OR_NEWER
-            SceneManager.LoadScene(levelNameList[0]);
+            SceneManager.LoadScene("TD_Demo_Garena_GamePlay");
 #else
-			Application.LoadLevel(levelNameList[0]);
+			Application.LoadLevel("TD_Demo_Garena_GamePlay");
 #endif
         }
 

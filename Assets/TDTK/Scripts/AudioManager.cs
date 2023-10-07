@@ -1,8 +1,5 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-
-using TDTK;
 
 namespace TDTK {
 
@@ -169,11 +166,26 @@ namespace TDTK {
 
 		void OnGameStage(int stage)
 		{
-            if (stage % 3 == 0)
-            {
-				musicSource.clip = musicList[stage/3];
+            // if (stage % 3 == 0)
+            // {
+			// 	int index = stage / 3;
+			// 	index = index < musicList.Count ? index : musicList.Count-1;
+			// 	musicSource.clip = musicList[index];
+			// 	musicSource.Play();
+			// }
+			if (Achievement.Combo % 3 == 0)
+			{
+				int index = Achievement.Combo / 3;
+				index = index < musicList.Count ? index : musicList.Count-1;
+				musicSource.clip = musicList[index];
 				musicSource.Play();
 			}
+			else if (!musicSource.isPlaying)
+			{
+				musicSource.Play();
+			}
+
+			
 		}
 
 		void OnPlayCard(bool succeed)

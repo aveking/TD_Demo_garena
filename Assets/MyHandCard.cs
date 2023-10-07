@@ -25,8 +25,10 @@ public class MyHandCard : MonoBehaviour, IPointerDownHandler
     private void Update()
     {
         int cost_mp = hand_cards.card_costmp[card_id];
-        if (mp_mana._inst.mana_cnt >= cost_mp) my_cg.alpha = 1f;
-        else my_cg.alpha = 0.5f;
+        if (mp_mana._inst == null)
+            Debug.Log("Hello");
+        else if (mp_mana._inst.mana_cnt >= cost_mp) my_cg.alpha = 1f;
+        else my_cg.alpha = 0.6f;
     }
 
     public void RefreshUI()

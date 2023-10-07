@@ -48,9 +48,12 @@ MonoBehaviour:
   musicList: []
   playMusic: 1
   shuffle: 0
+  gameStartSound: {fileID: 0}
   gameWonSound: {fileID: 0}
   gameLostSound: {fileID: 0}
-  lostLifeSound: {fileID: 0}
+  playCardSuccessSound: {fileID: 0}
+  playCardFailSound: {fileID: 0}
+  lostLifeSound: {fileID: 8300000, guid: 28b644ef8691f427091b2525663e2fa3, type: 3}
   newWaveSound: {fileID: 0}
   waveClearedSound: {fileID: 0}
   creepReachDestinationSound: {fileID: 0}
