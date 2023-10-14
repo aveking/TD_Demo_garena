@@ -385,7 +385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &119118533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -402,8 +402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 151.5, y: -103.7}
-  m_SizeDelta: {x: 130, y: 150}
+  m_AnchoredPosition: {x: -546.5, y: -215.12}
+  m_SizeDelta: {x: 100, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119118534
 MonoBehaviour:
@@ -774,7 +774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &333411975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -791,8 +791,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 492.4, y: -56.80005}
-  m_SizeDelta: {x: 218, y: 250}
+  m_AnchoredPosition: {x: -396.7, y: -252}
+  m_SizeDelta: {x: 180, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333411976
 MonoBehaviour:
@@ -3065,7 +3065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1156985684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3082,8 +3082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 302.3, y: -82.2}
-  m_SizeDelta: {x: 173, y: 200}
+  m_AnchoredPosition: {x: -547, y: -294.6}
+  m_SizeDelta: {x: 100, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156985685
 MonoBehaviour:
@@ -5931,7 +5931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u73A9\u6CD5\u4ECB\u7ECD\uFF1A\n\n1\u3001\u70B9\u3010\u62BD\u5361\u3011\u6D88\u8017\u6301\u6709\u5361\u5305\u83B7\u5F971\u5F20\u65B0\u5361\n\n2\u3001\u5728\u3010\u7559\u65E7\u5361\u3011\u4E0E\u3010\u6362\u65B0\u5361\u3011\u95F4\u505A\u9009\u62E9\n\n3\u3001\u5361\u7EC4\u63D0\u5347\u540E\u70B9\u3010\u51B2\u5854\u3011\u7EE7\u7EED\u751F\u5B58\u6311\u6218"
+  m_Text: "\u73A9\u6CD5\u4ECB\u7ECD\uFF1A\n\n1\u3001\u70B9\u3010\u62BD\u5361\u3011\u6D88\u8017\u5361\u5305\u83B7\u5F97\u4E00\u5F20\u65B0\u5361\n\n2\u3001\u5728\u3010\u7559\u65E7\u5361\u3011\u4E0E\u3010\u6362\u65B0\u5361\u3011\u95F4\u505A\u9009\u62E9\n\n3\u3001\u5361\u7EC4\u8D28\u91CF\u63D0\u5347\u540E\u70B9\u3010\u51B2\u5854\u3011\u7EE7\u7EED\u6311\u6218"
 --- !u!222 &2127892685
 CanvasRenderer:
   m_ObjectHideFlags: 0

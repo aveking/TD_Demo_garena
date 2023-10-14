@@ -42,7 +42,6 @@ namespace TDTK
             if (global_gamesetting._inst.boss_currenthp > 0)
             {
                 //GameControl.LoadNextScene();
-                global_gamesetting.current_stagelv++;
                 GameControl.RestartScene();
             }
         }
@@ -64,7 +63,6 @@ namespace TDTK
         public void OnCardButton()
         {//返回抽卡菜单
          //GameControl.LoadMainMenu();
-            global_gamesetting.current_stagelv++;
             Achievement.Combo = 0;
             TDTK.OnCardOrMainMenu();
             SceneManager.LoadScene("TD_Demo_Garena_Card");
@@ -98,10 +96,10 @@ namespace TDTK
                     card_setting.draw_times += 30;
                 }
 
-
                 int num = 3 + (Achievement.Combo > 5? 5: Achievement.Combo);
                 lbReward.text = string.Format("小家伙们安全到家，获得卡包：{0}个", num);
                 card_setting.AddDrawNum(num);
+                global_gamesetting.current_stagelv++;
             }
             else if (Achievement.Retries > 0)
             {

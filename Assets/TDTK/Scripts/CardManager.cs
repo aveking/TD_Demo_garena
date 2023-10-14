@@ -56,18 +56,18 @@ namespace TDTK
             int quality;
             int num = Random.Range(0, 10);
 
-            if (card_setting.draw_times < 8)
+            if (card_setting.draw_times < 5)
             {
                 quality = 0;
             }
-            else if (card_setting.draw_times < 28)
+            else if (card_setting.draw_times < 30)
             {
                 if (num < 5)
                     quality = 0;
                 else
                     quality = 1;
             }
-            else if (card_setting.draw_times < 58)
+            else if (card_setting.draw_times < 70)
             {
                 if (num < 2)
                     quality = 0;
@@ -76,7 +76,7 @@ namespace TDTK
                 else
                     quality = 2;
             }
-            else if (card_setting.draw_times < 100)
+            else if (card_setting.draw_times < 130)
             {
                 if (num < 2)
                     quality = 0;
@@ -87,7 +87,7 @@ namespace TDTK
                 else
                     quality = 3;
             }
-            else if (card_setting.draw_times < 150)
+            else if (card_setting.draw_times < 200)
             {
                 if (num < 1)
                     quality = 0;
@@ -223,17 +223,17 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("{0}秒内法典\n额外+{1}本", 9 + 3 * level, quality);
+                return string.Format("{0}秒内法典\n额外+{1}本", 7 + 2 * level, quality);
             else if (CardType == 1)
-                return string.Format("{0}秒内法典\n攻速+{1}%", 7 + 3 * level, 150 + 50 * quality);
+                return string.Format("{0}秒内法典\n攻速+{1}%", 5 + 1 * level, 125 + 75 * quality);
             else if (CardType == 2)
-                return string.Format("{0}秒内移动\n+{1}%", 1.7f + 0.3f * level, 30 + (quality * 15));
+                return string.Format("{0}秒内移动\n+{1}%", 1.5f + 0.25f * level, 70 + (quality * 20));
             else if (CardType == 3)
-                return string.Format("免伤{0}点", (level + quality * 5) * 3);
+                return string.Format("免伤{0}点\n不叠加", (level + quality * 5) * 3);
             else if (CardType == 4)
-                return string.Format("变大{0}倍\n无敌{1}秒", 2f + 0.6f * level, 2.8f + 0.6f * quality);
+                return string.Format("无敌{0}秒\n变大{1}倍", 2.9f + 0.6f * quality, 2.7f + 0.3f * level);
             else
-                return string.Format("塔暂停{0}秒\n子弹停{1}秒",2f + 0.5f * level, 1.7f + 0.3f * quality);
+                return string.Format("塔暂停{0}秒\n子弹停{1}秒",2f + 0.5f * level, 1.75f + 0.25f * quality);
         }
     }
 
