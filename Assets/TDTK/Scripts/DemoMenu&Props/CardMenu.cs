@@ -41,8 +41,8 @@ namespace TDTK
         // Start is called before the first frame update
         void Start()
         {
-            offsetX = (int)((35 * Screen.width) / 1920);
-            offsetY = (int)((40 * Screen.height) / 1080);
+            offsetX = 36;// (int)((36f * Screen.width) / 2560);
+            offsetY = 42;// (int)((42f * Screen.height) / 1440 );
 
             lableList.Add("抽卡");
             lableList.Add("冲塔");

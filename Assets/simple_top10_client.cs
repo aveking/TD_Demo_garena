@@ -31,7 +31,7 @@ public class simple_top10_client : MonoBehaviour
     public void change_playername()
     {
         player_name = ui_input_txt.text;
-        if (player_name == null || player_name.Length <= 0) player_name = "�����ο�";
+        if (player_name == null || player_name.Length <= 0) player_name = "无名游客";
         Debug.Log($"player_name={player_name}");
     }
 
@@ -136,7 +136,7 @@ public class simple_top10_client : MonoBehaviour
                     }
                     //Debug.Log($"str_len[j]={str_len}");
                     item.name = new string(name_c, 0, str_len);
-                    if (item.name == null || item.name.Length <= 0) item.name = "�����ο�";
+                    if (item.name == null || item.name.Length <= 0) item.name = "无名游客";
                     p += 4;
 
                     int score = (int)(rawReceiveBuffer_a[p] | (rawReceiveBuffer_a[p + 1] << 8)); p += 2;
@@ -147,10 +147,10 @@ public class simple_top10_client : MonoBehaviour
 
                 top10_list.Sort((x, y) => compare_AB(x, y));
 
-                string txt = "\n���а�";
+                string txt = "\n排行榜";
                 for (int i = 0; i < top10_list.Count; ++i)
                 {
-                    txt += "\n" + top10_list[i].score + "��       " + top10_list[i].name;
+                    txt += "\n" + top10_list[i].score + "关       " + top10_list[i].name;
                 }
 
                 ui_top10_txt.text = txt;
