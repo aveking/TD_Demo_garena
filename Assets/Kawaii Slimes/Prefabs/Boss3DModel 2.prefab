@@ -159,8 +159,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.7, z: 1.5}
-  m_Center: {x: 0, y: 0.35, z: 0}
+  m_Size: {x: 0.93279696, y: 0.7160213, z: 0.88589907}
+  m_Center: {x: 0, y: 0.35801065, z: -0.00427711}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15271,7 +15271,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sub_books: []
   sub_books_cd: 0
+  ratecd: 0
   card1_obj: {fileID: 0}
+  card1_enable: 0
 --- !u!1 &427615404794278169
 GameObject:
   m_ObjectHideFlags: 0
@@ -15355,7 +15357,9 @@ MonoBehaviour:
   - {fileID: 4315062695892822127}
   - {fileID: 2691762440179446852}
   sub_books_cd: 0
+  ratecd: 0
   card1_obj: {fileID: 117366}
+  card1_enable: 0
 --- !u!1 &836127788604437337
 GameObject:
   m_ObjectHideFlags: 0
@@ -20435,7 +20439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sub_books: []
   sub_books_cd: 0
+  ratecd: 0
   card1_obj: {fileID: 0}
+  card1_enable: 0
 --- !u!1 &2944201794501735050
 GameObject:
   m_ObjectHideFlags: 0
@@ -20719,7 +20725,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sub_books: []
   sub_books_cd: 0
+  ratecd: 0
   card1_obj: {fileID: 0}
+  card1_enable: 0
 --- !u!1 &4409046059988627345
 GameObject:
   m_ObjectHideFlags: 0
@@ -20767,7 +20775,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sub_books: []
   sub_books_cd: 0
+  ratecd: 0
   card1_obj: {fileID: 0}
+  card1_enable: 0
 --- !u!1 &4625978826659628003
 GameObject:
   m_ObjectHideFlags: 0

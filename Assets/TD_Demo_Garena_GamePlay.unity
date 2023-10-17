@@ -9617,44 +9617,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[0]
-      value: "\u5F00\u59CB\u540E\uFF0C\u4ECE3\u5F20\u724C\u4E2D\u90091\u5F20\u5145\u80FD\u5B8C\u6BD5\u7684\u5411\u4E0A\u6ED1\u52A8\u540E\u677E\u624B\u5373\u53EF\u91CA\u653E\u6280\u80FD"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u70B9\u51FB\u5F00\u59CB\u6E38\u620F\uFF0C\u4ECE3\u5F20\u724C\u4E2D\u90091\u5F20\u5145\u80FD\u5B8C\u6BD5\u7684\u5411\u4E0A\u6ED1\u52A8\u540E\u677E\u624B\u5373\u53EF\u91CA\u653E\u6280\u80FD"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[1]
-      value: "\u62B5\u6297\u6CD5\u5178\u6BCF\u96942\u79D2\u4F1A\u81EA\u52A8\u62B5\u6D88\u4E00\u53D1\u9644\u8FD1\u7684\u5B50\u5F39"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u6BCF\u672C\u6CD5\u5178\u6BCF\u96942\u79D2\u4F1A\u81EA\u52A8\u62B5\u6D88\u4E00\u53D1\u98DE\u884C\u4E2D\u7684\u5B50\u5F39"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[2]
-      value: "\u6218\u6597\u65F6\u6BCF\u5F20\u62BD\u5230\u7684\u724C\u5747\u6765\u81EA\u62BD\u5361\u754C\u9762\u7684\u517B\u6210\u5361\u7EC4"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u6218\u6597\u65F6\u62BD\u5230\u7684\u6BCF\u5F20\u724C\u5747\u6765\u81EA\u62BD\u5361\u754C\u9762\u4E2D\u6301\u6709\u7684"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[3]
-      value: "\u88AB\u91CD\u706B\u529B\u7D27\u8FFD\u65F6\u3010\u8FC5\u6377\u6B65\u4F10\u3011\u548C\u3010THE
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u88AB\u8F83\u591A\u5B50\u5F39\u8FFD\u65F6\u3010\u8FC5\u6377\u6B65\u4F10\u3011\u548C\u3010THE
         WORLD\uFF01\u3011\u662F\u6700\u5FEB\u8131\u56F0\u7684\u9009\u62E9"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[4]
-      value: "\u4E0D\u62BD\u5361\u8FDE\u80DC\u65F6\u901A\u5173\u5956\u52B1\u4F1A\u9012\u589E\uFF0C\u6700\u5C114\u4E2A\uFF0C\u6700\u591A8\u4E2A"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u4E0D\u62BD\u5361\u8FDE\u80DC\u65F6\u901A\u5173\u5956\u52B1\u4F1A\u9012\u589E\uFF08\u6700\u591A8\u4E2A\uFF09"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[5]
-      value: "\u5386\u53F2\u6700\u4F73\u6210\u7EE9\u8D8A\u9AD8\uFF0C\u4ECE\u7B2C\u4E00\u5173\u5F00\u59CB\u6311\u6218\u65F6\u521D\u59CB\u5361\u5305\u8D8A\u591A"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u5386\u53F2\u6700\u4F73\u6210\u7EE9\u8D8A\u9AD8\uFF0C\u4ECE\u7B2C\u4E00\u5173\u5F00\u59CB\u6311\u6218\u65F6\u521D\u59CB\u5361\u5305\u8D8A\u591A"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[6]
-      value: "\u62B5\u6297\u6CD5\u5178\u65E0\u6CD5\u5BF9\u88AB\u5B9A\u4F4F\u7684\u5B50\u5F39\u751F\u6548"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u6CD5\u5178\u65E0\u6CD5\u62E6\u622A\u5F15\u7206\u88AB\u5B9A\u4F4F\u7684\u5B50\u5F39"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[7]
-      value: "\u3010\u706B\u529B\u538B\u5236\u3011\u4E0E\u3010\u62B5\u6D88\u6CD5\u5178\u3011\u6548\u679C\u53EF\u540C\u65F6\u751F\u6548"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u3010\u706B\u529B\u538B\u5236\u3011\u4E0E\u3010\u62B5\u6D88\u6CD5\u5178\u3011\u6548\u679C\u53EF\u540C\u65F6\u751F\u6548"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[8]
-      value: "\u6BCF\u5F00\u4E00\u4E2A\u5361\u5305\u5E78\u8FD0\u503C\u90FD\u4F1A\u9012\u589E\uFF0C\u5E78\u8FD0\u503C\u4F1A\u5F71\u54CD\u62BD\u5230\u66F4\u4F18\u8D28\u5361\u724C\u7684\u6982\u7387"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u6BCF\u5F00\u4E00\u4E2A\u5361\u5305\u5E78\u8FD0\u503C\u7F13\u6162\u9012\u589E\uFF0C\u4ECE\u800C\u63D0\u5347\u540E\u7EED\u62BD\u5230\u66F4\u4F18\u8D28\u5361\u7684\u6982\u7387"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[9]
-      value: "\u8FDE\u62BD50\u5305\u3001100\u5305\u3001\u8FDE\u80DC18\u5173\uFF0C\u5747\u53EF\u83B7\u5F97\u6C38\u4E45\u63D0\u5347\u5E78\u8FD0\u503C\u7684\u5956\u676F"
+      value: "\u6E38\u620F\u8D34\u58EB\uFF1A\u8FDE\u62BD50\u5305\u3001100\u5305\u3001\u8FDE\u80DC18\u5173\uFF0C\u5747\u53EF\u83B7\u5F97\u6C38\u4E45\u63D0\u5347\u5E78\u8FD0\u503C\u7684\u5956\u676F"
       objectReference: {fileID: 0}
     - target: {fileID: 11445392, guid: 8caa835db4ebe864fbef2371b7a3e9d9, type: 3}
       propertyPath: stageHelp.Array.data[10]
@@ -32617,6 +32617,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173981251}
   m_Mesh: {fileID: 4300010, guid: af68ca7c1ae07d5438b8e1aa6b6768a9, type: 3}
+--- !u!1 &1176935243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176935244}
+  - component: {fileID: 1176935245}
+  m_Layer: 0
+  m_Name: "\u6309\u94AE-\u6536\u4E0B\u5956\u52B1"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1176935244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176935243}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1508962312}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1176935245
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176935243}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 37b9310a1a560421f82c5587f5f7e77e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1180640848
 GameObject:
   m_ObjectHideFlags: 0
@@ -41624,6 +41752,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1176935244}
   - {fileID: 406075634}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49362,15 +49491,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss_as: {fileID: 406075635}
+  getcardsound: {fileID: 1176935245}
   tower_attack_rate: 4
   tower_bullet_fly_speed: 2
   boss_move_speed: 4
   boss_maxhp: 100
   minion_maxhp: 15
   array_stage_h: 400000000f00000014000000190000001b0000001d0000001f00000021000000220000002400000028000000290000002a0000002b0000002c0000002d0000002e0000002f0000003000000031000000320000003200000033000000330000003400000034000000350000003500000036000000360000003700000037000000370000003800000038000000380000003900000039000000390000003a0000003a0000003a0000003b0000003b0000003b0000003c0000003c0000003c0000003d0000003d0000003d0000003d0000003e0000003e0000003e0000003e0000003f0000003f0000003f0000003f000000
-  array_stage_tower_cnt: 6400000005000000090000000d0000001100000014000000170000001a0000001d000000200000002300000026000000290000002b0000002d0000002f00000031000000330000003500000037000000390000003b0000003d0000003f0000004100000043000000450000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f0000005f00000060000000600000006100000061000000620000006200000063000000
-  array_stage_density: f40100002003000000020000e6000000e6000000e6000000f0000000f0000000f0000000fa000000fa000000fa0000000401000004010000040100000e0100000e0100000e0100001801000018010000180100002201000022010000220100002c0100002c0100002c0100004001000040010000400100005401000054010000540100006801000068010000680100007c0100007c0100007c010000900100009001000090010000a4010000a4010000a4010000b8010000b8010000b8010000cc010000cc010000
-  array_stage_density2: 78000000c80000006400000064000000640000004b0000004b0000004b0000004b0000004b0000005a0000005a0000005a0000005a0000005a0000005a0000005a0000005a0000005a0000006400000064000000640000006400000064000000640000006400000064000000640000006400000064000000640000006e0000006e0000006e0000006e0000006e0000006e0000006e0000006e0000006e000000
+  array_stage_tower_cnt: 7200000004000000080000000c0000000e0000001000000012000000160000001a0000001c0000001e00000020000000220000002400000026000000280000002a0000002e0000003200000036000000380000003a0000003c0000003e000000400000004200000044000000480000004c000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e000000
+  array_stage_density: f401000020030000f40100002c010000c8000000c8000000c8000000c8000000c800000096000000960000002c0100002c01000004010000040100000e0100000e0100000e0100001801000018010000180100002201000022010000220100002c0100002c0100002c0100004001000040010000400100005401000054010000540100006801000068010000680100007c0100007c0100007c010000900100009001000090010000a4010000a4010000a4010000b8010000b8010000b8010000cc010000cc010000
+  array_stage_density2: 78000000c8000000640000006400000064000000640000006400000064000000640000005a0000005a0000005a0000005a0000005a0000005a0000005a0000005a0000005a0000005a0000006400000064000000640000006400000064000000640000006400000064000000640000006400000064000000640000006e0000006e0000006e0000006e0000006e0000006e0000006e0000006e0000006e000000
   stage_h: 37
   stage_tower_cnt: 8
   stage_tower_density: 64

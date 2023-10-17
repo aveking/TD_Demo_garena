@@ -223,17 +223,17 @@ namespace TDTK
             int level = Level + 1;
 
             if (CardType == 0)
-                return string.Format("{0}秒内法典\n额外+{1}本", 7 + 2 * level, quality);
+                return string.Format("{0}秒内法典\n额外+{1}本", 5 + 2 * level, quality + 1);
             else if (CardType == 1)
-                return string.Format("{0}秒内法典\n攻速+{1}%", 5 + 1 * level, 125 + 75 * quality);
+                return string.Format("{0}秒内法典\n攻速+{1}%", 3 + 1 * level, 205 + 75 * quality);
             else if (CardType == 2)
-                return string.Format("{0}秒内移动\n+{1}%", 1.5f + 0.25f * level, 70 + (quality * 20));
+                return string.Format("{0}秒内移动\n+{1}%", 1.25f + 0.25f * level, 60 + (quality * 20));
             else if (CardType == 3)
                 return string.Format("免伤{0}点\n不叠加", (level + quality * 5) * 3);
             else if (CardType == 4)
                 return string.Format("无敌{0}秒\n变大{1}倍", 2.9f + 0.6f * quality, 2.7f + 0.3f * level);
             else
-                return string.Format("塔暂停{0}秒\n子弹停{1}秒",2f + 0.5f * level, 1.75f + 0.25f * quality);
+                return string.Format("塔暂停{0}秒\n子弹停{1}秒",2f + 0.5f * level, 1.5f + 0.25f * quality);
         }
     }
 

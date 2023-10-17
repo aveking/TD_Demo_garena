@@ -33,14 +33,16 @@ namespace TDTK
         public GameObject imgDraws100;
         public GameObject imgWins18;
 
+        public ParticleSystem particles;
+
         private int offsetX = 320; //注意这里的screen w=1920 h=1080
         private int offsetY = 380;
 
         // Start is called before the first frame update
         void Start()
         {
-            offsetX = (int)((350 * Screen.width) / 1920);
-            offsetY = (int)((400 * Screen.height) / 1080);
+            offsetX = (int)((35 * Screen.width) / 1920);
+            offsetY = (int)((40 * Screen.height) / 1080);
 
             lableList.Add("抽卡");
             lableList.Add("冲塔");
@@ -109,6 +111,7 @@ namespace TDTK
             {
                 drawCardBtn.button.GetComponents<AudioSource>()[1].Play();
                 replaceCardMenu.Show(cardManager, cardManager.GetCard(card.CardType), card);
+                particles.Play();
             }
 
         }

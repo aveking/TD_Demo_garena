@@ -16,11 +16,11 @@ public static class card_setting
     public static void Reset()
     {
         draw_num = Achievement.BestRecord > 5 ? Achievement.BestRecord : 5;
-        draw_times = Achievement.Draws50 ? 10: 0;
-        draw_times += Achievement.Draws100 ? 20: 0;
-        draw_times += Achievement.Wins18 ? 30: 0;
+        draw_times = Achievement.Draws50 ? 10 : 0;
+        draw_times += Achievement.Draws100 ? 20 : 0;
+        draw_times += Achievement.Wins18 ? 30 : 0;
 
-        for (int i=0; i <CARD_NUM; i++)
+        for (int i = 0; i < CARD_NUM; i++)
         {
             cards_lv[i] = 0;
             cards_ql[i] = 0;
@@ -45,24 +45,92 @@ public static class card_setting
 
 public static class Achievement
 {
-    public static uint Retries = 3;
+    public static uint Retries = 2;
     public static int Combo = 0;
-    public static int BestRecord = 0;
 
-    public static bool Draws50= false;
-    public static bool Draws100 = false;
-    public static bool Wins18 = false;
+    private static int _bestRecord = 0;
+    public static int BestRecord
+    {
+        get
+        {
+            return _bestRecord;
+        }
+        set
+        {
+            _bestRecord = value;
+            PlayerPrefs.SetInt("BestRecord", _bestRecord);
+        }
+    }
+
+    private static bool _draws50 = false;
+    public static bool Draws50
+    {
+        get
+        {
+            return _draws50;
+        }
+        set
+        {
+            _draws50 = value;
+            PlayerPrefs.SetInt("Draws50", _draws50 ? 1 : 0);
+        }
+    }
+
+    private static bool _draws100 = false;
+    public static bool Draws100
+    {
+        get
+        {
+            return _draws100;
+        }
+        set
+        {
+            _draws100 = value;
+            PlayerPrefs.SetInt("Draws100", _draws100 ? 1 : 0);
+        }
+    }
+
+    private static bool _wins18 = false;
+    public static bool Wins18
+    {
+        get
+        {
+            return _wins18;
+        }
+        set
+        {
+            _wins18 = value;
+            PlayerPrefs.SetInt("Wins18", _wins18 ? 1 : 0);
+        }
+    }
 
     public static void Reset()
     {
         Retries = 3;
         Combo = 0;
     }
+
+    public static void Init()
+    {
+        if (PlayerPrefs.HasKey("BestRecord"))
+            _bestRecord = PlayerPrefs.GetInt("BestRecord");
+
+        if (PlayerPrefs.HasKey("Draws50"))
+            _draws50 = PlayerPrefs.GetInt("Draws50") > 0;
+
+        if (PlayerPrefs.HasKey("Draws100"))
+            _draws100 = PlayerPrefs.GetInt("Draws100") > 0;
+
+        if (PlayerPrefs.HasKey("Wins18"))
+            _wins18 = PlayerPrefs.GetInt("Wins18") > 0;
+    }
 }
 
 public class global_gamesetting : MonoBehaviour
 {
     public AudioSource boss_as;
+
+    public AudioSource getcardsound;
 
     public float tower_attack_rate = 1f;
     public float tower_bullet_fly_speed = 1f;

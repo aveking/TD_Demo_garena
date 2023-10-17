@@ -5,10 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 #endif
 
-using System.Collections;
 using System.Collections.Generic;
-
-using TDTK;
 
 namespace TDTK
 {
@@ -30,7 +27,6 @@ namespace TDTK
         // Use this for initialization
         void Start()
         {
-
             levelNameList = new List<string>();
             levelDespList = new List<string>();
 
@@ -75,6 +71,7 @@ namespace TDTK
             //tt.GetChild(0).GetComponent<Text>().text = "最终解释权归 Garena 恐龍抗狼 小團隊 所有\n禁止用于商业用途\n未经作者同意禁止任何形式的复制或分享\n特別感謝：雪兒";
             //tt.GetChild(0).GetComponent<Text>().text = "最终解释权归 Garena 恐龍抗狼 小團隊 所有\n特別感謝：雪兒";
             OnExitButton(null);
+            Achievement.Init();
         }
 
         public void Click_Btn_StartGame()

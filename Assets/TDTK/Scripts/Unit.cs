@@ -189,8 +189,13 @@ namespace TDTK
 
             if (boss_flag == true)
             {
-                if (hand_cards.card4_cd > 0f) transform.localScale = Vector3.one * (hand_cards.card4_bigger);
-                else transform.localScale = Vector3.one * 2f;
+                Vector3 scale;
+
+                if (hand_cards.card4_cd > 0f) scale = Vector3.one * (hand_cards.card4_bigger);
+                else scale = Vector3.one * 2f;
+
+                transform.localScale = scale;
+                transform.GetComponent<Collider>().transform.localScale = scale;
             }
         }
 

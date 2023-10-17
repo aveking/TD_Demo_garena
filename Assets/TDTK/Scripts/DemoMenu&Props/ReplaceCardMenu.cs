@@ -60,6 +60,7 @@ namespace TDTK
 
         void OnReplaceCard(GameObject butObj, int pointerID = -1)
         {
+            cardManager.GetComponent<AudioSource>().Play();
             cardManager.AddCard(newCard, true);
             gameObject.SetActive(false);
         }

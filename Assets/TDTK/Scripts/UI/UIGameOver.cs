@@ -108,14 +108,14 @@ namespace TDTK
                 Achievement.Retries--;
                 Achievement.Combo = 0;
                 
-                lbReward.text = string.Format("剩余复活机会：{0}次\n从地狱带回卡包：6个", Achievement.Retries);
+                lbReward.text = string.Format("还剩：{0}条命\n在地狱获得卡包：6个", Achievement.Retries);
                 card_setting.AddDrawNum(6);
             }
             else
             {
                 buttonCard.SetActive(false);
                 buttonNext.SetActive(false);
-                lbReward.text = string.Format("闯到第{0}关！", global_gamesetting.current_stagelv);
+                lbReward.text = string.Format("GAME OVER", global_gamesetting.current_stagelv);
             }
 
             UIMainControl.FadeIn(canvasGroup, 0.25f, thisObj);
