@@ -5,7 +5,7 @@ public static class card_setting
 {
     public const int CARD_NUM = 6;
 
-    public static int draw_num = 5;
+    public static int draw_num = Achievement.BestRecord > 5 ? Achievement.BestRecord : 5;
 
     public static int draw_times = 0;
 
@@ -106,7 +106,7 @@ public static class Achievement
 
     public static void Reset()
     {
-        Retries = 3;
+        Retries = 2;
         Combo = 0;
     }
 

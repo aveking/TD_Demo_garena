@@ -181,6 +181,7 @@ public class hand_cards : MonoBehaviour
 
         magic_book.books_cnt = (int)((quality) + 1);
         magic_book.books_keepcd = 7 + level * 2;
+        skill_cd1._inst.StartCounting(magic_book.books_keepcd);
 
         //    return string.Format("�ٻ�{0}��ħ��\n��ս{1}�룬����+{2}%",  (int)((quality - 0.5f) * 2f), 7 + level * 2 + quality, 18 * level;
     }
@@ -193,8 +194,9 @@ public class hand_cards : MonoBehaviour
         int quality = card_setting.cards_ql[1] + 1;
         Debug.Log($"level = {level} quality={quality}");
 
-        magic_book.books_rate_keepcd = 3 + 1 * level;
-        magic_book.books_attack_rate = 100f / (205 + 75 * quality);
+        magic_book.books_speedup_rate = 100f / (205 + 75 * quality);
+        magic_book.books_speedup_cd = 3 + 1 * level;
+        skill_cd2._inst.StartCounting(magic_book.books_speedup_cd);
 
         //return string.Format("ǿ��ħ�����{0}�룬��๥��{1}��", 6f + 2f * quality, 10 + (level * 5)  + (quality * 15));
     }

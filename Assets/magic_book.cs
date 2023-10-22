@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,16 +17,18 @@ public class magic_book : MonoBehaviour
         }
     }
 
-    static public int books_cnt;// = 1 + quality / 2;
-    static public float books_keepcd;// = 5 + level * 2;
-    static public float books_attack_rate = 1f;// = 100f / (100 + 5 + 5 * quality);
-    static public float books_rate_keepcd;// = newadd
+    static public int books_cnt; 
+    static public float books_keepcd;
+    static public float books_speedup_rate = 1f;
+    static public float books_speedup_cd;
     public GameObject[] sub_books;
     public float sub_books_cd = 0;
-    public float ratecd = 0;
 
     public GameObject card1_obj;
     public bool card1_enable = false;
+
+    float speedup_cd;
+    float cd = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,6 @@ public class magic_book : MonoBehaviour
 
     }
 
-    float cd = 2f;
     void Update()
     {
         if (sub_books_cd > 0f)
@@ -69,6 +69,22 @@ public class magic_book : MonoBehaviour
             else card1_obj.SetActive(card1_enable = false);
         }
 
+        // Card1 will trigger a cd reset
+        if (books_speedup_cd > 0)
+        {
+            speedup_cd = books_speedup_cd;
+            books_speedup_cd = 0;
+            cd = 0f;
+        }
+        else if (speedup_cd > 0)
+        {
+            speedup_cd -= Time.deltaTime;
+        }
+        else
+        {
+            books_speedup_rate = 1f;
+        }
+
         cd -= Time.deltaTime;
         if (cd <= 0f)
         {
@@ -86,34 +102,17 @@ public class magic_book : MonoBehaviour
                     near_one = tf;
                 }
             }
-        if (near_one != null)
+
+            if (near_one != null)
             {
-                cd = 2f;
-                if (books_rate_keepcd > 0)
-                {
-                    ratecd = books_rate_keepcd;
-                    books_rate_keepcd = 0;
-                }
-                if (ratecd > 0)
-                {
-                ratecd -= Time.deltaTime;
-                cd = 2f * books_attack_rate;
-                }
-                     Vector3 dir = (a - near_one.position);
-                     dir.y = 0;
-                     transform.forward = dir;
-                     near_one.gameObject.layer = 30;
-                     //Debug.LogError($"near_one.gameObject.layer = {near_one.gameObject.layer}");
-                
+                cd = 2f * books_speedup_rate;
+
+                Vector3 dir = a - near_one.position;
+                dir.y = 0;
+                transform.forward = dir;
+                near_one.gameObject.layer = 30;
+                //Debug.LogError($"near_one.gameObject.layer = {near_one.gameObject.layer}");
             }
-
         }
-
-
-
-
-
-
-
     }
 }

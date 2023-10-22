@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Net;
 using System.Net.Sockets;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 
 
@@ -12,7 +10,7 @@ public class simple_top10_client : MonoBehaviour
     public InputField ui_input_txt;
     public Text ui_top10_txt;
 
-    static string player_name = "无名游客";
+    public static string player_name = "无名游客";
 
     //ͬ���а񽻻���
     byte[] send_data = new byte[(7 + 2 + 1) << 1];
@@ -23,6 +21,11 @@ public class simple_top10_client : MonoBehaviour
     {
         //global_gamesetting.current_stagelv ����Զ�Ĺؿ�
         Connect(IPAddress.Parse("118.31.60.208"), 65501);
+
+        if (PlayerPrefs.HasKey("player_name"))
+        {
+            player_name = PlayerPrefs.GetString("player_name");
+        }
         
         if (ui_input_txt != null)
             ui_input_txt.text = player_name;
@@ -32,7 +35,8 @@ public class simple_top10_client : MonoBehaviour
     {
         player_name = ui_input_txt.text;
         if (player_name == null || player_name.Length <= 0) player_name = "无名游客";
-        Debug.Log($"player_name={player_name}");
+
+        PlayerPrefs.SetString("player_name", player_name);
     }
 
     Socket socket;
@@ -82,8 +86,16 @@ public class simple_top10_client : MonoBehaviour
             send_data[14 + 3] = (byte)((dev_id_hash >> 24) & 0xff);
 
             //��߹�
-            send_data[18] = (byte)(global_gamesetting.current_stagelv & 0xff);
-            send_data[18 + 1] = (byte)((global_gamesetting.current_stagelv >> 8) & 0xff);
+            
+        
+                send_data[18] = (byte)(global_gamesetting.current_stagelv & 0xff);
+                send_data[18 + 1] = (byte)((global_gamesetting.current_stagelv >> 8) & 0xff);
+        
+                send_data[18] = (byte)(Achievement.BestRecord + 1 & 0xff);
+                send_data[18 + 1] = (byte)((Achievement.BestRecord + 1 >> 8) & 0xff);
+             
+          
+           
 
             socket.Send(send_data, 0, send_data.Length, SocketFlags.None);
         }

@@ -74,13 +74,6 @@ public class ObjectPoolManager : MonoBehaviour{
 
 	public int _Count()
 	{
-		// int count = 0;
-		// for(int i=0; i<poolList.Count; i++)
-		// {
-		// 	Debug.Log("Hello: " + i + ":" + poolList[i].GetTotalObjectCount());
-		// 	count += poolList[i].GetTotalObjectCount();
-		// }
-
 		return poolList[1].GetTotalObjectCount();
 	}
 

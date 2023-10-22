@@ -231,7 +231,7 @@ namespace TDTK
             else if (CardType == 3)
                 return string.Format("免伤{0}点\n不叠加", (level + quality * 5) * 3);
             else if (CardType == 4)
-                return string.Format("无敌{0}秒\n变大{1}倍", 2.9f + 0.6f * quality, 2.7f + 0.3f * level);
+                return string.Format("无敌{0}秒\n变大{1}倍", 2.5f + 0.5f * quality, 2.7f + 0.3f * level);
             else
                 return string.Format("塔暂停{0}秒\n子弹停{1}秒",2f + 0.5f * level, 1.5f + 0.25f * quality);
         }

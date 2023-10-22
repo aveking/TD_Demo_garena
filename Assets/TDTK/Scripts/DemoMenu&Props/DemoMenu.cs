@@ -19,10 +19,10 @@ namespace TDTK
         //~ public List<string> levelName=new List<string>();
         public List<string> levelNameList = new List<string>();
         //~ public List<string> levelDesp=new List<string>();
+
         public List<string> levelDespList = new List<string>();
         public List<UIButton> buttonList = new List<UIButton>();
         public Text txtBestRecord;
-        public Transform tt;
 
         // Use this for initialization
         void Start()
@@ -34,7 +34,12 @@ namespace TDTK
             //string genText="All level in this demo uses procedural generation so the incoming waves will be different in each play-through.\n";
             string genText = "";
 
-            displayedNameList.Add("开始游戏");
+            if (Achievement.BestRecord > 1)
+                displayedNameList.Add("继续游戏");
+            else
+                displayedNameList.Add("开始游戏");
+
+
             levelNameList.Add("TD_Demo_Garena_Card");
             levelDespList.Add("garena demo\n" + genText);
 
